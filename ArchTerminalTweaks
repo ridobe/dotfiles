@@ -1,0 +1,37 @@
+#list
+alias ls='ls --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
+alias ll='ls -l --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
+alias la='ls -la --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
+alias grep='grep --color=tty -d skip'
+
+##update
+alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
+alias pacnew='sudo find /etc -regextype posix-extended -regex ".+\.pac(new|save|orig)" 2> /dev/null'
+
+alias paq='pacman -Q | grep'
+alias pac='sudo pacman -S'
+alias pacy='sudo pacman -Sy'
+alias pacu='sudo pacman -Suy'
+alias pau='sudo pacman -U'
+alias par='sudo pacman -R'
+alias prc='sudo pacman -Rc'
+alias prs='sudo pacman -Rs'
+alias prm='sudo pacman -Rsc'
+alias prp='sudo pacman -Rn'
+alias psp='sudo pacman -Rsn'
+alias pcp='sudo pacman -Rcn'
+alias pmp='sudo pacman -Rscn'
+alias pcc='sudo pacman -Scc'
+
+##misc
+alias md5='md5sum'
+alias cdabs='cd /var/abs'
+alias cdvar='cd /var/abs/local'
+alias cdaur='cd /var/abs/local/AUR'
+alias np='nano PKGBUILD'
+
+##tar
+alias utarz='tar zvxf'
+alias utarj='tar jvxf'
+alias tarz='tar cvfz'
+alias tarj='tar cvfj'
