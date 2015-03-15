@@ -64,7 +64,7 @@ PS1="\[\e[0;37m\]┌─ ≺${root}\u\[\e[0;37m\]│\[\e[0;33m\]\h\[\e[0;37m\]≻
 PS2="   ╾──╼ "
 
 #text editor
-export EDITOR="medit"
+export EDITOR="nano"
 
 # Android tools
 export PATH=~/bin:$PATH
