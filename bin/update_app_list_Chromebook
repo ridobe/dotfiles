@@ -1,0 +1,3 @@
+#!/bin/bash
+
+cd $HOME/dotfiles && bin/saveApps desktop --quite && git add custom/chromebook.list && git commit -m 'Auto Commit of Application List for Chromebook' && git push

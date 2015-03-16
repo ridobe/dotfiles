@@ -1,0 +1,3 @@
+#!/bin/bash
+
+cd $HOME/dotfiles && bin/saveApps desktop --quite && git add custom/desktop.list && git commit -m 'Auto Commit of Application List for Desktop' && git push
