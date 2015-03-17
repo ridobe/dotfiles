@@ -2,9 +2,9 @@
 # /home/ridobe/.bashrc
 #
 
-#alias file ArchTerminalTweaks
+#alias file .bash_alias
 if [ -f ~/.bashrc ]; then
-source ~/.ArchTerminalTweaks
+source ~/.bash_alias
 fi
 
 #Colors
@@ -28,8 +28,8 @@ fi
 #ssh prompt
 if [ -n "$SSH_TTY" ] || [ -n "$SUDO_USER" ] ; then 
 
-	PS1="$PS1:ssh:"
-	fi
+	export PS1="$PS1:ssh: "
+fi
 
 #Weclome message
 c1="$(tput sgr0)$(tput setaf 7)"
@@ -66,7 +66,21 @@ PS2="   ╾──╼ "
 #text editor
 export EDITOR="nano"
 
-# Android tools
+# don't put duplicate lines in the history. See bash(1) for more options
+export HISTCONTROL=ignoreboth:erasedups
+
+# Expand the history size
+HISTFILESIZE=100000
+HISTSIZE=100000
+
+#print the time stamps associated with each history entry
+export HISTTIMEFORMAT="%h %d %H:%M:%S "
+
+#To append commands to the history file, rather than overwrite it
+shopt -s histappend
+
+#set $PATH
 export PATH=~/bin:$PATH
-#export PATH=~/sbin:$PATH
+export PATH=~/sbin:$PATH
 export PATH=${PATH}:~/android-sdk-linux/platform-tools
+export PATH=${PATH}:~/dotfiles/bin

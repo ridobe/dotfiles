@@ -1,0 +1,14 @@
+[user]
+	name = Dodd Berry
+	email = ridobe18@gmail.com
+[core]
+	editor = nano
+	
+[url    "ssh://user@git.host.com"]
+        insteadOf = "git://git.host.com"
+    
+[color]
+        ui = true
+	
+[commit]
+	template = ~/.gitmessage
