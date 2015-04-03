@@ -26,10 +26,9 @@ else
 fi
 
 #ssh prompt
-if [ -n "$SSH_TTY" ] || [ -n "$SUDO_USER" ] ; then 
-
-	export PS1="$PS1:ssh: "
+if [ -n "$SSH_CLIENT" ]; then text=" ssh-session"
 fi
+export PS1='\[\e[1;33m\]\u@\h:\w${text}$\[\e[m\] '
 
 #Weclome message
 c1="$(tput sgr0)$(tput setaf 7)"
