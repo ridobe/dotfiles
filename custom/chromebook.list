@@ -46,6 +46,7 @@ profile-sync-daemon
 rfkill
 scrot
 speedtest-cli
+sshguard
 sudo
 thunar
 thunar-archive-plugin
@@ -62,6 +63,7 @@ wget
 wpa_supplicant
 xarchiver
 xbindkeys
+xclip
 xf86-input-evdev
 xf86-input-joystick
 xf86-input-keyboard
