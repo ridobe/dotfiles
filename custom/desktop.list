@@ -18,6 +18,9 @@ cairo
 cdrdao
 conky-nvidia
 cronie
+cups
+cups-bjnp
+cups-pdf
 deadbeef
 dhclient
 dialog
@@ -28,6 +31,7 @@ dropbox
 dvd+rw-tools
 fakeroot
 file-roller
+fio
 flex
 fontconfig
 freetype2
@@ -36,6 +40,7 @@ gcc-multilib
 git
 gksu
 glxinfo
+gnome-disk-utility
 gnome-keyring
 gnumeric
 google-chrome
@@ -59,6 +64,7 @@ hal-flash
 handbrake
 haveged
 hddtemp
+hdparm
 inxi
 jdk7
 k3b
@@ -66,7 +72,6 @@ kio-mtp
 lib32-readline
 libtool
 libutil-linux
-linux-dash
 lsb-release
 lxdm
 lxtask
@@ -102,6 +107,7 @@ profile-sync-daemon
 pulseaudio
 reflector
 rsyslog
+samsung_magician
 scrot
 speedtest-cli
 squashfs-tools
@@ -116,11 +122,9 @@ thunar-media-tags-plugin
 thunar-volman
 transmission-gtk
 tumbler
-ufw-bzr
 unrar
 unzip
 usb_modeswitch
-vcp
 vim
 volumeicon-xfce
 wget
