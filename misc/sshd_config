@@ -16,7 +16,7 @@ ClientAliveInterval 120
 PermitRootLogin no
 PasswordAuthentication no
 ChallengeResponseAuthentication no
-Banner /etc/issue
+Banner /etc/issue.net
 PermitUserEnvironment=yes
 UseDNS no
 
