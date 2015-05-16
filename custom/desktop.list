@@ -27,7 +27,6 @@ dialog
 diffpac-git
 dmidecode
 dosfstools
-dropbox
 dvd+rw-tools
 fakeroot
 file-roller
@@ -65,6 +64,8 @@ handbrake
 haveged
 hddtemp
 hdparm
+insync
+insync-thunar
 inxi
 jdk7
 k3b
