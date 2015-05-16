@@ -1,4 +1,4 @@
 #!/bin/bash
 LOG=/var/log/chromebook-to-git.log
 echo "*** $(date -R) ***" >> $LOG
-cd $HOME/dotfiles && bin/saveApps chromebook --quite && git add custom/chromebook.list && git commit -m 'Auto Commit of Application List for Chromebook' && git push >> $LOG
+cd $HOME/dotfiles && bin/saveApps chromebook --quite && git add custom/chromebook.list && git commit -m 'Auto Commit of Application List for Chromebook' && git push
