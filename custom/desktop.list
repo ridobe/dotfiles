@@ -31,9 +31,11 @@ dvd+rw-tools
 fakeroot
 file-roller
 fio
+flashplugin
 flex
 fontconfig
 freetype2
+freshplayerplugin-git
 galculator
 gcc-multilib
 git
