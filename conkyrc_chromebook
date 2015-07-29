@@ -92,7 +92,7 @@ override_utf8_locale yes
 use_spacer none
 
 TEXT
-${image /home/ridobe/Dropbox/Linux_Backups/arch/Archimages/archlinux-logo-white.png -p -0,630 -s 300x99.5}
+${image /home/ridobe/Insync/Linux_Backups/arch/Archimages/archlinux-logo-white.png -p -0,630 -s 300x99.5}
 #-p is position, -s is size (728x455) original
 ##################################
 ##            SYSTEM            ##
