@@ -93,6 +93,7 @@ lxtask
 lz4
 lzop
 m4
+mailutils
 make
 makemkv
 medit
@@ -107,6 +108,7 @@ networkmanager
 ntfs-3g
 nvidia-beta-dkms
 nvidia-hook
+opensmtpd
 openssh
 orage
 os-prober
@@ -119,6 +121,7 @@ pkg-config
 pkgcacheclean
 polkit
 prebootloader
+procmail
 profile-sync-daemon
 pulseaudio
 pulseaudio-bluetooth
@@ -139,6 +142,7 @@ thunar
 thunar-archive-plugin
 thunar-media-tags-plugin
 thunar-volman
+thunderbird
 transmission-gtk
 tree
 tumbler
