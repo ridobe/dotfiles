@@ -1,0 +1,14 @@
+#add to ~/.ssh/config (client)
+#connection (ssh -p 2023 ridobe@71.46.90.151)
+Host cloudstation
+HostName 71.46.90.151
+IdentityFile /home/ridobe/.ssh/authorized_keys
+Port 2023
+User ridobe
+
+#connection (ssh -p 2023 ridobe@71.46.90.151)
+#Host pi
+#HostName 71.46.90.151
+#IdentityFile /home/ridobe/.ssh/authorized_keys
+#Port 2023
+#User ridobe
