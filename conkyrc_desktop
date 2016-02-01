@@ -108,10 +108,7 @@ uptime: $uptime
 ##################################
 
 ${color dimgray}GPU ${hr 2}${color}
-#type: ${exec inxi -G | grep "Card" | awk '{print $0}'}
-#type: ${exec nvidia-smi -q | grep "Product Name" | sed -e 's/.*: /nVidia /'}
-#driver: ${exec inxi -G | grep "driver"}
-#driver: ${exec nvidia-smi -q | grep "Driver Version" | awk '{print $4}'}
+type: ${exec inxi -G | grep "Card" | awk '{print $4,$5,$6,$7,$8}'}
 freq: ${nvidia gpufreq} Mhz
 memory: ${nvidia memfreq} Mhz
 temp: ${hwmon 0 temp 1}°F

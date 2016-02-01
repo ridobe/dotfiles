@@ -83,4 +83,3 @@ export PATH=~/bin:$PATH
 export PATH=~/sbin:$PATH
 export PATH=$PATH:~/android-sdk-linux/platform-tools
 export PATH=$PATH:~/dotfiles/bin
-export PATH=$PATH:~/depot_tools
