@@ -4,7 +4,6 @@ alsa-firmware
 alsa-oss
 alsa-utils
 alsi
-android-tools
 android-udev
 apache
 arch-install-scripts
@@ -45,6 +44,7 @@ fio
 flashplugin
 flex
 fontconfig
+freecad
 freetype2
 freshplayerplugin-git
 galculator
