@@ -13,6 +13,8 @@ EDITOR="nano"
 #FORCE=0
 #TMPDIR="/tmp"
 #NO_TESTDB=0
+AURUSEGIT=1
+AURSHOWDIFF=1
 
 # SUDO
 SUDONOVERIF=1      # Avoid multiple sudo checks when timestamp_timeout=0
