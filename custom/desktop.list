@@ -40,7 +40,6 @@ dwdiff
 efibootmgr
 fakeroot
 file-roller
-fio
 flashplugin
 flex
 fontconfig
@@ -122,6 +121,7 @@ openssh
 orage
 os-prober
 p7zip
+package-query
 patch
 pavucontrol
 pax-utils
