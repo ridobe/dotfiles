@@ -4,7 +4,6 @@ alsa-firmware
 alsa-oss
 alsa-utils
 alsi
-android-tools
 android-udev
 apache
 arch-install-scripts
@@ -20,6 +19,9 @@ bluez-utils
 btrfs-progs
 cairo
 cdrdao
+chromium
+chromium-pepper-flash
+chromium-widevine
 cloudstation
 conky-nvidia
 cronie
@@ -34,14 +36,15 @@ dmidecode
 dosfstools
 downgrade
 dvd+rw-tools
+dwdiff
 efibootmgr
 fakeroot
 file-roller
 fio
-firefox
 flashplugin
 flex
 fontconfig
+freecad
 freetype2
 freshplayerplugin-git
 galculator
@@ -55,7 +58,6 @@ gnome-control-center
 gnome-disk-utility
 gnome-keyring
 gnumeric
-google-chrome
 gparted
 grantlee-qt4
 grsync
@@ -82,9 +84,16 @@ insync
 insync-thunar
 inxi
 jdk7
+jdk7-openjdk
 k3b
 kio-mtp
+lib32-fakeroot
+lib32-js17
+lib32-libltdl
+lib32-libstdc++5
+lib32-mesa-libgl
 lib32-readline
+libtinfo
 libtool
 libutil-linux
 lsb-release
@@ -98,6 +107,7 @@ make
 makemkv
 medit
 memtest86+
+mesa-libgl
 mkinitcpio-nfs-utils
 mobile-broadband-provider-info
 modemmanager
@@ -105,9 +115,8 @@ mt-post
 nbd
 network-manager-applet
 networkmanager
+ninja
 ntfs-3g
-nvidia-beta-dkms
-nvidia-hook
 opensmtpd
 openssh
 orage
@@ -115,10 +124,11 @@ os-prober
 p7zip
 patch
 pavucontrol
+pax-utils
 php
 php-apache
+php-cgi
 pkg-config
-pkgcacheclean
 polkit
 prebootloader
 procmail
@@ -126,6 +136,7 @@ profile-sync-daemon
 pulseaudio
 pulseaudio-bluetooth
 pulseaudio-equalizer
+python-pyelftools
 reflector
 rfkill
 rsyslog
@@ -142,7 +153,6 @@ thunar
 thunar-archive-plugin
 thunar-media-tags-plugin
 thunar-volman
-thunderbird
 transmission-gtk
 tree
 tumbler
@@ -173,6 +183,7 @@ xf86-video-i128
 xf86-video-i740
 xf86-video-mach64
 xf86-video-neomagic
+xf86-video-nouveau
 xf86-video-nv
 xf86-video-openchrome
 xf86-video-r128
