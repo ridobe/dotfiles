@@ -2,6 +2,6 @@
 #Automated .sh file for rsync backups to Synology NAS.
 LOG=/var/log/rsync-auto.log
 echo "*** $(date -R) ***" >> $LOG
-rsync -av -e 'ssh -p 2023' --info=progress2 --delete --exclude={"/.thumbnails/","/Downloads","/Insync","/.cache/google-chrome","/.local/share/Trash/","/CloudStation/","/android-sdk-linux","/kernel_build","/android_devices"} /home/ridobe/* ridobe@50.90.73.229:/volume1/homes/ridobe/rsync_ridobe_desktop/home/ >> $LOG
+rsync -av -e 'ssh -p 2023' --info=progress2  --exclude={"/.thumbnails/","/Downloads","/Insync","/.cache/google-chrome","/.local/share/Trash/","/CloudStation/","/android-sdk-linux","/kernel_build","/android_devices"} /home/ridobe/* ridobe@50.90.73.229:/volume1/homes/ridobe/rsync_ridobe_desktop/home/ >> $LOG
 rsync -av -e 'ssh -p 2023' --info=progress2 /etc/* ridobe@50.90.73.229:/volume1/homes/ridobe/rsync_ridobe_desktop/etc/ >> $LOG
-rsync -av -e 'ssh -p 2023' --info=progress2 --delete --exclude={"/abs","/aur"} /var/* ridobe@50.90.73.229:/volume1/homes/ridobe/rsync_ridobe_desktop/var/ >> $LOG
+rsync -av -e 'ssh -p 2023' --info=progress2  --exclude={"/abs","/aur"} /var/* ridobe@50.90.73.229:/volume1/homes/ridobe/rsync_ridobe_desktop/var/ >> $LOG
