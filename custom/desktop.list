@@ -24,6 +24,7 @@ chromium-pepper-flash
 chromium-widevine
 cloudstation
 conky-nvidia
+cower
 cronie
 cups
 cups-bjnp
@@ -254,4 +255,3 @@ xorg-xwd
 xorg-xwud
 xpdf
 xscreensaver-arch-logo
-yaourt
