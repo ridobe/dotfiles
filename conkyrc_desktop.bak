@@ -1,98 +1,98 @@
-conky.config = {
---##############################################
---#  .conkyrc by ridobe <ridobe18@gmail.com>  ##
---##############################################
+###############################################
+##  .conkyrc by ridobe <ridobe18@gmail.com>  ##
+###############################################
 
---units
-	temperature_unit = 'fahrenheit',
-	short_units = true,
+#units
+temperature_unit fahrenheit
+short_units yes
 
--- Use Xft?
-	use_xft = true,
-	font = 'DejaVu Sans:size=10',
-	xftalpha = 0.8,
-	text_buffer_size = 2048,
+# Use Xft?
+use_xft yes
+xftfont DejaVu Sans:size=10
+xftalpha 0.8
+text_buffer_size 2048
 
--- Update interval in seconds
-	update_interval = 1,
+# Update interval in seconds
+update_interval 1
 
--- This is the number of times Conky will update before quitting.
--- Set to zero to run forever.
-	total_run_times = 0,
-	own_window = true,
-	own_window_transparent = false,
+# This is the number of times Conky will update before quitting.
+# Set to zero to run forever.
+total_run_times 0
 
---own_window_type override
-	own_window_type = 'desktop',
---own_window_type normal #use this if you want a nice shadow to appear around conky
+own_window yes
+own_window_transparent no
+#own_window_type override
+own_window_type desktop
+#own_window_type normal #use this if you want a nice shadow to appear around conky
 
--- If own_window is yes, these window manager hints may be used
-	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+# If own_window is yes, these window manager hints may be used
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
 
--- Use double buffering (reduces flicker, may not work for everyone)
-	double_buffer = true,
+# Use double buffering (reduces flicker, may not work for everyone)
+double_buffer yes
 
--- Minimum size of text area
-	minimum_width = 300, minimum_height = 1080,
---maximum_width 300
+# Minimum size of text area
+minimum_size 300 1080
+#maximum_width 300
 
--- Draw shades?
-	draw_shades = false,
+# Draw shades?
+draw_shades no
 
--- Draw outlines?
-	draw_outline = false,
+# Draw outlines?
+draw_outline no
 
--- Draw borders around text
-	draw_borders = false,
+# Draw borders around text
+draw_borders no
 
--- Stippled borders?
-	stippled_borders = 0,
+# Stippled borders?
+stippled_borders 0
 
--- border width
-	border_width = 1,
+# border margins
+#border_margin 5
 
--- Default colors and also border colors
---http://www.graphviz.org/doc/info/colors.html
-	default_color = 'gainsboro',
---default_shade_color black
---default_outline_color grey
-	own_window_colour = 'grey17',
---own_window_colour black
+# border width
+border_width 1
 
--- Text alignment, other possible values are commented
---alignment top_left
-	alignment = 'top_right',
---alignment bottom_left
---alignment bottom_right
+# Default colors and also border colors
+#http://www.graphviz.org/doc/info/colors.html
+default_color gainsboro
+#default_shade_color black
+#default_outline_color grey
+own_window_colour grey17
+#own_window_colour black
 
--- Gap between borders of screen and text
--- same thing as passing -x at command line
-	gap_x = 0,
-	gap_y = 0,
+# Text alignment, other possible values are commented
+#alignment top_left
+alignment top_right
+#alignment bottom_left
+#alignment bottom_right
 
--- Subtract file system buffers from used memory?
-	no_buffers = true,
+# Gap between borders of screen and text
+# same thing as passing -x at command line
+gap_x 0
+gap_y 0
 
--- set to yes if you want all text to be in uppercase
-	uppercase = false,
+# Subtract file system buffers from used memory?
+no_buffers yes
 
--- number of cpu samples to average
--- set to 1 to disable averaging
-	cpu_avg_samples = 2,
+# set to yes if you want all text to be in uppercase
+uppercase no
 
--- number of net samples to average
--- set to 1 to disable averaging
-	net_avg_samples = 2,
+# number of cpu samples to average
+# set to 1 to disable averaging
+cpu_avg_samples 2
 
--- Force UTF8? note that UTF8 support required XFT
-	override_utf8_locale = true,
+# number of net samples to average
+# set to 1 to disable averaging
+net_avg_samples 2
 
--- Add spaces to keep things from moving about? This only affects certain objects.
-	use_spacer = 'none',
+# Force UTF8? note that UTF8 support required XFT
+override_utf8_locale yes
 
-};
+# Add spaces to keep things from moving about? This only affects certain objects.
+use_spacer none
 
-conky.text = [[
+TEXT
 ${image /home/ridobe/Insync/Linux_Backups/arch/Archimages/archlinux-logo-white.png -p -0,850 -s 300x99.5}
 #-p is position, -s is size (728x455) original
 ##################################
@@ -137,11 +137,11 @@ processes: $processes   Running: $running_processes
 file systems: / ${fs_used /}/${fs_size /} ${color gold4}${fs_bar 6 /}${color}
 file systems: /home ${fs_used /home}/${fs_size /home} ${color gold4}${fs_bar 6 /home}${color}
 
-Name		PID   CPU%   MEM%
-${top name 1}	${top pid 1} ${top cpu 1} ${top mem 1}
-${top name 2}	${top pid 2} ${top cpu 2} ${top mem 2}
-${top name 3}	${top pid 3} ${top cpu 3} ${top mem 3}
-${top name 4}	${top pid 4} ${top cpu 4} ${top mem 4}
+Name              PID   CPU%   MEM%
+${top name 1} ${top pid 1} ${top cpu 1} ${top mem 1}
+${top name 2} ${top pid 2} ${top cpu 2} ${top mem 2}
+${top name 3} ${top pid 3} ${top cpu 3} ${top mem 3}
+${top name 4} ${top pid 4} ${top cpu 4} ${top mem 4}
 
 ##################################
 ##          DATE/TIME           ##
@@ -165,4 +165,3 @@ ${voffset 4}${font PizzaDude Bullets:size=14}N${font} upload: ${alignr}${totalup
 #${voffset 4}${font PizzaDude Bullets:size=14}T${font} download: ${alignr}${totaldown wlp3s0}
 ${voffset 4}${font PizzaDude Bullets:size=14}T${font} download: ${alignr}${totaldown enp6s0}
 ${endif}
-]];
