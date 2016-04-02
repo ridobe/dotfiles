@@ -108,8 +108,7 @@ uptime: $uptime
 ##################################
 
 ${color dimgray}GPU ${hr 2}${color}
-type: GeForce GTX 760
-#type: ${exec inxi -G | grep "Card" | awk '{print $4,$5,$6,$7,$8}'}
+type: EVGA GeForce GTX 760
 freq: ${nvidia gpufreq} Mhz
 memory: ${nvidia memfreq} Mhz
 temp: ${hwmon 0 temp 1}°F
