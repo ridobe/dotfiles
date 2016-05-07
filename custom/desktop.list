@@ -1,4 +1,5 @@
 abiword
+abootimg-git
 abs
 alsa-firmware
 alsa-oss
@@ -22,8 +23,8 @@ cdrdao
 chromium
 chromium-pepper-flash
 chromium-widevine
-cloudstation
-conky-nvidia
+cloudstationdrive
+conky-lua-nv
 cower
 cronie
 cups
@@ -44,6 +45,7 @@ file-roller
 flashplugin
 flex
 fontconfig
+foomatic-db-gutenprint-ppds
 freecad
 freetype2
 freshplayerplugin-git
@@ -93,6 +95,7 @@ lib32-libltdl
 lib32-libstdc++5
 lib32-mesa-libgl
 lib32-readline
+libpng12
 libtinfo
 libtool
 libutil-linux
@@ -117,7 +120,6 @@ network-manager-applet
 networkmanager
 ninja
 ntfs-3g
-opensmtpd
 openssh
 orage
 os-prober
@@ -164,6 +166,7 @@ vim
 volumeicon-xfce
 wget
 wireless_tools
+wps-office
 xclip
 xdg-user-dirs
 xf86-input-acecad
