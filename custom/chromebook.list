@@ -6,8 +6,12 @@ autoconf
 automake
 binutils
 bison
-cloudstation
+chromium
+chromium-pepper-flash
+chromium-widevine
+cloudstationdrive
 conky
+cower
 cpupower
 cronie
 cyrus-sasl
@@ -22,7 +26,6 @@ garcon
 gcc
 glxinfo
 gnumeric
-google-chrome
 groff
 grsync
 grub
@@ -161,5 +164,4 @@ xorg-xwud
 xpdf
 xscreensaver-arch-logo
 xvkbd
-yaourt
 zip
