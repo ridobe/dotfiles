@@ -25,9 +25,6 @@ alias pcc='sudo pacman -Scc'
 
 ##misc
 alias md5='md5sum'
-alias cdabs='cd /var/abs'
-alias cdvar='cd /var/abs/local'
-alias cdaur='cd /var/abs/local/AUR'
 alias np='nano PKGBUILD'
 alias insync='insync quit && insync start --synchronous-full'
 alias octal='stat -c "%a %n"'
