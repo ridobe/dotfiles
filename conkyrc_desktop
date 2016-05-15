@@ -34,6 +34,7 @@ conky.config = {
 
 -- Minimum size of text area
 	minimum_width = 300, minimum_height = 1080,
+	
 --maximum_width 300
 
 -- Draw shades?
@@ -61,13 +62,13 @@ conky.config = {
 
 -- Text alignment, other possible values are commented
 --alignment top_left
-	alignment = 'top_right',
---alignment bottom_left
---alignment bottom_right
+--alignment = 'top_right',	
+--alignment = bottom_left,
+--alignment = bottom_right,
 
 -- Gap between borders of screen and text
 -- same thing as passing -x at command line
-	gap_x = 0,
+	gap_x = 1615,
 	gap_y = 0,
 
 -- Subtract file system buffers from used memory?
