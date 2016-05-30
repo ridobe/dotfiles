@@ -1,3 +1,10 @@
+##add private keys to ssh-agent
+added_keys=`ssh-add -l`
+
+if [ ! $(echo $added_keys | grep -o -e id_rsa) ]; then
+    ssh-add "$HOME/.ssh/id_rsa"
+fi
+
 ##list
 alias ls='ls --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
 alias ll='ls -l --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'

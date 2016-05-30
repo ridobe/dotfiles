@@ -2,13 +2,13 @@
 #connection (ssh -p 2023 ridobe@50.90.73.229)
 Host cloudstation
 HostName 50.90.73.229
-IdentityFile  ~/.ssh/authorized_keys
+IdentityFile  ~/.ssh/id_rsa
 Port 2023
 User ridobe
 
 #connection (ssh -p 2024 ridobe@50.90.73.229)
 Host arch
 HostName 50.90.73.229
-IdentityFile  ~/.ssh/authorized_keys
+IdentityFile  ~/.ssh/id_rsa
 Port 2024
 User ridobe
