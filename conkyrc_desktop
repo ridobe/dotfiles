@@ -68,7 +68,7 @@ conky.config = {
 
 -- Gap between borders of screen and text
 -- same thing as passing -x at command line
-	gap_x = 1615,
+	gap_x = 2255,
 	gap_y = 0,
 
 -- Subtract file system buffers from used memory?
