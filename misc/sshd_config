@@ -20,10 +20,6 @@ Banner /etc/issue.net
 PermitUserEnvironment=yes
 UseDNS no
 
-#AddressFamily any
-#ListenAddress 50.90.42.58:2022
-#ListenAddress ::
-
 # The default requires explicit activation of protocol 1
 #Protocol 2
 
