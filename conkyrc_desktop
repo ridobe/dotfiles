@@ -33,7 +33,7 @@ conky.config = {
 	double_buffer = true,
 
 -- Minimum size of text area
-	minimum_width = 300, minimum_height = 1080,
+	minimum_width = 300, minimum_height = 1045,
 	
 --maximum_width 300
 
@@ -109,17 +109,17 @@ uptime: $uptime
 ##################################
 
 ${color dimgray}GPU ${hr 2}${color}
-type: EVGA GeForce GTX 760
+type: Ellesmere [Polaris10] Sapphire RX 470
 freq: ${nvidia gpufreq} Mhz
 memory: ${nvidia memfreq} Mhz
-temp: ${hwmon 0 temp 1}°F
+temp: ${execi 1 sensors | grep ^temp1 | head -n 1 |awk '{print ($2*9)/5+32}'}°F
 
 ##################################
 ##             CPU              ##
 ##################################
 ${color dimgray}CPU ${hr 2}${color}
 RAM usage: $mem/$memmax - ${color gold4}$memperc% ${membar 4}${color}
-temp: ${execi 1 sensors | grep ^temp1 | tail -n 1 |awk '{print ($2*9)/5+32}'} °F
+temp: ${execi 1 sensors | grep thermal | head -n 1 |awk '{print ($2*9)/5+32}'}°F
 
 core_0: ${freq_g cpu0} Ghz ${color gold4}${cpu cpu0}%  ${cpubar cpu0}${color}
 core_1: ${freq_g cpu1} Ghz ${color gold4}${cpu cpu1}%  ${cpubar cpu1}${color}
