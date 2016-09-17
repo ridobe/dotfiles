@@ -110,8 +110,8 @@ uptime: $uptime
 
 ${color dimgray}GPU ${hr 2}${color}
 type: Ellesmere [Polaris10] Sapphire RX 470
-freq: ${nvidia gpufreq} Mhz
-memory: ${nvidia memfreq} Mhz
+freq: $freq MHz
+memory: $mem Mhz
 temp: ${execi 1 sensors | grep ^temp1 | head -n 1 |awk '{print ($2*9)/5+32}'}°F
 
 ##################################
