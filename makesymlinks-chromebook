@@ -34,12 +34,6 @@ mv ~/.config/cower/config ~/dotfiles_old/
 echo "Creating unique symlink for cower config"
 ln -s $dir/config ~/.config/cower/config
 
-# move ssh config due to unique naming
-echo "Moving ~/.ssh/config to ~/dotfiles_old"
-mv ~/.ssh/config ~/dotfiles_old/
-echo "Creating unique symlink for ssh config"
-ln -s $dir/misc/config ~/.ssh/config
-
 # move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks from the homedir to any files in the ~/dotfiles directory specified in $files
 for file in $files; do
     echo "Moving any existing dotfiles from ~ to $olddir"
