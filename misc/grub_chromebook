@@ -1,7 +1,8 @@
 GRUB_DEFAULT="1>0"
 GRUB_TIMEOUT=0
 GRUB_DISTRIBUTOR="Arch"
-#GRUB_CMDLINE_LINUX_DEFAULT="quiet tpm_tis.interrupts=0"
+#GRUB_CMDLINE_LINUX_DEFAULT="rw quiet loglevel=0 vga=current udev.log-priority=3 tpm_tis.interrupts=0"
+GRUB_CMDLINE_LINUX_DEFAULT="rw quiet loglevel=0 vga=current udev.log-priority=0"
 GRUB_CMDLINE_LINUX=""
 
 # Preload both GPT and MBR modules so that they are not missed
