@@ -1,0 +1,6 @@
+# /var/spool/cron/
+# mm  hh  DD  MM  W /path/progam [--option]...  ( W = weekday: 0-6 [Sun=0] )
+  30  06  *   *   0 /home/ridobe/dotfiles/bin/rsync-desktop
+  30  08  *   *   0 /home/ridobe/dotfiles/bin/update_app_lixt_Desktop
+  30  09  *   *   0 /home/ridobe/dotfiles/bin/reflector_mirrors
+  
