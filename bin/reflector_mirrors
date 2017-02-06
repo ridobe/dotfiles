@@ -1,6 +1,8 @@
 #!/bin/bash
 
 #This will run reflector on mirrorlist, copying from backup first, overwriting
+LOG=/var/log/reflector_mirrors.log
+echo "*** $(date -R) ***" >> $LOG
 
 wget -O /etc/pacman.d/mirrorlist.backup https://www.archlinux.org/mirrorlist/all/ &&
 cp /etc/pacman.d/mirrorlist.backup /etc/pacman.d/mirrorlist &&
