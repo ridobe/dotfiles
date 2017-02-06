@@ -1,4 +1,4 @@
 #!/bin/bash
-LOG=~/crontab_log/rsync-desktop.log 2>&1
+LOG=~/crontab_log/update_app_list_Desktop 2>&1
 echo "*** $(date -R) ***" >> $LOG
 cd $HOME/dotfiles && bin/saveApps desktop --quite && git add * && git commit -m 'Auto Commit of Application List for Desktop' && git push && echo "Successfully completed" >> $LOG || echo "Error. Try again" >> $LOG
