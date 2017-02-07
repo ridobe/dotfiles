@@ -2,6 +2,11 @@
 # /home/ridobe/.bashrc
 #
 
+if [ -n "$DESKTOP_SESSION" ];then
+    eval $(gnome-keyring-daemon --start)
+    export SSH_AUTH_SOCK
+fi
+
 #alias file .bash_alias
 if [ -f ~/.bashrc ]; then
 source ~/.bash_alias
