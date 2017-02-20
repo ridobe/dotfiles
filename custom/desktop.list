@@ -42,7 +42,6 @@ dvd+rw-tools
 dwdiff
 efibootmgr
 efitools
-fail2ban
 fakeroot
 file-roller
 firefox
@@ -69,10 +68,6 @@ grub
 gsfonts
 gst-libav
 gst-plugins-good
-gstreamer0.10-bad-plugins
-gstreamer0.10-ffmpeg
-gstreamer0.10-good-plugins
-gstreamer0.10-ugly-plugins
 gtk-xfce-engine
 gummiboot
 gutenprint
@@ -84,7 +79,7 @@ hardinfo
 haveged
 hddtemp
 hdparm
-i-nex-git
+i-nex
 insync
 insync-thunar
 inxi
@@ -132,6 +127,7 @@ openssh
 orage
 os-prober
 p7zip
+pa-applet-git
 package-query
 patch
 pavucontrol
