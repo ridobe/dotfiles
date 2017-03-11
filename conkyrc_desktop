@@ -130,6 +130,7 @@ core_4: ${freq_g cpu4} Ghz ${color gold4}${cpu cpu4}%  ${cpubar cpu4}${color}
 core_5: ${freq_g cpu5} Ghz ${color gold4}${cpu cpu5}%  ${cpubar cpu5}${color}
 core_6: ${freq_g cpu6} Ghz ${color gold4}${cpu cpu6}%  ${cpubar cpu6}${color}
 core_7: ${freq_g cpu7} Ghz ${color gold4}${cpu cpu7}%  ${cpubar cpu7}${color}
+core_8: ${freq_g cpu8} Ghz ${color gold4}${cpu cpu8}%  ${cpubar cpu8}${color}
 
 ##################################
 ##          STATISTICS          ##
@@ -157,14 +158,14 @@ ${voffset 2}${alignc}${time %A, %d %B %Y}
 ##################################
 ${color dimgray}NETWORK ${hr 2}${color}
 #${if_existing /proc/net/route wlan0}
-${if_existing /proc/net/route enp6s0}
+${if_existing /proc/net/route enp38s0}
 #${voffset -6}${font PizzaDude Bullets:size=14}O${font} up: ${upspeed wlp3s0}${alignr}${color gold4}${upspeedgraph wlp3s0 8,60}${color}
-${voffset -6}${font PizzaDude Bullets:size=14}O${font} up: ${upspeed enp6s0}${alignr}${color gold4}${upspeedgraph enp6s0 8,60}${color}
+${voffset -6}${font PizzaDude Bullets:size=14}O${font} up: ${upspeed enp38s0}${alignr}${color gold4}${upspeedgraph enp38s0 8,60}${color}
 #${voffset 4}${font PizzaDude Bullets:size=14}U${font} down: ${downspeed wlp3s0}${alignr}${color gold4}${downspeedgraph wlp3s0 8,60}${color}
-${voffset 4}${font PizzaDude Bullets:size=14}U${font} down: ${downspeed enp6s0}${alignr}${color gold4}${downspeedgraph enp6s0 8,60}${color}
+${voffset 4}${font PizzaDude Bullets:size=14}U${font} down: ${downspeed enp38s0}${alignr}${color gold4}${downspeedgraph enp38s0 8,60}${color}
 #${voffset 4}${font PizzaDude Bullets:size=14}N${font} upload: ${alignr}${totalup wlp3s0}
-${voffset 4}${font PizzaDude Bullets:size=14}N${font} upload: ${alignr}${totalup enp6s0}
+${voffset 4}${font PizzaDude Bullets:size=14}N${font} upload: ${alignr}${totalup enp38s0}
 #${voffset 4}${font PizzaDude Bullets:size=14}T${font} download: ${alignr}${totaldown wlp3s0}
-${voffset 4}${font PizzaDude Bullets:size=14}T${font} download: ${alignr}${totaldown enp6s0}
+${voffset 4}${font PizzaDude Bullets:size=14}T${font} download: ${alignr}${totaldown enp38s0}
 ${endif}
 ]];
