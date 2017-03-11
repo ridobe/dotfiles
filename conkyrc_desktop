@@ -102,7 +102,7 @@ ${image /home/ridobe/Google_Drive/Linux_Backups/arch/Archimages/archlinux-logo-w
 ##################################
 ${color dimgray}SYSTEM ${hr 2}${color}
 ${font DejaVu:size=14}${nodename} -xfce${font}
-${execi 1000 cat /proc/cpuinfo | grep 'model name' | cut -c 14-49 | uniq}
+${execi 1000 cat /proc/cpuinfo | grep 'model name' | cut -c 14-50 | uniq}
 kernel: $kernel
 uptime: $uptime
 ##################################
@@ -122,15 +122,14 @@ ${color dimgray}CPU ${hr 2}${color}
 RAM usage: $mem/$memmax - ${color gold4}$memperc% ${membar 4}${color}
 temp: ${execi 1 sensors | grep thermal | head -n 1 |awk '{print ($2*9)/5+32}'}°F
 
-core_0: ${freq_g cpu0} Ghz ${color gold4}${cpu cpu0}%  ${cpubar cpu0}${color}
-core_1: ${freq_g cpu1} Ghz ${color gold4}${cpu cpu1}%  ${cpubar cpu1}${color}
-core_2: ${freq_g cpu2} Ghz ${color gold4}${cpu cpu2}%  ${cpubar cpu2}${color}
-core_3: ${freq_g cpu3} Ghz ${color gold4}${cpu cpu3}%  ${cpubar cpu3}${color}
-core_4: ${freq_g cpu4} Ghz ${color gold4}${cpu cpu4}%  ${cpubar cpu4}${color}
-core_5: ${freq_g cpu5} Ghz ${color gold4}${cpu cpu5}%  ${cpubar cpu5}${color}
-core_6: ${freq_g cpu6} Ghz ${color gold4}${cpu cpu6}%  ${cpubar cpu6}${color}
-core_7: ${freq_g cpu7} Ghz ${color gold4}${cpu cpu7}%  ${cpubar cpu7}${color}
-core_8: ${freq_g cpu8} Ghz ${color gold4}${cpu cpu8}%  ${cpubar cpu8}${color}
+cpu_0: ${freq_g cpu0} Ghz ${color gold4}${cpu cpu0}%  ${cpubar cpu0}${color}
+cpu_1: ${freq_g cpu1} Ghz ${color gold4}${cpu cpu1}%  ${cpubar cpu1}${color}
+cpu_2: ${freq_g cpu2} Ghz ${color gold4}${cpu cpu2}%  ${cpubar cpu2}${color}
+cpu_3: ${freq_g cpu3} Ghz ${color gold4}${cpu cpu3}%  ${cpubar cpu3}${color}
+cpu_4: ${freq_g cpu4} Ghz ${color gold4}${cpu cpu4}%  ${cpubar cpu4}${color}
+cpu_5: ${freq_g cpu5} Ghz ${color gold4}${cpu cpu5}%  ${cpubar cpu5}${color}
+cpu_6: ${freq_g cpu6} Ghz ${color gold4}${cpu cpu6}%  ${cpubar cpu6}${color}
+cpu_7: ${freq_g cpu7} Ghz ${color gold4}${cpu cpu7}%  ${cpubar cpu7}${color}
 
 ##################################
 ##          STATISTICS          ##
