@@ -90,7 +90,6 @@ lib32-fakeroot
 lib32-js17
 lib32-libltdl
 lib32-libstdc++5
-lib32-mesa-libgl
 lib32-mesa-vdpau
 lib32-readline
 libcpuid-git
@@ -110,13 +109,14 @@ make
 makemkv
 medit
 memtest86+
-mesa-libgl
+memtest86-efi
 mesa-vdpau
 mkinitcpio-nfs-utils
 mkinitcpio-systemd-tool
 mobile-broadband-provider-info
 modemmanager
 mousepad
+mprime
 mt-post
 nbd
 network-manager-applet
