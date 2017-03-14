@@ -119,6 +119,7 @@ temp: ${execi 1 sensors | grep ^temp1 | head -n 1 |awk '{print ($2*9)/5+32}'}°F
 ##################################
 ${color dimgray}CPU ${hr 2}${color}
 RAM usage: $mem/$memmax - ${color gold4}$memperc% ${membar 4}${color}
+RAM clock: ${execi 1 sudo dmidecode -t 17 | grep 'Speed' | head -7 | tail -1 | cut -c 9-16 | uniq}
 temp: ${execi 1 sensors | grep thermal | head -n 1 |awk '{print ($2*9)/5+32}'}°F
 
 cpu_0: ${freq_g cpu0} Ghz ${color gold4}${cpu cpu0}%  ${cpubar cpu0}${color}
