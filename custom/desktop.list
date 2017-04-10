@@ -27,6 +27,7 @@ chromium-widevine
 cloudstationdrive
 conky-git
 cower
+cpu-g-bzr
 cronie
 cups
 cups-bjnp
@@ -80,6 +81,7 @@ haveged
 hddtemp
 hdparm
 i-nex
+i2c-tools
 insync
 insync-thunar
 inxi
