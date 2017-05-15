@@ -82,7 +82,7 @@ haveged
 hddtemp
 hdparm
 hwinfo
-i-nex
+i-nex-git
 i2c-tools
 insync
 insync-thunar
@@ -128,6 +128,7 @@ networkmanager
 ninja
 ntfs-3g
 openssh
+openvpn
 orage
 os-prober
 p7zip
