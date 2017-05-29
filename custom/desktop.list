@@ -137,6 +137,7 @@ package-query
 patch
 pavucontrol
 pax-utils
+phoronix-test-suite-git
 php
 php-apache
 php-cgi
