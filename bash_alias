@@ -43,7 +43,7 @@ alias python3='sudo rm /usr/bin/python && sudo ln -s /usr/bin/python3 /usr/bin/p
 #text editor
 export EDITOR="nano"
 
-# don't put duplicate lines in the history. See bash(1) for more options
+#don't put duplicate lines in the history. See bash(1) for more options
 export HISTCONTROL=ignoreboth:erasedups
 
 # Expand the history size
@@ -55,10 +55,3 @@ export HISTTIMEFORMAT="%h %d %H:%M:%S "
 
 #To append commands to the history file, rather than overwrite it
 shopt -s histappend
-
-#set $PATH
-export PATH=~/bin:$PATH
-export PATH=~/sbin:$PATH
-export PATH=$PATH:~/android-sdk-linux/platform-tools
-export PATH=$PATH:~/android-sdk-linux/tools
-export PATH=$PATH:~/dotfiles/bin

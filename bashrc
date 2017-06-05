@@ -8,22 +8,20 @@ source ~/.bash_alias
 fi
 
 #Colors
-red="\[\e[0;31m\]"
-green="\[\e[0;32m\]"
-yellow="\[\e[0;33m\]"
-blue="\[\e[0;34m\]"
-magenta="\[\e[0;35m\]"
-cyan="\[\e[0;36m\]"
-white="\[\e[0;37m\]"
+red="\[$(tput setaf 1)\]"
+green="\[$(tput setaf 2)\]"
+yellow="\[$(tput setaf 3)\]"
+blue="\[$(tput setaf 4)\]"
+magenta="\[$(tput setaf 5)\]"
+cyan="\[$(tput setaf 6)\]"
+white="\[$(tput setaf 7)\]"
 light_green="\[\e[1;32m\]"
-TXTRST="\[\e[0m\]"
+RESET="\[$(tput sgr0)\]"
 
 DOWNBAR='\342\224\214'
 HORBAR='\342\224\200'
 UPBAR='\342\224\224'
 HORBARPLUG='\342\225\274'
-CROSS='\342\234\227'
-CHECK='\342\234\223'
 
 #Weclome message
 c1="$(tput sgr0)$(tput setaf 7)"
@@ -76,11 +74,11 @@ function begin_module {
 }
 
 function end_module {
-    echo "\n"$white$UPBAR$HORBAR$HORBAR$HORBARPLUG $TXTRST
+    echo "\n"$white$UPBAR$HORBAR$HORBAR$HORBARPLUG $RESET
 }
 
 function user_module {
-     echo $HORBAR$HORBAR[$(if [[ $(id -u) = 0 ]]; then echo $red'\u'; else echo $white'\u']@[$yellow'\h'; fi)$white]
+     echo $HORBAR$HORBAR[$(if [[ $(id -u) = 0 ]]; then echo $red'\u'; else echo $white'\u']@[$magenta'\h'; fi)$white]
 }
 
 function location_module {
@@ -92,3 +90,10 @@ function set_bash_prompt {
 }
 
 PROMPT_COMMAND=set_bash_prompt
+
+#set $PATH
+export PATH=~/bin:$PATH
+export PATH=~/sbin:$PATH
+export PATH=$PATH:~/android-sdk-linux/platform-tools
+export PATH=$PATH:~/android-sdk-linux/tools
+export PATH=$PATH:~/dotfiles/bin
