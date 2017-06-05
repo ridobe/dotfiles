@@ -63,7 +63,7 @@ function parse_git_branch {
 
 function git_module {
     if [[ $(git status 2> /dev/null) ]];then
-        echo $white$HORBAR$HORBAR[$light_green$(parse_git_branch)]$white;
+        echo $white$HORBAR$HORBAR[$light_green$(parse_git_branch)$white];
     fi
 }
  
