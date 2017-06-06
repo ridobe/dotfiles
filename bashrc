@@ -8,15 +8,15 @@ source ~/.bash_alias
 fi
 
 #Colors
-red="\[$(tput setaf 1)\]"
-green="\[$(tput setaf 2)\]"
-yellow="\[$(tput setaf 3)\]"
-blue="\[$(tput setaf 4)\]"
-magenta="\[$(tput setaf 5)\]"
-cyan="\[$(tput setaf 6)\]"
-white="\[$(tput setaf 7)\]"
+red="\[\e[0;31m\]"
+green="\[\e[0;32m\]"
+yellow="\[\e[0;33m\]"
+blue="\[\e[0;34m\]"
+magenta="\[\e[0;35m\]"
+cyan="\[\e[0;36m\]"
+white="\[\e[0;37m\]"
 light_green="\[\e[1;32m\]"
-RESET="\[$(tput sgr0)\]"
+TXTRST="\[\e[0m\]"
 
 DOWNBAR='\342\224\214'
 HORBAR='\342\224\200'
@@ -74,11 +74,11 @@ function begin_module {
 }
 
 function end_module {
-    echo "\n"$white$UPBAR$HORBAR$HORBAR$HORBARPLUG $RESET
+    echo "\n"$white$UPBAR$HORBAR$HORBAR$HORBARPLUG $TXTRST
 }
 
 function user_module {
-     echo $HORBAR$HORBAR[$(if [[ $(id -u) = 0 ]]; then echo $red'\u'; else echo $white'\u']@[$magenta'\h'; fi)$white]
+    echo $HORBAR$HORBAR[$white'\u']@[$yellow'\h'$white]
 }
 
 function location_module {
