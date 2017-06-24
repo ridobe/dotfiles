@@ -1,5 +1,6 @@
 #
-# ~/.bashrc
+# ~/.bashrc for root
+# locate in /root
 #
 
 # If not running interactively, don't do anything
