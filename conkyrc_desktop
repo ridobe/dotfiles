@@ -94,7 +94,7 @@ conky.config = {
 };
 
 conky.text = [[
-${image /home/ridobe/Google_Drive/Linux_Backups/arch/Archimages/stycil_tux_icon_white.png -p 30,670 -s 256x256}
+${image /home/ridobe/Google_Drive/Linux_Backups/arch/Archimages/penguin-icon.png -p 50,720 -s 200x200}
 ${image /home/ridobe/Google_Drive/Linux_Backups/arch/Archimages/archlinux-logo-white.png -p -0,930 -s 300x99.5}
 #-p is position, -s is size (728x455) original
 ##################################
