@@ -22,7 +22,6 @@ btrfs-progs
 cairo
 cdrdao
 chromium
-chromium-pepper-flash
 chromium-widevine
 cloudstationdrive
 conky-git
@@ -137,6 +136,7 @@ package-query
 patch
 pavucontrol
 pax-utils
+pepper-flash
 phoronix-test-suite-git
 php
 php-apache
