@@ -29,6 +29,7 @@ alias np='nano PKGBUILD'
 alias insync='insync quit && insync start --synchronous-full'
 alias octal='stat -c "%a %n"'
 alias ssha='eval ssh-agent -s && ssh-add ~/.ssh/id_rsa'
+alias bootctl='sudo bootctl update'
 
 ##tar
 alias utarz='tar zvxf'
