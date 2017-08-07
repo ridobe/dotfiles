@@ -149,8 +149,10 @@ ${top name 4}	${top pid 4} ${top cpu 4} ${top mem 4}
 ##          DATE/TIME           ##
 ##################################
 ${color dimgray}DATE ${hr 2}${color}
-${alignc 19}${font Arial white:size=18}${time %H:%M}${font}
-${voffset 2}${alignc}${time %A, %d %B %Y}
+#${alignc 19}${font Arial white:size=18}${time %H:%M}${font}
+#${voffset 2}${alignc}${time %A, %d %B %Y}
+${font Arial white:size=18}${time %H:%M}${font}
+${time %A, %d %B %Y}
 
 ##################################
 ##          NETWORK             ##
