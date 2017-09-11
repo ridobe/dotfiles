@@ -65,7 +65,6 @@ gnome-bluetooth
 gnome-control-center
 gnome-disk-utility
 gparted
-grsync
 grub
 gsfonts
 gst-libav
@@ -102,7 +101,6 @@ libtinfo
 libtool
 libutil-linux
 lsb-release
-lshw
 lxdm
 lxtask
 lz4
