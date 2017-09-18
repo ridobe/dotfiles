@@ -65,7 +65,6 @@ gnome-bluetooth
 gnome-control-center
 gnome-disk-utility
 gparted
-grub
 gsfonts
 gst-libav
 gst-plugins-good
@@ -214,7 +213,6 @@ xfce4-mailwatch-plugin
 xfce4-mount-plugin
 xfce4-mpc-plugin
 xfce4-netload-plugin
-xfce4-notes-plugin
 xfce4-notifyd
 xfce4-panel
 xfce4-power-manager
