@@ -82,6 +82,7 @@ hdparm
 hwinfo
 i-nex-git
 i2c-tools
+iftop
 insync
 insync-thunar
 inxi
@@ -113,13 +114,13 @@ memtest86+
 memtest86-efi
 mesa-vdpau
 mkinitcpio-nfs-utils
-mkinitcpio-systemd-tool
 mobile-broadband-provider-info
 modemmanager
 mousepad
 mprime
 mt-post
 nbd
+nethogs
 network-manager-applet
 networkmanager
 ninja
