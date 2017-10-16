@@ -44,6 +44,7 @@ dvd+rw-tools
 dwdiff
 efibootmgr
 efitools
+evhz-git
 fakeroot
 file-roller
 firefox
@@ -148,6 +149,7 @@ pulseaudio
 pulseaudio-bluetooth
 pulseaudio-equalizer
 python-pyelftools
+radeontop-git
 reflector
 rfkill
 ristretto
