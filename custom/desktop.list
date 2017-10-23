@@ -98,7 +98,6 @@ lib32-mesa-vdpau
 lib32-readline
 libcpuid-git
 libpng12
-libtinfo
 libtool
 libutil-linux
 lsb-release
