@@ -124,6 +124,7 @@ nethogs
 network-manager-applet
 networkmanager
 ninja
+nlohmann-json
 ntfs-3g
 openssh
 openvpn
