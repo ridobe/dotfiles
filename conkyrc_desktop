@@ -110,9 +110,11 @@ uptime: $uptime
 ##################################
 
 ${color dimgray}GPU ${hr 2}${color}
-type: Ellesmere [Polaris10] Sapphire RX 470
+#type: Ellesmere [Polaris10] Sapphire RX 470
+#type: ${execi 1 inxi -G | grep renderer | cut -c 50-83 | uniq}
+type: ${execi 1 inxi -G | grep renderer | cut -c 35-62 | uniq}
 freq: $freq MHz
-temp: ${execi 1 sensors | grep ^temp1 | head -n 1 |awk '{print ($2*9)/5+32}'}°F
+temp: ${execi 1 sensors | grep temp1 | head -n 2 | tail -1 |awk '{print ($2*9)/5+32}'}°F
 
 ##################################
 ##             CPU              ##
@@ -120,7 +122,7 @@ temp: ${execi 1 sensors | grep ^temp1 | head -n 1 |awk '{print ($2*9)/5+32}'}°F
 ${color dimgray}CPU ${hr 2}${color}
 RAM usage: $mem/$memmax - ${color gold4}$memperc% ${membar 4}${color}
 RAM clock: ${execi 1 sudo dmidecode -t 17 | grep 'Speed' | head -7 | tail -1 | cut -c 9-12 | uniq}MHz
-temp: ${execi 1 sensors | grep thermal | head -n 1 |awk '{print ($2*9)/5+32}'}°F
+temp: ${execi 1 sensors | grep temp1 | tail -n 1 |awk '{print ($2*9)/5+32}'}°F
 
 cpu_0: ${freq_g cpu0} Ghz ${color gold4}${cpu cpu0}%  ${cpubar cpu0}${color}
 cpu_1: ${freq_g cpu1} Ghz ${color gold4}${cpu cpu1}%  ${cpubar cpu1}${color}
