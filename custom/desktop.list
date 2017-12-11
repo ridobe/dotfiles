@@ -56,7 +56,7 @@ freecad
 freetype2
 freshplayerplugin-git
 galculator-gtk2
-gcc-multilib
+gcc
 gimp
 git
 gksu
