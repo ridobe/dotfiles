@@ -101,6 +101,7 @@ libpng12
 libtool
 libutil-linux
 lsb-release
+lshw
 lxdm
 lxtask
 lz4
