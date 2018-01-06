@@ -113,7 +113,7 @@ bios: ${execi 1 sudo dmidecode -t 0 | grep 'Version'| cut -c 11-13 | uniq}
 ${color dimgray}GPU ${hr 2}${color}
 #type: Ellesmere [Polaris10] Sapphire RX 470
 type: ${execi 1 lspci -vnn | grep Sapphire | head -1 | cut -c 34-66 | uniq}
-freq: $freq MHz
+#freq: $freq MHz
 temp: ${execi 1 sensors -f amdgpu-pci-0b00 | tail -n 2 | tr -d '+' | cut -c 14-22}
 ##################################
 ##             RAM              ##
