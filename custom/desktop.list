@@ -137,8 +137,9 @@ package-query
 patch
 pavucontrol
 pax-utils
+pdf-decrypt
 pepper-flash
-phoronix-test-suite-git
+phoronix-test-suite-milestone
 php
 php-apache
 php-cgi
