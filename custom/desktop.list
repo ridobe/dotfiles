@@ -14,6 +14,8 @@ auracle-git
 autoconf
 automake
 bash-completion
+bbqlinux-keyring
+bbqlinux-mirrorlist
 bc
 binutils
 bison
@@ -81,7 +83,6 @@ haveged
 hddtemp
 hdparm
 hwinfo
-i-nex-git
 i2c-tools
 iftop
 insync
@@ -100,7 +101,6 @@ libcpuid-git
 libpng12
 libtool
 libutil-linux
-lsb-release
 lshw
 lxdm
 lxtask
