@@ -31,6 +31,7 @@ alias octal='stat -c "%a %n"'
 alias ssha='eval ssh-agent -s && ssh-add ~/.ssh/id_rsa'
 alias bootctl='sudo bootctl update'
 alias scrot='scrot -d 5 -m /home/ridobe/Google_Drive/Backdrops_2560x1080/screenshots/current.jpeg'
+alias paccache='paccache -ruk0 && paccache -rk 2'
 
 ##tar
 alias utarz='tar zvxf'
