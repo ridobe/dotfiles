@@ -10,6 +10,7 @@ alsi
 android-udev
 apache
 arch-install-scripts
+archlinux-themes-slim
 auracle-git
 autoconf
 automake
@@ -106,6 +107,7 @@ libtool
 libutil-linux
 lshw
 lxdm
+lxdm-themes
 lxtask
 lz4
 lzop
