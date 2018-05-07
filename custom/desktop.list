@@ -86,7 +86,11 @@ haveged
 hddtemp
 hdparm
 hwinfo
+i-nex-git
 i2c-tools
+i3-gaps
+i3blocks
+i3status
 iftop
 insync
 insync-thunar
@@ -115,6 +119,7 @@ m4
 mailutils
 make
 makemkv
+med
 medit
 memtest86+
 memtest86-efi
@@ -144,7 +149,6 @@ pavucontrol
 pax-utils
 pdf-decrypt
 pepper-flash
-phoronix-test-suite-milestone
 php
 php-apache
 php-cgi
