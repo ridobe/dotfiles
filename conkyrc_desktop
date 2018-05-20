@@ -105,7 +105,7 @@ ${font DejaVu:size=14}${nodename} -xfce${font}
 ${execi 1000 cat /proc/cpuinfo | grep 'model name' | cut -c 14-50 | uniq}
 kernel: $kernel
 uptime: $uptime
-bios: ${execi 1 sudo dmidecode -t 0 | grep 'Version'| cut -c 11-13 | uniq}
+bios: ${execi 1 sudo dmidecode -t 0 | grep 'Version'| cut -c 11-14 | uniq}
 ##################################
 ##             GPU              ##
 ##################################
