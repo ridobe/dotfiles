@@ -120,7 +120,8 @@ uptime: $uptime
 ##################################
 ${color dimgray}CPU ${hr 2}${color}
 RAM usage: $mem/$memmax - ${color gold4}$memperc% ${membar 4}${color}
-temp: ${execi 1 sensors | grep ^temp1 | tail -n 1 |awk '{print ($2*9)/5+32}'} °F
+#temp: ${execi 1 sensors | grep Core | cut -c 14-50 | uniq |awk '{print ($2*9)/5+32}'} °F
+temp: ${execi 1 sensors | grep 'Core 1' | cut -c 15-23 | tr -d '+' | uniq}
 
 core_1: ${freq_g cpu0} Ghz ${color gold4}${cpu cpu0}%  ${cpubar cpu0}${color}
 core_2: ${freq_g cpu1} Ghz ${color gold4}${cpu cpu1}%  ${cpubar cpu1}${color}
