@@ -2,4 +2,4 @@
 #Automated .sh file for rsync backups to Synology NAS.
 LOG=~/crontab_log/rsync-desktop.log 2>&1
 echo "*** $(date -R) ***" >> $LOG
-rsync -a -e "ssh -p 2023" --delete --info=progress2  --exclude={"/.thumbnails/","/Downloads","/Google_Drive","/.cache/google-chrome","/.local/share/Trash/","/CloudStation/","/android-sdk-linux","/kernel_build","/Music","/android_devices"} /home/ridobe/ ridobe@50.90.39.211:/volume1/homes/ridobe/rsync_ridobe_desktop/home/ && echo "Successfully completed" >> $LOG || echo "Error. Try again" >> $LOG
+rsync -a -e "ssh -p 2023" --delete --info=progress2  --exclude={"/.thumbnails/","/Downloads","/Google_Drive","/.cache/","/.local/share/Trash/","/CloudStation/","/dotfiles/","/android-sdk-linux","/kernel_build","/Music","/android_devices"} /home/ridobe/ ridobe@50.90.39.211:/volume1/homes/ridobe/rsync_ridobe_desktop/home/ && echo "Successfully completed" >> $LOG || echo "Error. Try again" >> $LOG
