@@ -270,3 +270,13 @@ www.linuxtracker.org
 vue.playstation.com
 ltschools.org
 elc.ltschools.org
+moviesanywhere.com
+images.moviesanywhere.com
+auth.api.sonyentertainmentnetwork.com
+sonyvuefiles.secure.footprint.net
+www.youngliving.com
+click.linksynergy.com
+link.e.gianteagle.com
+mail.google.com
+link.p0.com
+www.google.com
