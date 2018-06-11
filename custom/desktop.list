@@ -42,6 +42,7 @@ dhclient
 dialog
 diffpac-git
 dmidecode
+dolphin
 dosfstools
 downgrade
 dvd+rw-tools
@@ -98,6 +99,7 @@ jaxx
 jdk8-openjdk
 k3b
 kio-mtp
+konsole
 lib32-fakeroot
 lib32-js17
 lib32-libltdl
