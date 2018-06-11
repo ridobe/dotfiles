@@ -1,0 +1,12 @@
+##Put in /etc/pacman.d/hooks/
+[Trigger]
+Operation = Upgrade
+Operation = Install
+Operation = Remove
+Type = Package
+Target = *
+
+[Action]
+Description = Cleaning pacman cache...
+When = PostTransaction
+Exec = /usr/bin/paccache -ruk0 && paccache -rk 2
