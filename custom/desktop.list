@@ -93,7 +93,6 @@ i3blocks
 i3status
 iftop
 insync
-insync-thunar
 inxi
 jaxx
 jdk8-openjdk
@@ -190,10 +189,6 @@ sudo
 syslinux
 system-config-printer
 tcl
-thunar
-thunar-archive-plugin
-thunar-media-tags-plugin
-thunar-volman
 tor
 transmission-gtk
 tree
