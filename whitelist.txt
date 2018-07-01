@@ -280,3 +280,14 @@ link.e.gianteagle.com
 mail.google.com
 link.p0.com
 www.google.com
+ajax.googleapis.com
+www.googletagmanager.com
+www.google-analytics.com
+www.rakuten.com
+www.ojrq.net
+cdn.bestmoviehd.net
+imdb.playnowstore.com
+pixxur.com
+nextpicturez.com
+gitlab.com
+git.kernel.org
