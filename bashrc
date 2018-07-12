@@ -97,3 +97,4 @@ export PATH=~/sbin:$PATH
 export PATH=$PATH:~/android-sdk-linux/platform-tools
 export PATH=$PATH:~/android-sdk-linux/tools
 export PATH=$PATH:~/dotfiles/bin
+export PATH=$PATH:~/dotfiles
