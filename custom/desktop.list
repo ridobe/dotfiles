@@ -1,4 +1,3 @@
-abiword
 abootimg-git
 adobe-source-code-pro-fonts
 adobe-source-sans-pro-fonts
@@ -107,7 +106,6 @@ m4
 mailutils
 make
 makemkv
-med
 medit
 memtest86+
 memtest86-efi
@@ -152,16 +150,17 @@ pulseaudio
 pulseaudio-bluetooth
 pulseaudio-equalizer
 python-pyelftools
+python-qdarkstyle
 reflector
 rsyslog
 samsung_magician-consumer-ssd
 scrot
-sflock-git
 speedtest-cli
 squashfs-tools
 sshguard
 stellar-desktop-client
 sudo
+sxlock-git
 synology-cloud-station-drive
 syslinux
 system-config-printer
