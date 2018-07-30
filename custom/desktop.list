@@ -181,6 +181,7 @@ wireless_tools
 wlc-git
 wps-office
 x264
+xautolock
 xclip
 xdg-user-dirs
 xf86-input-evdev
@@ -230,3 +231,4 @@ xorg-xpr
 xorg-xwd
 xorg-xwud
 xpdf
+yubikey-manager-git
