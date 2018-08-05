@@ -8,7 +8,7 @@ if which dbus-launch >/dev/null && test -z "$DBUS_SESSION_BUS_ADDRESS"; then
 fi
 
 #xset dpms to suspend after 20 min and lock.
-xset dpms 0 1200 0
+(sleep 15s && xset dpms 0 1200 0) &
 xautolock -time 20 -locker sxlock &
 
 # Set a single desktop environment
