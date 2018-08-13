@@ -1,0 +1,3 @@
+#!/bin/bash
+#Automated .sh file for cleanup after new kernel upgrade. 
+ssha && reflector_mirrors && pacman -Syyu && rsync-desktop

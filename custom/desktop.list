@@ -95,6 +95,7 @@ lib32-mesa-vdpau
 lib32-readline
 libcpuid-git
 libpng12
+libreoffice-fresh
 libtool
 libutil-linux
 lnav
@@ -179,7 +180,6 @@ volumeicon-xfce
 wget
 wireless_tools
 wlc-git
-wps-office
 x264
 xautolock
 xclip
