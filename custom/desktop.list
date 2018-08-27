@@ -48,6 +48,7 @@ electrum-git
 evhz-git
 fakeroot
 file-roller
+firefox
 flashplugin
 flex
 fontconfig
@@ -171,6 +172,7 @@ transmission-gtk
 tree
 ttf-inconsolata
 tumbler
+ubports-installer
 unrar
 unzip
 usb_modeswitch
