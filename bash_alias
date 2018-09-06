@@ -18,6 +18,7 @@ alias ssha='eval ssh-agent -s && ssh-add ~/.ssh/id_rsa'
 alias scrot='scrot -d 5 -m /home/ridobe/Google_Drive/Backdrops_2560x1080/screenshots/current.jpeg'
 #alias paccache='paccache -ruk0 && paccache -rk 2'
 alias killx='pkill -15 Xorg'
+alias microcode='dmesg | grep microcode'
 
 ##tar
 alias utarz='tar zvxf'
