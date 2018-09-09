@@ -9,7 +9,7 @@ fi
 
 #xset dpms to suspend after 20 min and lock.
 (sleep 15s && xset dpms 0 1200 0) &
-xautolock -time 20 -locker sxlock &
+xautolock -time 20 -locker sxlock -f -misc-fixed-medium-r-semicondensed--13-100-100-100-c-60-iso8859-1 &
 
 # Set a single desktop environment
 #exec i3 -V >> ~/i3log-$(date +'%F-%k-%M-%S') 2>&1
