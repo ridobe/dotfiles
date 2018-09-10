@@ -5,6 +5,7 @@ alsa-firmware
 alsa-oss
 alsa-utils
 alsi
+amd-ucode
 android-udev
 apache
 arandr
@@ -144,6 +145,7 @@ pepper-flash
 php
 php-apache
 php-cgi
+pkgbuilder
 pkgconf
 polkit
 procmail
