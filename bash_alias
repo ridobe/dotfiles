@@ -19,7 +19,7 @@ alias scrot='scrot -d 5 -m /home/ridobe/Google_Drive/Backdrops_2560x1080/screens
 #alias paccache='paccache -ruk0 && paccache -rk 2'
 alias killx='pkill -15 Xorg'
 alias microcode='dmesg | grep microcode'
-alias pkgb='pkgbuilder'
+alias pbr='pkgbuilder'
 
 ##tar
 alias utarz='tar zvxf'
