@@ -1,10 +1,8 @@
-abootimg-git
 adobe-source-code-pro-fonts
 adobe-source-sans-pro-fonts
 alsa-firmware
 alsa-oss
 alsa-utils
-alsi
 amd-ucode
 android-udev
 apache
@@ -69,6 +67,7 @@ gnome-bluetooth
 gnome-control-center
 gnome-disk-utility
 gparted
+grub
 gsfonts
 gst-libav
 gst-plugins-good
@@ -110,7 +109,6 @@ lzop
 m4
 mailutils
 make
-makemkv
 medit
 memtest86+
 memtest86-efi
@@ -158,7 +156,6 @@ pulseaudio-equalizer
 python-pyelftools
 python-qdarkstyle
 reflector
-rsyslog
 samsung_magician-consumer-ssd
 scrot
 speedtest-cli
@@ -169,6 +166,7 @@ sudo
 sxlock-git
 synology-cloud-station-drive
 syslinux
+syslog-ng
 system-config-printer
 tcl
 tor
@@ -237,4 +235,3 @@ xorg-xpr
 xorg-xwd
 xorg-xwud
 xpdf
-yubikey-manager-git
