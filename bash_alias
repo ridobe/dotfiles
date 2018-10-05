@@ -5,7 +5,7 @@ alias la='ls -la --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --colo
 alias grep='grep --color=tty -d skip'
 
 ##update
-alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
+#alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 alias pacnew='sudo find /etc -regextype posix-extended -regex ".+\.pac(new|save|orig)" 2> /dev/null'
 
 ##misc
