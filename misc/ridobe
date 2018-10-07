@@ -1,4 +1,0 @@
-# /var/spool/cron/
-# mm  hh  DD  MM  W /path/progam [--option]...  ( W = weekday: 0-6 [Sun=0] )
-  29  19  *   *   1 /home/ridobe/dotfiles/bin/rsync-desktop >> ~/crontab.log
-  46  17  *   *   1 /home/ridobe/dotfiles/bin/update_app_list_Desktop
