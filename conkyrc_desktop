@@ -122,7 +122,7 @@ temp: ${execi 1 sensors -f amdgpu-pci-0900 | grep temp1 | tr -d '+' | cut -c 14-
 ${color dimgray}RAM ${hr 2}${color}
 RAM usage: $mem/$memmax - ${color gold4}$memperc% ${membar 4}${color}
 RAM clock: ${execi 1 sudo dmidecode -t 17 | grep 'Speed' | head -7 | tail -1 | cut -c 9-12 | uniq}MHz
-RAM PN: ${execi 1 sudo dmidecode -t 17 | grep 'Part' | head -4 | tail -1| cut -c 14-29 | uniq}
+RAM PN: ${execi 1 sudo dmidecode -t 17 | grep 'Part' | head -4 | tail -1| cut -c 14-30 | uniq}
 
 ##################################
 ##             CPU              ##
