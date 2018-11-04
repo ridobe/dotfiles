@@ -1,0 +1,10 @@
+##Put in /etc/pacman.d/hooks/
+[Trigger]
+Operation = Remove
+Type = Package
+Target = *
+
+[Action]
+Description = Checking for newly orphaned packages...
+When = PostTransaction
+Exec = /usr/bin/bash -c "/usr/bin/pacman -Qtd || /usr/bin/echo '=> None found.'"
