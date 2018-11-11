@@ -20,6 +20,7 @@ alias scrot='scrot -d 5 -m /home/ridobe/Google_Drive/Backdrops_2560x1080/screens
 alias killx='pkill -15 Xorg'
 alias microcode='journalctl --since yesterday | grep microcode'
 alias pbr='pkgbuilder'
+alias git log='git log --max-count=1 kernel'
 
 ##tar
 alias utarz='tar zvxf'
