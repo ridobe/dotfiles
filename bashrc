@@ -94,7 +94,7 @@ PROMPT_COMMAND=set_bash_prompt
 #set $PATH
 export PATH=~/bin:$PATH
 export PATH=~/sbin:$PATH
-export PATH=$PATH:~/android-sdk-linux/platform-tools
-export PATH=$PATH:~/android-sdk-linux/tools
+export PATH=$PATH:~/android-sdk-linux/build-tools
+export PATH=$PATH:~/android-sdk-linux/tools/bin
 export PATH=$PATH:~/dotfiles/misc
 export PATH=$PATH:~/dotfiles
