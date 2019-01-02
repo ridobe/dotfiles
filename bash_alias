@@ -21,6 +21,7 @@ alias killx='pkill -15 Xorg'
 alias microcode='journalctl --since yesterday | grep microcode'
 alias pbr='pkgbuilder'
 alias gitlog='git log --max-count=1 kernel'
+alias sdk='sdkmanager'
 
 ##tar
 alias utarz='tar zvxf'
