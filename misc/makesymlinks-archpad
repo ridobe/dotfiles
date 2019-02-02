@@ -1,6 +1,5 @@
 #!/bin/bash
 ############################
-# .make.sh
 # This script creates symlinks from the home directory to any desired dotfiles in ~/dotfiles
 ############################
 
@@ -8,7 +7,7 @@
 
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files="bashrc face gitconfig bash_alias xbindkeysrc bash_profile xinitrc"    # list of files/folders to symlink in homedir
+files="bashrc face gitconfig bash_alias bash_profile pam_environment xinitrc"    # list of files/folders to symlink in homedir
 
 ##########
 
@@ -28,11 +27,17 @@ mv ~/.conkyrc ~/dotfiles_old/
 echo "Creating unique symlink for .conkyrc"
 ln -s $dir/conkyrc_archpad ~/.conkyrc
 
-# move cower config due to unique naming
+# move unique files due to location
 echo "Moving ~/.config/cower/config to ~/dotfiles_old"
 mv ~/.config/cower/config ~/dotfiles_old/
 echo "Creating unique symlink for cower config"
 ln -s $dir/config ~/.config/cower/config
+echo "Moving ~/.config/systemd/user/ssh-agent.service to ~/dotfiles_old"
+mv ~/.config/systemd/user/ssh-agent.service ~/dotfiles_old/
+echo "Creating unique symlink for ssh-agent"
+ln -s $dir/ssh-agent.service ~/.config/systemd/user/ssh-agent.service
+echo "Don't for get to run systemctl --user start ssh-agent.service and
+                           systemctl --user enable ssh-agent.seervice"
 
 # move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks from the homedir to any files in the ~/dotfiles directory specified in $files
 for file in $files; do
