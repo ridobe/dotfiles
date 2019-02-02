@@ -37,7 +37,7 @@ mv ~/.config/systemd/user/ssh-agent.service ~/dotfiles_old/
 echo "Creating unique symlink for ssh-agent"
 ln -s $dir/ssh-agent.service ~/.config/systemd/user/ssh-agent.service
 echo "Don't for get to run systemctl --user start ssh-agent.service and
-                           systemctl --user enable ssh-agent.seervice"
+                           systemctl --user enable ssh-agent.service"
 
 # move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks from the homedir to any files in the ~/dotfiles directory specified in $files
 for file in $files; do
