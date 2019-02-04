@@ -1,3 +1,4 @@
+##Put in /etc/pacman.d/hooks/
 [Trigger]
 Type = Package
 Operation = Upgrade
