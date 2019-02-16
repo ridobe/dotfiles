@@ -22,7 +22,8 @@ alias microcode='journalctl --since yesterday | grep microcode'
 alias pbr='pkgbuilder'
 alias gitlog='git log --max-count=1 kernel'
 alias sdk='sdkmanager'
-alias lastpass='ykman oath code'
+alias code='ykman oath code'
+
 
 ##tar
 alias utarz='tar zvxf'
