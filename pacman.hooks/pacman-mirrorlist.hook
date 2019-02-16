@@ -1,4 +1,5 @@
- [Trigger]
+##Put in /etc/pacman.d/hooks/
+[Trigger]
 Operation = Upgrade
 Type = Package
 Target = pacman-mirrorlist
