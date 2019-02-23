@@ -23,6 +23,7 @@ alias pbr='pkgbuilder'
 alias gitlog='git log --max-count=1 kernel'
 alias sdk='sdkmanager'
 alias code='ykman oath code'
+alias unlock='sudo rm /var/lib/pacman/db.lck'
 
 
 ##tar
