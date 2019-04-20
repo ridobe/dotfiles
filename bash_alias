@@ -24,17 +24,14 @@ alias gitlog='git log --max-count=1 kernel'
 alias sdk='sdkmanager'
 alias code='ykman oath code'
 alias unlock='sudo rm /var/lib/pacman/db.lck'
+alias alias='cat /home/ridobe/dotfiles/bash_alias'
 
 
 ##tar
-alias utarz='tar zvxf'
-alias utarj='tar jvxf'
-alias tarz='tar cvfz'
-alias tarj='tar cvfj'
-
-##python
-alias python2='sudo rm /usr/bin/python && sudo ln -s /usr/bin/python2 /usr/bin/python'
-alias python3='sudo rm /usr/bin/python && sudo ln -s /usr/bin/python3 /usr/bin/python'
+#alias utarz='tar zvxf'
+#alias utarj='tar jvxf'
+#alias tarz='tar cvfz'
+#alias tarj='tar cvfj'
 
 #text editor
 export EDITOR="nano"
