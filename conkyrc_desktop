@@ -1,7 +1,7 @@
 conky.config = {
---##############################################
---#  .conkyrc by ridobe <ridobe18@gmail.com>  ##
---##############################################
+--#####################################################
+--#  .conkyrc by ridobe <ridobe18 AT gmail DOT com>  ##
+--#####################################################
 
 --units
 	temperature_unit = 'fahrenheit',
@@ -104,6 +104,7 @@ ${color dimgray}SYSTEM ${hr 2}${color}
 ${font DejaVu:size=14}${nodename} -xfce${font}
 ${execi 1000 cat /proc/cpuinfo | grep 'model name' | cut -c 14-50 | uniq}
 kernel: $kernel
+${alignr 20}${color gold4}${font DejaVu Sans:size=10:italic} -elite, powerful, efficient${color}${font}
 uptime: $uptime
 bios: ${execi 1 sudo dmidecode -t 0 | grep 'Version'| cut -c 11-14 | uniq}
 ##################################
@@ -156,6 +157,7 @@ ${top name 4}	${top pid 4} ${top cpu 4} ${top mem 4}
 ##          DATE/TIME           ##
 ##################################
 ${color dimgray}DATE ${hr 2}${color}
+
 #${alignc 19}${font Arial white:size=18}${time %H:%M}${font}
 #${voffset 2}${alignc}${time %A, %d %B %Y}
 ${font Arial white:size=18}${time %H:%M}${font}
@@ -166,14 +168,14 @@ ${time %A, %d %B %Y}
 ##################################
 ${color dimgray}NETWORK ${hr 2}${color}
 ${if_existing /proc/net/route wlp8s0}
-#${if_existing /proc/net/route enp6s0}
+#${if_existing /proc/net/route enp4s0}
 ${voffset -6}${font PizzaDude Bullets:size=14}O${font} up: ${upspeed wlp8s0}${alignr}${color gold4}${upspeedgraph wlp18s0 8,60}${color}
-#${voffset -6}${font PizzaDude Bullets:size=14}O${font} up: ${upspeed enp6s0}${alignr}${color gold4}${upspeedgraph enp6s0 8,60}${color}
+#${voffset -6}${font PizzaDude Bullets:size=14}O${font} up: ${upspeed enp4s0}${alignr}${color gold4}${upspeedgraph enp4s0 8,60}${color}
 ${voffset 4}${font PizzaDude Bullets:size=14}U${font} down: ${downspeed wlp8s0}${alignr}${color gold4}${downspeedgraph wlp8s0 8,60}${color}
-#${voffset 4}${font PizzaDude Bullets:size=14}U${font} down: ${downspeed enp6s0}${alignr}${color gold4}${downspeedgraph enp6s0 8,60}${color}
+#${voffset 4}${font PizzaDude Bullets:size=14}U${font} down: ${downspeed enp4s0}${alignr}${color gold4}${downspeedgraph enp4s0 8,60}${color}
 ${voffset 4}${font PizzaDude Bullets:size=14}N${font} upload: ${alignr}${totalup wlp8s0}
-#${voffset 4}${font PizzaDude Bullets:size=14}N${font} upload: ${alignr}${totalup enp6s0}
+#${voffset 4}${font PizzaDude Bullets:size=14}N${font} upload: ${alignr}${totalup enp4s0}
 ${voffset 4}${font PizzaDude Bullets:size=14}T${font} download: ${alignr}${totaldown wlp8s0}
-#${voffset 4}${font PizzaDude Bullets:size=14}T${font} download: ${alignr}${totaldown enp6s0}
+#${voffset 4}${font PizzaDude Bullets:size=14}T${font} download: ${alignr}${totaldown enp4s0}
 ${endif}
 ]];
