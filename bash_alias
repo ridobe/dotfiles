@@ -10,7 +10,6 @@ alias pacnew='sudo find /etc -regextype posix-extended -regex ".+\.pac(new|save|
 
 ##misc
 alias md5='md5sum'
-alias np='nano PKGBUILD'
 alias insync='insync quit && insync start --synchronous-full'
 alias octal='stat -c "%a %n"'
 alias ssha='eval ssh-agent -s && ssh-add ~/.ssh/id_rsa'
@@ -25,13 +24,6 @@ alias sdk='sdkmanager'
 alias code='ykman oath code'
 alias unlock='sudo rm /var/lib/pacman/db.lck'
 alias alias='cat /home/ridobe/dotfiles/bash_alias'
-
-
-##tar
-#alias utarz='tar zvxf'
-#alias utarj='tar jvxf'
-#alias tarz='tar cvfz'
-#alias tarj='tar cvfj'
 
 #text editor
 export EDITOR="nano"
