@@ -95,7 +95,7 @@ conky.config = {
 
 conky.text = [[
 #${image /home/ridobe/Google_Drive/Linux/arch/Archimages/penguin-icon.png -p 50,730 -s 200x200}
-${image /home/ridobe/Google_Drive/Linux/arch/Archimages/archlinux-logo-white.png -p -0,820 -s 300x99.5}
+${image /home/ridobe/Google_Drive/Linux/arch/Archimages/archlinux-logo-white.png -p -0,890 -s 300x99.5}
 #-p is position, -s is size (728x455) original
 ##################################
 ##            SYSTEM            ##
@@ -123,7 +123,9 @@ temp: ${execi 1 sensors -f amdgpu-pci-0A00 | grep temp1 | tr -d '+' | cut -c 14-
 ${color dimgray}RAM ${hr 2}${color}
 RAM usage: $mem/$memmax - ${color gold4}$memperc% ${membar 4}${color}
 RAM clock: ${execi 1 sudo dmidecode -t 17 | grep 'Speed' | head -7 | tail -1 | cut -c 9-12 | uniq}MHz
-RAM PN: ${execi 1 sudo dmidecode -t 17 | grep 'Part' | head -4 | tail -1| cut -c 14-30 | uniq}
+RAM PN: ${execi 1 sudo dmidecode -t 17 | grep 'Part' | head -4 | tail -1 | cut -c 14-30 | uniq}
+${execi 1 sudo dmidecode -t 17 | grep 'Maximum Voltage' | tail -1 | cut -c 2-23 | uniq}
+${execi 1 sudo dmidecode -t 17 | grep 'Configured Voltage' | tail -1 | cut -c 2-26 | uniq}
 
 ##################################
 ##             CPU              ##
@@ -139,6 +141,10 @@ cpu_4: ${freq_g cpu4} Ghz ${color gold4}${cpu cpu4}%  ${cpubar cpu4}${color}
 cpu_5: ${freq_g cpu5} Ghz ${color gold4}${cpu cpu5}%  ${cpubar cpu5}${color}
 cpu_6: ${freq_g cpu6} Ghz ${color gold4}${cpu cpu6}%  ${cpubar cpu6}${color}
 cpu_7: ${freq_g cpu7} Ghz ${color gold4}${cpu cpu7}%  ${cpubar cpu7}${color}
+#cpu_8: ${freq_g cpu8} Ghz ${color gold4}${cpu cpu8}%  ${cpubar cpu8}${color}
+#cpu_9: ${freq_g cpu9} Ghz ${color gold4}${cpu cpu9}%  ${cpubar cpu9}${color}
+#cpu_10: ${freq_g cpu10} Ghz ${color gold4}${cpu cpu10}%  ${cpubar cpu10}${color}
+#cpu_11: ${freq_g cpu11} Ghz ${color gold4}${cpu cpu11}%  ${cpubar cpu11}${color}
 
 ##################################
 ##          STATISTICS          ##
