@@ -169,14 +169,14 @@ ${time %A, %d %B %Y}
 ##################################
 ${color dimgray}NETWORK ${hr 2}${color}
 ${if_existing /proc/net/route wlp9s0}
-#${if_existing /proc/net/route enp4s0}
-${voffset -6}${font PizzaDude Bullets:size=14}O${font} up: ${upspeed wlp9s0}${alignr}${color gold4}${upspeedgraph wlp18s0 8,60}${color}
-#${voffset -6}${font PizzaDude Bullets:size=14}O${font} up: ${upspeed enp4s0}${alignr}${color gold4}${upspeedgraph enp4s0 8,60}${color}
+#${if_existing /proc/net/route enp6s0}
+${voffset -6}${font PizzaDude Bullets:size=14}O${font} up: ${upspeed wlp9s0}${alignr}${color gold4}${upspeedgraph wlp9s0 8,60}${color}
+#${voffset -6}${font PizzaDude Bullets:size=14}O${font} up: ${upspeed enp6s0}${alignr}${color gold4}${upspeedgraph enp6s0 8,60}${color}
 ${voffset 4}${font PizzaDude Bullets:size=14}U${font} down: ${downspeed wlp9s0}${alignr}${color gold4}${downspeedgraph wlp9s0 8,60}${color}
-#${voffset 4}${font PizzaDude Bullets:size=14}U${font} down: ${downspeed enp4s0}${alignr}${color gold4}${downspeedgraph enp4s0 8,60}${color}
+#${voffset 4}${font PizzaDude Bullets:size=14}U${font} down: ${downspeed enp6s0}${alignr}${color gold4}${downspeedgraph enp6s0 8,60}${color}
 ${voffset 4}${font PizzaDude Bullets:size=14}N${font} upload: ${alignr}${totalup wlp9s0}
-#${voffset 4}${font PizzaDude Bullets:size=14}N${font} upload: ${alignr}${totalup enp4s0}
+#${voffset 4}${font PizzaDude Bullets:size=14}N${font} upload: ${alignr}${totalup enp6s0}
 ${voffset 4}${font PizzaDude Bullets:size=14}T${font} download: ${alignr}${totaldown wlp9s0}
-#${voffset 4}${font PizzaDude Bullets:size=14}T${font} download: ${alignr}${totaldown enp4s0}
+#${voffset 4}${font PizzaDude Bullets:size=14}T${font} download: ${alignr}${totaldown enp6s0}
 ${endif}
 ]];
