@@ -129,7 +129,8 @@ RAM PN: ${execi 1 sudo dmidecode -t 17 | grep 'Part' | head -4 | tail -1| cut -c
 ##             CPU              ##
 ##################################
 ${color dimgray}CPU ${hr 2}${color}
-temp: ${execi 1 sensors -f k10temp-pci-00c3 | tr -d '+' | tail -n 2 | cut -c 14-42}
+temp: ${execi 1 sensors -f k10temp-pci-00c3 | tr -d '+' | tail -n 2 | cut -c 14-42}Vcore: ${execi 1 sensors -f it8792-isa-0a60 | grep 'in0'| tr -d '+' | cut -c 15-20}
+
 cpu_0: ${freq_g cpu0} Ghz ${color gold4}${cpu cpu0}%  ${cpubar cpu0}${color}
 cpu_1: ${freq_g cpu1} Ghz ${color gold4}${cpu cpu1}%  ${cpubar cpu1}${color}
 cpu_2: ${freq_g cpu2} Ghz ${color gold4}${cpu cpu2}%  ${cpubar cpu2}${color}
