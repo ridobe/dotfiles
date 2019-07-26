@@ -115,7 +115,7 @@ ${color dimgray}GPU ${hr 2}${color}
 #type: Ellesmere [Polaris10] Sapphire RX 470
 type: ${execi 1 lspci -vnn | grep Sapphire | head -1 | cut -c 34-66 | uniq}
 #freq: $freq MHz
-temp: ${execi 1 sensors -f amdgpu-pci-0A00 | grep temp1 | tr -d '+' | cut -c 14-22}
+temp: ${execi 1 sensors -f amdgpu-pci-0900 | grep temp1 | tr -d '+' | cut -c 14-22}
 
 ##################################
 ##             RAM              ##
@@ -131,7 +131,8 @@ ${execi 1 sudo dmidecode -t 17 | grep 'Configured Voltage' | tail -1 | cut -c 2-
 ##             CPU              ##
 ##################################
 ${color dimgray}CPU ${hr 2}${color}
-temp: ${execi 1 sensors -f k10temp-pci-00c3 | tr -d '+' | tail -n 2 | cut -c 14-42}Vcore: ${execi 1 sensors -f it8792-isa-0a60 | grep 'in0'| tr -d '+' | cut -c 15-20}
+temp: ${execi 1 sensors -f k10temp-pci-00c3 | tr -d '+' | tail -n 2 | cut -c 14-42}
+Vcore: ${execi 1 sensors -f it8792-isa-0a60 | grep 'in0'| tr -d '+' | cut -c 15-20}
 
 cpu_0: ${freq_g cpu0} Ghz ${color gold4}${cpu cpu0}%  ${cpubar cpu0}${color}
 cpu_1: ${freq_g cpu1} Ghz ${color gold4}${cpu cpu1}%  ${cpubar cpu1}${color}
@@ -141,10 +142,10 @@ cpu_4: ${freq_g cpu4} Ghz ${color gold4}${cpu cpu4}%  ${cpubar cpu4}${color}
 cpu_5: ${freq_g cpu5} Ghz ${color gold4}${cpu cpu5}%  ${cpubar cpu5}${color}
 cpu_6: ${freq_g cpu6} Ghz ${color gold4}${cpu cpu6}%  ${cpubar cpu6}${color}
 cpu_7: ${freq_g cpu7} Ghz ${color gold4}${cpu cpu7}%  ${cpubar cpu7}${color}
-#cpu_8: ${freq_g cpu8} Ghz ${color gold4}${cpu cpu8}%  ${cpubar cpu8}${color}
-#cpu_9: ${freq_g cpu9} Ghz ${color gold4}${cpu cpu9}%  ${cpubar cpu9}${color}
-#cpu_10: ${freq_g cpu10} Ghz ${color gold4}${cpu cpu10}%  ${cpubar cpu10}${color}
-#cpu_11: ${freq_g cpu11} Ghz ${color gold4}${cpu cpu11}%  ${cpubar cpu11}${color}
+cpu_8: ${freq_g cpu8} Ghz ${color gold4}${cpu cpu8}%  ${cpubar cpu8}${color}
+cpu_9: ${freq_g cpu9} Ghz ${color gold4}${cpu cpu9}%  ${cpubar cpu9}${color}
+cpu_10: ${freq_g cpu10} Ghz ${color gold4}${cpu cpu10}%  ${cpubar cpu10}${color}
+cpu_11: ${freq_g cpu11} Ghz ${color gold4}${cpu cpu11}%  ${cpubar cpu11}${color}
 
 ##################################
 ##          STATISTICS          ##
@@ -174,15 +175,15 @@ ${time %A, %d %B %Y}
 ##          NETWORK             ##
 ##################################
 ${color dimgray}NETWORK ${hr 2}${color}
-${if_existing /proc/net/route wlp9s0}
-#${if_existing /proc/net/route enp6s0}
-${voffset -6}${font PizzaDude Bullets:size=14}O${font} up: ${upspeed wlp9s0}${alignr}${color gold4}${upspeedgraph wlp9s0 8,60}${color}
-#${voffset -6}${font PizzaDude Bullets:size=14}O${font} up: ${upspeed enp6s0}${alignr}${color gold4}${upspeedgraph enp6s0 8,60}${color}
-${voffset 4}${font PizzaDude Bullets:size=14}U${font} down: ${downspeed wlp9s0}${alignr}${color gold4}${downspeedgraph wlp9s0 8,60}${color}
-#${voffset 4}${font PizzaDude Bullets:size=14}U${font} down: ${downspeed enp6s0}${alignr}${color gold4}${downspeedgraph enp6s0 8,60}${color}
-${voffset 4}${font PizzaDude Bullets:size=14}N${font} upload: ${alignr}${totalup wlp9s0}
-#${voffset 4}${font PizzaDude Bullets:size=14}N${font} upload: ${alignr}${totalup enp6s0}
-${voffset 4}${font PizzaDude Bullets:size=14}T${font} download: ${alignr}${totaldown wlp9s0}
-#${voffset 4}${font PizzaDude Bullets:size=14}T${font} download: ${alignr}${totaldown enp6s0}
+${if_existing /proc/net/route wlp4s0}
+#${if_existing /proc/net/route enp5s0}
+${voffset -6}${font PizzaDude Bullets:size=14}O${font} up: ${upspeed wlp4s0}${alignr}${color gold4}${upspeedgraph wlp4s0 8,60}${color}
+#${voffset -6}${font PizzaDude Bullets:size=14}O${font} up: ${upspeed enp5s0}${alignr}${color gold4}${upspeedgraph enp5s0 8,60}${color}
+${voffset 4}${font PizzaDude Bullets:size=14}U${font} down: ${downspeed wlp4s0}${alignr}${color gold4}${downspeedgraph wlp4s0 8,60}${color}
+#${voffset 4}${font PizzaDude Bullets:size=14}U${font} down: ${downspeed enp5s0}${alignr}${color gold4}${downspeedgraph enp5s0 8,60}${color}
+${voffset 4}${font PizzaDude Bullets:size=14}N${font} upload: ${alignr}${totalup wlp4s0}
+#${voffset 4}${font PizzaDude Bullets:size=14}N${font} upload: ${alignr}${totalup enp5s0}
+${voffset 4}${font PizzaDude Bullets:size=14}T${font} download: ${alignr}${totaldown wlp4s0}
+#${voffset 4}${font PizzaDude Bullets:size=14}T${font} download: ${alignr}${totaldown enp5s0}
 ${endif}
 ]];
