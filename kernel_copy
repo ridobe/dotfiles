@@ -1,0 +1,35 @@
+#!/bin/bash
+
+#
+# Make copy of current kernel, package it and upload to GD.
+# 
+
+srcdir1="/boot"
+srcdir2="/usr/lib/modules"
+wrkdir="$HOME/temp_work/seiei"
+dstdir="$HOME/Google_Drive/seiei"
+
+echo "..::Script to copy new kernel, compress it and add it to Google Drive::.."
+echo "removing old kernels..."
+sleep 3
+rm -rf "$wrkdir"/* && echo "done"
+echo "create folder and copy kernel and it's components..."
+sleep 3
+mkdir "$wrkdir/$(uname -r)"
+cp "$scrdir1/*$(uname -r)"* "$wrkdir/$(uname -r)"
+cp "$srcdir2/$(uname -r)/modules."* "$wrkdir/$(uname -r)"
+cp -r "$srcdir2/$(uname -r)/kernel" "$wrkdir/$(uname -r)/kernel"
+echo "creating 7z file..."
+sleep 3
+cd "$wrkdir" && 7za a -tzip "$wrkdir/$(uname -r).7z" *
+echo "copy 7z to Google Drive..."
+sleep 3
+cp "$wrkdir/$(uname -r).7z" "$dstdir"
+echo "upload complete"
+
+
+
+
+
+
+
