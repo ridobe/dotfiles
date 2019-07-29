@@ -25,6 +25,7 @@ cd "$wrkdir" && 7za a -tzip "$wrkdir/$(uname -r).7z" *
 echo "copy 7z to Google Drive..."
 sleep 3
 cp "$wrkdir/$(uname -r).7z" "$dstdir"
+echo " "
 echo "upload complete"
 
 
