@@ -9,10 +9,10 @@ alias grep='grep --color=tty -d skip'
 alias pacnew='sudo find /etc -regextype posix-extended -regex ".+\.pac(new|save|orig)" 2> /dev/null'
 
 #working directories
-alias tw='cd /home/ridobe/temp_work && ls -la'
-alias kb='cd /home/ridobe/kernel_build/linux'
-alias device='cd /home/ridobe/android_devices/walleye && ls -la'
-alias seiei='cd /home/ridobe/Google_Drive/seiei && ls -la'
+alias tw='cd $HOME/temp_work && ls -la'
+alias kb='cd $HOME/kernel_build/linux'
+alias device='cd $HOME/android_devices/walleye && ls -la'
+alias seiei='cd $HOME/Google_Drive/seiei && ls -la'
 
 ##misc
 alias md5='md5sum'
