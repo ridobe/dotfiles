@@ -16,7 +16,7 @@ rm -rf "$wrkdir"/* && echo "done"
 echo "create folder and copy kernel and it's components..."
 sleep 3
 mkdir "$wrkdir/$(uname -r)"
-cp "$scrdir1/*$(uname -r)"* "$wrkdir/$(uname -r)"
+cp "$scrdir1/ * $(uname -r)"* "$wrkdir/$(uname -r)"
 cp "$srcdir2/$(uname -r)/modules."* "$wrkdir/$(uname -r)"
 cp -r "$srcdir2/$(uname -r)/kernel" "$wrkdir/$(uname -r)/kernel"
 echo "creating 7z file..."
