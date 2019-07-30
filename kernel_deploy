@@ -1,0 +1,34 @@
+#!/bin/bash
+
+#
+# Make copy of current kernel, package it and upload to GD.
+# by ridobe18 at gmail dot com
+#
+
+srcdir1="$HOME/Google_Drive/seiei"
+dstdir1="/usr/lib/modules"
+dstdir2="/boot"
+
+echo "..::Script to copy new kernel from GD, uncompress and deploy::.."
+sleep 3
+echo "copying files to requisite kernel destinations"
+echo " "
+sleep 1
+sudo cp "$srcdir1/"$(uname -r).7z "$dstdir1" && 7za x $(uname -r).7z
+sudo mv vmlinuz* /boot && mv initramfs* /boot
+echo " "
+sleep 3
+echo "!!!"
+echo "!!!"
+echo "!!!"
+echo "don't forget to modify ridobe-primary.conf before you reboot"
+echo "!!!"
+echo "!!!"
+echo "!!!"
+echo "done"
+
+
+
+
+
+
