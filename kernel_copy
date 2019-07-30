@@ -9,6 +9,7 @@ srcdir1="/boot"
 srcdir2="/usr/lib/modules"
 wrkdir="$HOME/temp_work/seiei"
 dstdir="$HOME/Google_Drive/seiei"
+#prefixes="{initramfs-,vmlinuz-}"
 
 echo "..::Script to copy new kernel, compress it and add it to Google Drive::.."
 echo "removing old kernels..."
@@ -18,7 +19,8 @@ rm -rf "$wrkdir"/* && echo "done"
 echo "create folder and copy kernel and it's components..."
 sleep 3
 mkdir "$wrkdir/$(uname -r)"
-cp "$scrdir1/* $(uname -r)"* "$wrkdir/$(uname -r)"
+cp "$srcdir1/"initramfs-$(uname -r).img "$wrkdir/$(uname -r)"
+cp "$srcdir1/"vmlinuz-$(uname -r) "$wrkdir/$(uname -r)"
 cp "$srcdir2/$(uname -r)/modules."* "$wrkdir/$(uname -r)"
 cp -r "$srcdir2/$(uname -r)/kernel" "$wrkdir/$(uname -r)/kernel"
 echo "creating 7z file..."
@@ -36,7 +38,7 @@ echo "."
 cp "$wrkdir/$(uname -r).7z" "$dstdir"
 echo " "
 echo "upload complete"
-
+cd "$dstdir" && ls -la
 
 
 
