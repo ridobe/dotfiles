@@ -79,11 +79,11 @@ conky.config = {
 
 -- number of cpu samples to average
 -- set to 1 to disable averaging
-	cpu_avg_samples = 2,
+	cpu_avg_samples = 1,
 
 -- number of net samples to average
 -- set to 1 to disable averaging
-	net_avg_samples = 2,
+	net_avg_samples = 1,
 
 -- Force UTF8? note that UTF8 support required XFT
 	override_utf8_locale = true,
@@ -102,18 +102,18 @@ ${image /home/ridobe/Google_Drive/Linux/arch/Archimages/archlinux-logo-white.png
 ##################################
 ${color dimgray}SYSTEM ${hr 2}${color}
 ${font DejaVu:size=14}${nodename} -xfce${font}
-${execi 1000 cat /proc/cpuinfo | grep 'model name' | cut -c 14-50 | uniq}
+${exec cat /proc/cpuinfo | grep 'model name' | cut -c 14-50 | uniq}
 kernel: $kernel
 ${alignr 20}${color gold4}${font DejaVu Sans:size=10:italic} -elite, powerful, efficient${color}${font}
 uptime: $uptime
-bios: ${execi 1 sudo dmidecode -t 0 | grep 'Version'| cut -c 11-14 | uniq}
+bios: ${exec sudo dmidecode -t 0 | grep 'Version'| cut -c 11-14 | uniq}
 ##################################
 ##             GPU              ##
 ##################################
 
 ${color dimgray}GPU ${hr 2}${color}
 #type: Ellesmere [Polaris10] Sapphire RX 470
-type: ${execi 1 lspci -vnn | grep Sapphire | head -1 | cut -c 34-66 | uniq}
+type: ${exec lspci -vnn | grep Sapphire | head -1 | cut -c 34-66 | uniq}
 #freq: $freq MHz
 temp: ${execi 1 sensors -f amdgpu-pci-0900 | grep edge | tr -d '+' | cut -c 14-22}
 
@@ -122,16 +122,15 @@ temp: ${execi 1 sensors -f amdgpu-pci-0900 | grep edge | tr -d '+' | cut -c 14-2
 ##################################
 ${color dimgray}RAM ${hr 2}${color}
 RAM usage: $mem/$memmax - ${color gold4}$memperc% ${membar 4}${color}
-RAM clock: ${execi 1 sudo dmidecode -t 17 | grep 'Speed' | head -7 | tail -1 | cut -c 9-12 | uniq}MHz
-RAM PN: ${execi 1 sudo dmidecode -t 17 | grep 'Part' | head -4 | tail -1 | cut -c 14-30 | uniq}
-#${execi 1 sudo dmidecode -t 17 | grep 'Maximum Voltage' | tail -1 | cut -c 2-23 | uniq}
-#${execi 1 sudo dmidecode -t 17 | grep 'Configured Voltage' | tail -1 | cut -c 2-26 | uniq}
+RAM clock: ${exec sudo dmidecode -t 17 | grep 'Speed' | head -7 | tail -1 | cut -c 9-12 | uniq}MHz
+RAM PN: ${exec sudo dmidecode -t 17 | grep 'Part' | head -4 | tail -1 | cut -c 14-30 | uniq}
 
 ##################################
 ##             CPU              ##
 ##################################
 ${color dimgray}CPU ${hr 2}${color}
-temp: ${execi 1 sensors -f zenpower-pci-00c3 | grep 'Tdie'| tr -d '+' | tail -n 2 | cut -c 14-42}
+temp: ${execi 1 sensors -f zenpower-pci-00c3 | grep 'Tdie'| tr -d '+' | tail -n 2 | cut -c 14-22} limit: (95°C/203°F)
+#${execi 1 ''sensors -f zenpower-pci-00c3 | grep 'Tdie'| tr -d '+' | tail -n 2 | cut -c 14-22' -32*5/9'}
 Core: ${execi 1 sensors -f zenpower-pci-00c3 | grep 'SVI2_SoC'| tr -d '+' | cut -c 15-20}
 SoC: ${execi 1 sensors -f zenpower-pci-00c3 | grep 'SVI2_Core'| tr -d '+' | cut -c 15-20}
 #Core and SoC are backwards for some reason.  Monitor for fix.
