@@ -129,8 +129,7 @@ RAM PN: ${exec sudo dmidecode -t 17 | grep 'Part' | head -4 | tail -1 | cut -c 1
 ##             CPU              ##
 ##################################
 ${color dimgray}CPU ${hr 2}${color}
-temp: ${execi 1 sensors -f zenpower-pci-00c3 | grep 'Tdie'| tr -d '+' | tail -n 2 | cut -c 14-22} limit: (95°C/203°F)
-#${execi 1 ''sensors -f zenpower-pci-00c3 | grep 'Tdie'| tr -d '+' | tail -n 2 | cut -c 14-22' -32*5/9'}
+temp: ${execi 1 sensors -f zenpower-pci-00c3 | grep 'Tdie'| tr -d '+' | tail -n 2 | cut -c 14-22 | awk '{print ($1-32)*5/9}'}°C/${execi 1 sensors -f zenpower-pci-00c3 | grep 'Tdie'| tr -d '+' | tail -n 2 | cut -c 14-22} limit: (95°C/203°F)
 Core: ${execi 1 sensors -f zenpower-pci-00c3 | grep 'SVI2_SoC'| tr -d '+' | cut -c 15-20}
 SoC: ${execi 1 sensors -f zenpower-pci-00c3 | grep 'SVI2_Core'| tr -d '+' | cut -c 15-20}
 #Core and SoC are backwards for some reason.  Monitor for fix.
