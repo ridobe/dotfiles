@@ -15,12 +15,13 @@ echo "copying files to requisite kernel destinations"
 echo " "
 sleep 1
 sudo cp "$srcdir1"/*.7z "$dstdir1" && cd "$dstdir1"
-7za x *.7z && cd 'grep "*.7z" | cut -d "+"'
-sudo mv vmlinuz* "$dstdir2" && mv initramfs* "$dstdir2"
+sudo 7za x *.7z && cd $(basename *.7z .7z)
+sudo cp vmlinuz* "$dstdir2"
+sudo cp initramfs* "$dstdir2"
 echo " "
 sleep 3
 echo "cleaning up 7z files from /usr/lib/modules..."
-sudo rm -rf *.7z
+sudo rm -rf /usr/lib/modules/*.7z
 sleep 1
 echo "..."
 echo "done"
@@ -31,7 +32,6 @@ echo "do not forget to modify ridobe-primary.conf before you reboot"
 echo "!!!"
 echo "!!!"
 echo "!!!"
-echo "done"
 
 
 
