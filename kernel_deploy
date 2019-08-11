@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #
-# Make copy of current kernel, package it and upload to GD.
+# Retrieve kernel from GD and deploy.
 # by ridobe18 at gmail dot com
 #
 
