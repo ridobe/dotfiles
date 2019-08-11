@@ -19,7 +19,7 @@ sleep 3
 rm -rf "$wrkdir"/* && echo "cleaning up temp_work..."
 echo " "
 sleep 1
-rm -rf "$dstdir"/* $$ echo "cleaning up Google Drive..."
+rm -rf "$dstdir"/* && echo "cleaning up Google Drive..."
 sleep 1
 echo " "
 echo "create folder and copy kernel and it's components..."
