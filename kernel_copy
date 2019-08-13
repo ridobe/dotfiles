@@ -45,7 +45,7 @@ cp "$wrkdir/$(uname -r).7z" "$dstdir"
 echo " "
 echo "upload complete"
 cd "$dstdir" && ls -la
-insync quit && insync start --synchronous-full
+#insync quit && insync start --synchronous-full
 
 
 
