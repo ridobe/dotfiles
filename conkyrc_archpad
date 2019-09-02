@@ -104,7 +104,7 @@ ${color dimgray}SYSTEM ${hr 2}${color}
 ${font DejaVu:size=14}${nodename} -xfce${font}
 ${execi 1000 cat /proc/cpuinfo | grep 'model name' | cut -c 14-30 | uniq}
 kernel: $kernel
-${alignr 20}${color gold4}${font DejaVu Sans:size=10:italic} -elite, powerful, efficient${color}${font}
+${alignr 20}${color dodgerblue3}${font DejaVu Sans:size=10:italic} -elite, powerful, efficient${color}${font}
 uptime: $uptime
 bios: ${execi 1 sudo dmidecode -t 0 | grep 'Version'}
 ##################################
@@ -120,7 +120,7 @@ temp: ${execi 1 sensors -f amdgpu-pci-0500 | grep temp1 | tr -d '+' | cut -c 14-
 ##             RAM              ##
 ##################################
 ${color dimgray}RAM ${hr 2}${color}
-RAM usage: $mem/$memmax - ${color gold4}$memperc% ${membar 4}${color}
+RAM usage: $mem/$memmax - ${color dodgerblue3}$memperc% ${membar 4}${color}
 RAM clock: ${execi 1 sudo dmidecode -t 17 | grep 'Speed' | head -4 | tail -1 | cut -c 26-30 | uniq}MHz
 RAM PN: ${execi 1 sudo dmidecode -t 17 | grep 'Part' | head -4 | tail -1| cut -c 14-30 | uniq}
 
@@ -129,22 +129,22 @@ RAM PN: ${execi 1 sudo dmidecode -t 17 | grep 'Part' | head -4 | tail -1| cut -c
 ##################################
 ${color dimgray}CPU ${hr 2}${color}
 temp: ${execi 1 sensors -f k10temp-pci-00c3 | tr -d '+' | tail -n 2 | cut -c 14-42}
-cpu_0: ${freq_g cpu0} Ghz ${color gold4}${cpu cpu0}%  ${cpubar cpu0}${color}
-cpu_1: ${freq_g cpu1} Ghz ${color gold4}${cpu cpu1}%  ${cpubar cpu1}${color}
-cpu_2: ${freq_g cpu2} Ghz ${color gold4}${cpu cpu2}%  ${cpubar cpu2}${color}
-cpu_3: ${freq_g cpu3} Ghz ${color gold4}${cpu cpu3}%  ${cpubar cpu3}${color}
-cpu_4: ${freq_g cpu4} Ghz ${color gold4}${cpu cpu4}%  ${cpubar cpu4}${color}
-cpu_5: ${freq_g cpu5} Ghz ${color gold4}${cpu cpu5}%  ${cpubar cpu5}${color}
-cpu_6: ${freq_g cpu6} Ghz ${color gold4}${cpu cpu6}%  ${cpubar cpu6}${color}
-cpu_7: ${freq_g cpu7} Ghz ${color gold4}${cpu cpu7}%  ${cpubar cpu7}${color}
+cpu_0: ${freq_g cpu0} Ghz ${color dodgerblue3}${cpu cpu0}%  ${cpubar cpu0}${color}
+cpu_1: ${freq_g cpu1} Ghz ${color dodgerblue3}${cpu cpu1}%  ${cpubar cpu1}${color}
+cpu_2: ${freq_g cpu2} Ghz ${color dodgerblue3}${cpu cpu2}%  ${cpubar cpu2}${color}
+cpu_3: ${freq_g cpu3} Ghz ${color dodgerblue3}${cpu cpu3}%  ${cpubar cpu3}${color}
+cpu_4: ${freq_g cpu4} Ghz ${color dodgerblue3}${cpu cpu4}%  ${cpubar cpu4}${color}
+cpu_5: ${freq_g cpu5} Ghz ${color dodgerblue3}${cpu cpu5}%  ${cpubar cpu5}${color}
+cpu_6: ${freq_g cpu6} Ghz ${color dodgerblue3}${cpu cpu6}%  ${cpubar cpu6}${color}
+cpu_7: ${freq_g cpu7} Ghz ${color dodgerblue3}${cpu cpu7}%  ${cpubar cpu7}${color}
 
 ##################################
 ##          STATISTICS          ##
 ##################################
 ${color dimgray}STATISTICS ${hr 2}${color}
 processes: $processes   Running: $running_processes
-file systems: / ${fs_used /}/${fs_size /} ${color gold4}${fs_bar 6 /}${color}
-file systems: /home ${fs_used /home}/${fs_size /home} ${color gold4}${fs_bar 6 /home}${color}
+file systems: / ${fs_used /}/${fs_size /} ${color dodgerblue3}${fs_bar 6 /}${color}
+file systems: /home ${fs_used /home}/${fs_size /home} ${color dodgerblue3}${fs_bar 6 /home}${color}
 
 Name			PID   CPU%   MEM%
 ${top name 1}	${top pid 1} ${top cpu 1} ${top mem 1}
@@ -168,10 +168,10 @@ ${time %A, %d %B %Y}
 ${color dimgray}NETWORK ${hr 2}${color}
 ${if_existing /proc/net/route wlp4s0}
 #${if_existing /proc/net/route enp2s0}
-${voffset -6}${font PizzaDude Bullets:size=14}O${font} up: ${upspeed wlp4s0}${alignr}${color gold4}${upspeedgraph wlp4s0 8,60}${color}
-#${voffset -6}${font PizzaDude Bullets:size=14}O${font} up: ${upspeed enp2s0}${alignr}${color gold4}${upspeedgraph enp2s0 8,60}${color}
-${voffset 4}${font PizzaDude Bullets:size=14}U${font} down: ${downspeed wlp4s0}${alignr}${color gold4}${downspeedgraph wlp4s0 8,60}${color}
-#${voffset 4}${font PizzaDude Bullets:size=14}U${font} down: ${downspeed enp2s0}${alignr}${color gold4}${downspeedgraph enp2s0 8,60}${color}
+${voffset -6}${font PizzaDude Bullets:size=14}O${font} up: ${upspeed wlp4s0}${alignr}${color dodgerblue3}${upspeedgraph wlp4s0 8,60}${color}
+#${voffset -6}${font PizzaDude Bullets:size=14}O${font} up: ${upspeed enp2s0}${alignr}${color dodgerblue3}${upspeedgraph enp2s0 8,60}${color}
+${voffset 4}${font PizzaDude Bullets:size=14}U${font} down: ${downspeed wlp4s0}${alignr}${color dodgerblue3}${downspeedgraph wlp4s0 8,60}${color}
+#${voffset 4}${font PizzaDude Bullets:size=14}U${font} down: ${downspeed enp2s0}${alignr}${color dodgerblue3}${downspeedgraph enp2s0 8,60}${color}
 ${voffset 4}${font PizzaDude Bullets:size=14}N${font} upload: ${alignr}${totalup wlp4s0}
 #${voffset 4}${font PizzaDude Bullets:size=14}N${font} upload: ${alignr}${totalup enp2s0}
 ${voffset 4}${font PizzaDude Bullets:size=14}T${font} download: ${alignr}${totaldown wlp4s0}
