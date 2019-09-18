@@ -32,19 +32,3 @@ alias sdk='sdkmanager'
 alias code='ykman oath code'
 alias unlock='sudo rm /var/lib/pacman/db.lck'
 alias alias='cat /home/ridobe/dotfiles/bash_alias'
-
-#text editor
-export EDITOR="nano"
-
-#don't put duplicate lines in the history. See bash(1) for more options
-export HISTCONTROL=ignoreboth:erasedups
-
-# Expand the history size
-HISTFILESIZE=100000
-HISTSIZE=100000
-
-#print the time stamps associated with each history entry
-export HISTTIMEFORMAT="%h %d %H:%M:%S "
-
-#To append commands to the history file, rather than overwrite it
-shopt -s histappend

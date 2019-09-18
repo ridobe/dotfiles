@@ -91,6 +91,17 @@ function set_bash_prompt {
 
 PROMPT_COMMAND=set_bash_prompt
 
+#text editor
+export EDITOR="nano"
+
+#History expansion, format and retention
+HISTFILESIZE=
+HISTSIZE=
+shopt -s histappend
+export HISTTIMEFORMAT="%h %d %H:%M:%S "
+export HISTCONTROL=ignoreboth:erasedups
+shopt -s histappend
+
 #set $PATH
 export PATH=~/bin:$PATH
 export PATH=~/sbin:$PATH
