@@ -1,5 +1,5 @@
 ##color
-alias ls='ls --color -l --group-directories-first'
+alias ls='ls --color --group-directories-first'
 
 ##update
 #alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
