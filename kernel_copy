@@ -8,7 +8,7 @@
 srcdir1="/boot"
 srcdir2="/usr/lib/modules"
 wrkdir="$HOME/temp_work/seiei"
-dstdir="$HOME/Google_Drive/seiei"
+dstdir="$HOME/googledrive/seiei"
 #prefixes="{initramfs-,vmlinuz-}"
 
 echo "..::Script to copy new kernel, compress it and add it to Google Drive::.."
@@ -41,7 +41,8 @@ sleep .5
 echo "."
 sleep .5
 echo "."
-cp "$wrkdir/$(uname -r).7z" "$dstdir"
+rclone copy "$wrkdir/$(uname -r).7z" gd:/seiei
+#cp "$wrkdir/$(uname -r).7z" "$dstdir"
 echo " "
 echo "upload complete"
 cd "$dstdir" && ls -la

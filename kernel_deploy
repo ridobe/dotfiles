@@ -5,7 +5,7 @@
 # by ridobe18 at gmail dot com
 #
 
-srcdir1="$HOME/Google_Drive/seiei"
+srcdir1="$HOME/googledrive/seiei"
 dstdir1="/usr/lib/modules"
 dstdir2="/boot"
 
