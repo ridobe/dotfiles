@@ -45,8 +45,6 @@ rclone copy "$wrkdir/$(uname -r).7z" gd:/seiei
 #cp "$wrkdir/$(uname -r).7z" "$dstdir"
 echo " "
 echo "upload complete"
-cd "$dstdir" && ls -la
-#insync quit && insync start --synchronous-full
 
 
 
