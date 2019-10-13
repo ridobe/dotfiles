@@ -2,4 +2,4 @@
 #Automated .sh file for rsync backups to Synology NAS.
 LOG=~/crontab_log/rsync-archpad.log 2>&1
 echo "*** $(date -R) ***" >> $LOG
-rsync -a -e 'ssh -p 2023' --delete --info=progress2  --exclude-from=$HOME/dotfiles/scripts/rsync-exclude /home/ridobe/ ridobe@ridobenet.asuscomm.com:/volume1/homes/ridobe/rsync_ridobe_thinkpad/home/ && echo "Successfully completed" >> $LOG
+rsync -a -e "ssh -p 2023" --delete --info=progress2  --exclude-from=$HOME/dotfiles/scripts/rsync-exclude /home/ridobe/ ridobe@ridobenet.asuscomm.com:/volume1/homes/ridobe/rsync_ridobe_thinkpad/home/ && echo "Successfully completed" >> $LOG
