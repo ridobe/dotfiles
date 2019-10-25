@@ -8,7 +8,7 @@ alias pacnew='sudo find /etc -regextype posix-extended -regex ".+\.pac(new|save|
 #working directories
 alias tw='cd $HOME/temp_work && ls -la'
 alias kb='cd $HOME/kernel_build/linux'
-alias walleye='cd $HOME/android_devices/walleye && ls -la'
+alias coral='cd $HOME/android_devices/coral && ls -la'
 
 #insync
 alias insyncfull='insync start --synchronous-full'
