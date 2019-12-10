@@ -1,0 +1,24 @@
+#!/bin/sh
+#fastboot -w
+
+fastboot flash aop aop.img
+fastboot flash bluetooth bluetooth.img
+fastboot flash boot boot.img
+fastboot flash dsp dsp.img
+fastboot flash dtbo dtbo.img
+fastboot flash LOGO LOGO.img
+fastboot flash modem modem.img
+fastboot flash oem_stanvbk oem_stanvbk.img
+fastboot flash qupfw qupfw.img
+fastboot flash storsec storsec.img
+fastboot flash multiimgoem multiimgoem.img
+fastboot flash uefisecapp uefisecapp.img
+fastboot flash recovery recovery.img
+fastboot --disable-verity flash vbmeta vbmeta.img
+fastboot --disable-verity flash vbmeta_system vbmeta_system.img
+fastboot flash opproduct opproduct.img
+fastboot reboot fastboot
+fastboot flash system system.img
+fastboot flash vendor vendor.img
+fastboot flash product product.img
+fastboot reboot
