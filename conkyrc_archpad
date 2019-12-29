@@ -114,7 +114,7 @@ bios: ${execi 1 sudo dmidecode -t 0 | grep 'Version'}
 ${color dimgray}GPU ${hr 2}${color}
 type: AMD radeon Vega 8
 #freq: $freq MHz
-temp: ${execi 1 sensors -f amdgpu-pci-0500 | grep temp1 | tr -d '+' | cut -c 14-22}
+temp: ${execi 1 sensors -f amdgpu-pci-0500 | grep edge | tr -d '+' | cut -c 14-22}
 
 ##################################
 ##             RAM              ##
