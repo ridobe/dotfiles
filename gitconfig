@@ -12,5 +12,6 @@
 	
 [commit]
 	template = ~/.gitmessage
+	
 [push]
 	default = simple

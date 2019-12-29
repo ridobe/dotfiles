@@ -19,7 +19,7 @@ alias devices='cd $HOME/android_devices && ls -la'
 
 ##misc
 alias md5='md5sum'
-alias gitpush='git status && ssha && git add * && git commit -m "updated/committed via script" && git push'
+alias gitpush='git status && ssha && git add && git commit -m "updated/committed via script" && git push'
 alias octal='stat -c "%a %n"'
 alias ssha='eval ssh-agent -s && ssh-add ~/.ssh/id_rsa'
 #alias bootctl='sudo bootctl update'

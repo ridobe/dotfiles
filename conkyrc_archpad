@@ -166,15 +166,15 @@ ${time %A, %d %B %Y}
 ##          NETWORK             ##
 ##################################
 ${color dimgray}NETWORK ${hr 2}${color}
-${if_existing /proc/net/route wlp4s0}
-#${if_existing /proc/net/route enp2s0}
-${voffset -6}${font PizzaDude Bullets:size=14}O${font} up: ${upspeed wlp4s0}${alignr}${color dodgerblue3}${upspeedgraph wlp4s0 8,60}${color}
-#${voffset -6}${font PizzaDude Bullets:size=14}O${font} up: ${upspeed enp2s0}${alignr}${color dodgerblue3}${upspeedgraph enp2s0 8,60}${color}
-${voffset 4}${font PizzaDude Bullets:size=14}U${font} down: ${downspeed wlp4s0}${alignr}${color dodgerblue3}${downspeedgraph wlp4s0 8,60}${color}
-#${voffset 4}${font PizzaDude Bullets:size=14}U${font} down: ${downspeed enp2s0}${alignr}${color dodgerblue3}${downspeedgraph enp2s0 8,60}${color}
-${voffset 4}${font PizzaDude Bullets:size=14}N${font} upload: ${alignr}${totalup wlp4s0}
-#${voffset 4}${font PizzaDude Bullets:size=14}N${font} upload: ${alignr}${totalup enp2s0}
-${voffset 4}${font PizzaDude Bullets:size=14}T${font} download: ${alignr}${totaldown wlp4s0}
-#${voffset 4}${font PizzaDude Bullets:size=14}T${font} download: ${alignr}${totaldown enp2s0}
+${if_existing /proc/net/route wlp7s0}
+#${if_existing /proc/net/route enp7s0}
+${voffset -6}${font PizzaDude Bullets:size=14}O${font} up: ${upspeed wlp7s0}${alignr}${color dodgerblue3}${upspeedgraph wlp7s0 8,60}${color}
+#${voffset -6}${font PizzaDude Bullets:size=14}O${font} up: ${upspeed enp7s0}${alignr}${color dodgerblue3}${upspeedgraph enp7s0 8,60}${color}
+${voffset 4}${font PizzaDude Bullets:size=14}U${font} down: ${downspeed wlp7s0}${alignr}${color dodgerblue3}${downspeedgraph wlp7s0 8,60}${color}
+#${voffset 4}${font PizzaDude Bullets:size=14}U${font} down: ${downspeed enp7s0}${alignr}${color dodgerblue3}${downspeedgraph enp7s0 8,60}${color}
+${voffset 4}${font PizzaDude Bullets:size=14}N${font} upload: ${alignr}${totalup wlp7s0}
+#${voffset 4}${font PizzaDude Bullets:size=14}N${font} upload: ${alignr}${totalup enp7s0}
+${voffset 4}${font PizzaDude Bullets:size=14}T${font} download: ${alignr}${totaldown wlp7s0}
+#${voffset 4}${font PizzaDude Bullets:size=14}T${font} download: ${alignr}${totaldown enp7s0}
 ${endif}
 ]];
