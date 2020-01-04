@@ -9,7 +9,7 @@ conky.config = {
 
 -- Use Xft?
 	use_xft = true,
-	font = 'DejaVu Sans:size=10',
+	font = 'DejaVu Sans:size=6',
 	xftalpha = 0.8,
 	text_buffer_size = 2048,
 
@@ -101,10 +101,10 @@ ${image /home/ridobe/Backdrops_2560x1080_and-images/archimages/archlinux-logo-wh
 ##            SYSTEM            ##
 ##################################
 ${color dimgray}SYSTEM ${hr 2}${color}
-${font DejaVu:size=14}${nodename} -xfce${font}
+${font DejaVu:size=10}${nodename} -xfce${font}
 ${execi 1000 cat /proc/cpuinfo | grep 'model name' | cut -c 14-30 | uniq}
 kernel: $kernel
-${alignr 20}${color dodgerblue3}${font DejaVu Sans:size=10:italic} -elite, powerful, efficient${color}${font}
+${alignr 20}${color dodgerblue3}${font DejaVu Sans:size=6:italic} -elite, powerful, efficient${color}${font}
 uptime: $uptime
 bios: ${execi 1 sudo dmidecode -t 0 | grep 'Version'}
 ##################################
@@ -159,7 +159,7 @@ ${color dimgray}DATE ${hr 2}${color}
 
 #${alignc 19}${font Arial white:size=18}${time %H:%M}${font}
 #${voffset 2}${alignc}${time %A, %d %B %Y}
-${font Arial white:size=18}${time %H:%M}${font}
+${font Arial white:size=10}${time %H:%M}${font}
 ${time %A, %d %B %Y}
 
 ##################################
@@ -168,13 +168,13 @@ ${time %A, %d %B %Y}
 ${color dimgray}NETWORK ${hr 2}${color}
 ${if_existing /proc/net/route wlp7s0}
 #${if_existing /proc/net/route enp7s0}
-${voffset -6}${font PizzaDude Bullets:size=14}O${font} up: ${upspeed wlp7s0}${alignr}${color dodgerblue3}${upspeedgraph wlp7s0 8,60}${color}
-#${voffset -6}${font PizzaDude Bullets:size=14}O${font} up: ${upspeed enp7s0}${alignr}${color dodgerblue3}${upspeedgraph enp7s0 8,60}${color}
-${voffset 4}${font PizzaDude Bullets:size=14}U${font} down: ${downspeed wlp7s0}${alignr}${color dodgerblue3}${downspeedgraph wlp7s0 8,60}${color}
-#${voffset 4}${font PizzaDude Bullets:size=14}U${font} down: ${downspeed enp7s0}${alignr}${color dodgerblue3}${downspeedgraph enp7s0 8,60}${color}
-${voffset 4}${font PizzaDude Bullets:size=14}N${font} upload: ${alignr}${totalup wlp7s0}
-#${voffset 4}${font PizzaDude Bullets:size=14}N${font} upload: ${alignr}${totalup enp7s0}
-${voffset 4}${font PizzaDude Bullets:size=14}T${font} download: ${alignr}${totaldown wlp7s0}
-#${voffset 4}${font PizzaDude Bullets:size=14}T${font} download: ${alignr}${totaldown enp7s0}
+${voffset -6}${font PizzaDude Bullets:size=10}O${font} up: ${upspeed wlp7s0}${alignr}${color dodgerblue3}${upspeedgraph wlp7s0 8,60}${color}
+#${voffset -6}${font PizzaDude Bullets:size=10}O${font} up: ${upspeed enp7s0}${alignr}${color dodgerblue3}${upspeedgraph enp7s0 8,60}${color}
+${voffset 4}${font PizzaDude Bullets:size=10}U${font} down: ${downspeed wlp7s0}${alignr}${color dodgerblue3}${downspeedgraph wlp7s0 8,60}${color}
+#${voffset 4}${font PizzaDude Bullets:size=10}U${font} down: ${downspeed enp7s0}${alignr}${color dodgerblue3}${downspeedgraph enp7s0 8,60}${color}
+${voffset 4}${font PizzaDude Bullets:size=10}N${font} upload: ${alignr}${totalup wlp7s0}
+#${voffset 4}${font PizzaDude Bullets:size=10}N${font} upload: ${alignr}${totalup enp7s0}
+${voffset 4}${font PizzaDude Bullets:size=10}T${font} download: ${alignr}${totaldown wlp7s0}
+#${voffset 4}${font PizzaDude Bullets:size=10}T${font} download: ${alignr}${totaldown enp7s0}
 ${endif}
 ]];
