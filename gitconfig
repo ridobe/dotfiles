@@ -11,7 +11,7 @@
         ui = true
 	
 [commit]
-	template = ~/.gitmessage
+	
 	
 [push]
 	default = simple
