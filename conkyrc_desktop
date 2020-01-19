@@ -103,7 +103,7 @@ ${image /home/ridobe/Backdrops_2560x1080_and-images/archimages/archlinux-logo-wh
 ${color dimgray}SYSTEM ${hr 2}${color}
 ${font DejaVu:size=14}${nodename} -xfce${font}
 ${exec cat /proc/cpuinfo | grep 'model name' | cut -c 14-50 | uniq}
-kernel: $kernel
+kernel: ${exec uname -r | grep 'seiei' | tr -d '+'}
 ${alignr 20}${color dodgerblue3}${font DejaVu Sans:size=10:italic} -elite, powerful, efficient${color}${font}
 uptime: $uptime
 bios: ${exec sudo dmidecode -t 0 | grep 'Version'| cut -c 11-14 | uniq}
