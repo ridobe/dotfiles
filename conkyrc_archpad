@@ -9,7 +9,7 @@ conky.config = {
 
 -- Use Xft?
 	use_xft = true,
-	font = 'DejaVu Sans:size=6',
+	font = 'DejaVu Sans:size=10',
 	xftalpha = 0.8,
 	text_buffer_size = 2048,
 
@@ -156,10 +156,9 @@ ${top name 4}	${top pid 4} ${top cpu 4} ${top mem 4}
 ##          DATE/TIME           ##
 ##################################
 ${color dimgray}DATE ${hr 2}${color}
-
 #${alignc 19}${font Arial white:size=18}${time %H:%M}${font}
 #${voffset 2}${alignc}${time %A, %d %B %Y}
-${font Arial white:size=10}${time %H:%M}${font}
+${font Arial white:size=18}${time %H:%M}${font}
 ${time %A, %d %B %Y}
 
 ##################################
@@ -168,13 +167,13 @@ ${time %A, %d %B %Y}
 ${color dimgray}NETWORK ${hr 2}${color}
 ${if_existing /proc/net/route wlp7s0}
 #${if_existing /proc/net/route enp7s0}
-${voffset -6}${font PizzaDude Bullets:size=10}O${font} up: ${upspeed wlp7s0}${alignr}${color dodgerblue3}${upspeedgraph wlp7s0 8,60}${color}
-#${voffset -6}${font PizzaDude Bullets:size=10}O${font} up: ${upspeed enp7s0}${alignr}${color dodgerblue3}${upspeedgraph enp7s0 8,60}${color}
-${voffset 4}${font PizzaDude Bullets:size=10}U${font} down: ${downspeed wlp7s0}${alignr}${color dodgerblue3}${downspeedgraph wlp7s0 8,60}${color}
-#${voffset 4}${font PizzaDude Bullets:size=10}U${font} down: ${downspeed enp7s0}${alignr}${color dodgerblue3}${downspeedgraph enp7s0 8,60}${color}
-${voffset 4}${font PizzaDude Bullets:size=10}N${font} upload: ${alignr}${totalup wlp7s0}
-#${voffset 4}${font PizzaDude Bullets:size=10}N${font} upload: ${alignr}${totalup enp7s0}
-${voffset 4}${font PizzaDude Bullets:size=10}T${font} download: ${alignr}${totaldown wlp7s0}
-#${voffset 4}${font PizzaDude Bullets:size=10}T${font} download: ${alignr}${totaldown enp7s0}
+${voffset -6}${font PizzaDude Bullets:size=12}O${font} up: ${upspeed wlp7s0}${alignr}${color dodgerblue3}${upspeedgraph wlp7s0 8,60}${color}
+#${voffset -6}${font PizzaDude Bullets:size=12}O${font} up: ${upspeed enp7s0}${alignr}${color dodgerblue3}${upspeedgraph enp7s0 8,60}${color}
+${voffset 4}${font PizzaDude Bullets:size=12}U${font} down: ${downspeed wlp7s0}${alignr}${color dodgerblue3}${downspeedgraph wlp7s0 8,60}${color}
+#${voffset 4}${font PizzaDude Bullets:size=12}U${font} down: ${downspeed enp7s0}${alignr}${color dodgerblue3}${downspeedgraph enp7s0 8,60}${color}
+${voffset 4}${font PizzaDude Bullets:size=12}N${font} upload: ${alignr}${totalup wlp7s0}
+#${voffset 4}${font PizzaDude Bullets:size=12}N${font} upload: ${alignr}${totalup enp7s0}
+${voffset 4}${font PizzaDude Bullets:size=12}T${font} download: ${alignr}${totaldown wlp7s0}
+#${voffset 4}${font PizzaDude Bullets:size=12}T${font} download: ${alignr}${totaldown enp7s0}
 ${endif}
 ]];

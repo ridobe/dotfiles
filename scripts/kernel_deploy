@@ -25,17 +25,6 @@ echo "cleaning up 7z files from /usr/lib/modules..."
 sudo rm -rf /usr/lib/modules/*.7z
 sleep 1
 echo "..."
+echo "..."
+echo "..."
 echo "done"
-echo "!!!"
-echo "!!!"
-echo "!!!"
-echo "do not forget to modify ridobe-primary.conf before you reboot"
-echo "!!!"
-echo "!!!"
-echo "!!!"
-
-
-
-
-
-
