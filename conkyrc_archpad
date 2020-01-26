@@ -104,7 +104,7 @@ ${color dimgray}SYSTEM ${hr 2}${color}
 ${font DejaVu:size=10}${nodename} -xfce${font}
 ${execi 1000 cat /proc/cpuinfo | grep 'model name' | cut -c 14-30 | uniq}
 kernel: ${exec uname -r | grep 'seiei' | tr -d '+'}
-${alignr 20}${color dodgerblue3}${font DejaVu Sans:size=6:italic} -elite, powerful, efficient${color}${font}
+${alignr 20}${color dodgerblue3}${font DejaVu Sans:size=10:italic} -elite, powerful, efficient${color}${font}
 uptime: $uptime
 bios: ${execi 1 sudo dmidecode -t 0 | grep 'Version'}
 ##################################
@@ -156,8 +156,7 @@ ${top name 4}	${top pid 4} ${top cpu 4} ${top mem 4}
 ##          DATE/TIME           ##
 ##################################
 ${color dimgray}DATE ${hr 2}${color}
-#${alignc 19}${font Arial white:size=18}${time %H:%M}${font}
-#${voffset 2}${alignc}${time %A, %d %B %Y}
+
 ${font Arial white:size=18}${time %H:%M}${font}
 ${time %A, %d %B %Y}
 
