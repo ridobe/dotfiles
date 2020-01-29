@@ -129,9 +129,12 @@ RAM PN: ${exec sudo dmidecode -t 17 | grep 'Part' | head -4 | tail -1 | cut -c 1
 ##             CPU              ##
 ##################################
 ${color dimgray}CPU ${hr 2}${color}
-temp: ${execi 1 sensors -f zenpower-pci-00c3 | grep 'Tdie'| tr -d '+' | tail -n 2 | cut -c 14-22 | awk '{print ($1-32)*5/9}' OFMT="%.1f"}°C/${execi 1 sensors -f zenpower-pci-00c3 | grep 'Tdie'| tr -d '+' | tail -n 2 | cut -c 14-22} limit: (95°C/203°F)
-Core: ${execi 1 sensors -f zenpower-pci-00c3 | grep 'SVI2_Core'| cut -c 14-24}
-SoC: ${execi 1 sensors -f zenpower-pci-00c3 | grep 'SVI2_SoC'| cut -c 15-22}
+temp: ${execi 1 sensors -f k10temp-pci-00c3 | grep 'Tdie'| tr -d '+' | tail -n 2 | cut -c 14-22 | awk '{print ($1-32)*5/9}' OFMT="%.1f"}°C/${execi 1 sensors -f k10temp-pci-00c3 | grep 'Tdie'| tr -d '+' | tail -n 2 | cut -c 14-22} limit: (95°C/203°F)
+Vcore: ${execi 1 sensors -f k10temp-pci-00c3 | grep 'Vcore'| cut -c 14-24}
+VsoC: ${execi 1 sensors -f k10temp-pci-00c3 | grep 'Vsoc'| cut -c 15-22}
+#temp: ${execi 1 sensors -f zenpower-pci-00c3 | grep 'Tdie'| tr -d '+' | tail -n 2 | cut -c 14-22 | awk '{print ($1-32)*5/9}' OFMT="%.1f"}°C/${execi 1 sensors -f zenpower-pci-00c3 | grep 'Tdie'| tr -d '+' | tail -n 2 | cut -c 14-22} limit: (95°C/203°F)
+#Vcore: ${execi 1 sensors -f zenpower-pci-00c3 | grep 'SVI2_Core'| cut -c 14-24}
+#VsoC: ${execi 1 sensors -f zenpower-pci-00c3 | grep 'SVI2_SoC'| cut -c 15-22}
 
 cpu_0: ${freq_g cpu0} Ghz ${color dodgerblue3}${cpu cpu0}%  ${cpubar cpu0}${color}
 cpu_1: ${freq_g cpu1} Ghz ${color dodgerblue3}${cpu cpu1}%  ${cpubar cpu1}${color}
