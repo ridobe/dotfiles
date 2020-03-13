@@ -8,6 +8,7 @@ alias pacnew='sudo find /etc -regextype posix-extended -regex ".+\.pac(new|save|
 #working directories
 alias tw='cd $HOME/temp_work && ls -la'
 alias kb='cd $HOME/kernel_build/linux'
+alias coral='cd $HOME/android_devices/coral && ls -la'
 alias hotdogb='cd $HOME/android_devices/hotdogb && ls -la'
 alias devices='cd $HOME/android_devices && ls -la'
 
