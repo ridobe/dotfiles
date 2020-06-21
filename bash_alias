@@ -9,7 +9,7 @@ alias pacnew='sudo find /etc -regextype posix-extended -regex ".+\.pac(new|save|
 alias tw='cd $HOME/temp_work && ls -la'
 alias kb='cd $HOME/kernel_build/linux'
 alias coral='cd $HOME/android_devices/coral && ls -la'
-alias hotdogb='cd $HOME/android_devices/hotdogb && ls -la'
+#alias hotdogb='cd $HOME/android_devices/hotdogb && ls -la'
 alias devices='cd $HOME/android_devices && ls -la'
 
 #insync
@@ -24,7 +24,6 @@ alias ssha='eval ssh-agent -s && ssh-add ~/.ssh/id_rsa'
 alias sshc='cat /home/ridobe/.ssh/config | grep "Host"'
 alias nordc='nordvpn connect'
 alias nordd='nordvpn disconnect'
-#alias unwait='sudo systemctl restart NetworkManager-wait-online'
 alias initgen='sudo mkinitcpio -p ridobe-seiei'
 alias md5='md5sum'
 alias gitpush='git status && ssha && git add * && git commit -m "updated/committed via script" && git push'
