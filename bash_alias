@@ -16,6 +16,7 @@ alias tw='cd $HOME/temp_work && ls -la'
 alias kb='cd $HOME/kernel_build/linux'
 alias coral='cd $HOME/android_devices/coral && ls -la'
 alias redfin='cd $HOME/android_devices/redfin && ls -la'
+alias bonito='cd $HOME/android_devices/bonito && ls -la'
 alias devices='cd $HOME/android_devices && ls -la'
 
 ##docker OSX
