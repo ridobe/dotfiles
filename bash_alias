@@ -2,21 +2,26 @@
 alias ls='ls --color=auto --group-directories-first'
 alias la='ls -alF --color=auto'
 
+##Make some possibly destructive commands more interactive.
+#alias rm='rm -i'
+#alias mv='mv -i'
+#alias cp='cp -i'
+
 ##update
 #alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 alias pacnew='sudo find /etc -regextype posix-extended -regex ".+\.pac(new|save|orig)" 2> /dev/null'
 
-#working directories
+##working directories
 alias tw='cd $HOME/temp_work && ls -la'
 alias kb='cd $HOME/kernel_build/linux'
 alias coral='cd $HOME/android_devices/coral && ls -la'
-#alias hotdogb='cd $HOME/android_devices/hotdogb && ls -la'
+alias redfin='cd $HOME/android_devices/redfin && ls -la'
 alias devices='cd $HOME/android_devices && ls -la'
 
-#docker OSX
-alias osx='cd $HOME/android_devices/iphone_SE/OSX/OSX-KVM && ./OpenCore-Boot.sh'
+##docker OSX
+#alias osx='cd $HOME/android_devices/iphone_SE/OSX/OSX-KVM && ./OpenCore-Boot.sh'
 
-#insync
+##insync
 #alias insyncfull='insync start --synchronous-full'
 #alias insyncheadless='/usr/bin/insync-headless start'
 #alias insyncquit='/usr/bin/insync-headless quit'
