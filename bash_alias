@@ -1,5 +1,6 @@
 ##color
-alias ls='ls --color --group-directories-first'
+alias ls='ls --color=auto --group-directories-first'
+alias la='ls -alF --color=auto'
 
 ##update
 #alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
@@ -11,6 +12,9 @@ alias kb='cd $HOME/kernel_build/linux'
 alias coral='cd $HOME/android_devices/coral && ls -la'
 #alias hotdogb='cd $HOME/android_devices/hotdogb && ls -la'
 alias devices='cd $HOME/android_devices && ls -la'
+
+#docker OSX
+alias osx='cd $HOME/android_devices/iphone_SE/OSX/OSX-KVM && ./OpenCore-Boot.sh'
 
 #insync
 #alias insyncfull='insync start --synchronous-full'

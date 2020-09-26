@@ -107,10 +107,11 @@ kernel: ${exec uname -r | grep 'seiei' | tr -d '+'}
 ${alignr 20}${color dodgerblue3}${font DejaVu Sans:size=10:italic} -elite, powerful, efficient${color}${font}
 uptime: $uptime
 bios: ${exec sudo dmidecode -t 0 | grep 'Version'| cut -c 11-14 | uniq}
+#motherboard: ${exec sudo lshw | grep 'product: X570' | tail -1 | cut -c 17-35 | uniq}
+
 ##################################
 ##             GPU              ##
 ##################################
-
 ${color dimgray}GPU ${hr 2}${color}
 #type: Ellesmere [Polaris10] Sapphire RX 470
 type: ${exec lspci -vnn | grep Sapphire | head -1 | cut -c 34-66 | uniq}
