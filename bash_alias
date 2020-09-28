@@ -29,6 +29,7 @@ alias devices='cd $HOME/android_devices && ls -la'
 #alias insyncrestart='sudo systemctl stop insync@ridobe && sudo systemctl start insync@ridobe'
 
 ##misc
+alias reflector='sudo systemctl start reflector'
 alias scheduler='test -z $(dmesg | grep -i muqss) && echo CFS || echo MuQSS'
 alias gz='gunzip -c /proc/config.gz | grep'
 alias ssha='eval ssh-agent -s && ssh-add ~/.ssh/id_rsa'
