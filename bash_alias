@@ -2,19 +2,29 @@
 alias ls='ls --color=auto --group-directories-first'
 alias la='ls -alF --color=auto'
 
-##Make some possibly destructive commands more interactive.
-#alias rm='rm -i'
-#alias mv='mv -i'
-#alias cp='cp -i'
+##Make some commands more helpful and interactive.
+alias mkdir='mkdir -iv'
+alias mv='mv -iv'
+alias cp='cp -iv'
+
+##mullvad (via nmcli)
+#alias mullc='nmcli connection up mlvd-us22'
+#alias mulld='nmcli connection down mlvd-us22'
+#alias mullstat='nmcli device show mlvd-us22'
+
+##nordvpn/nordlynx
+#alias nordc='nordvpn connect'
+#alias nordd='nordvpn disconnect'
 
 ##update
 #alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 alias pacnew='sudo find /etc -regextype posix-extended -regex ".+\.pac(new|save|orig)" 2> /dev/null'
+alias piupdate='sudo apt-get update && sudo apt-get upgrade -y && pihole -up && pihole -g'
 
 ##working directories
 alias tw='cd $HOME/temp_work && ls -la'
 alias kb='cd $HOME/kernel_build/linux'
-alias coral='cd $HOME/android_devices/coral && ls -la'
+#alias coral='cd $HOME/android_devices/coral && ls -la'
 alias redfin='cd $HOME/android_devices/redfin && ls -la'
 alias bonito='cd $HOME/android_devices/bonito && ls -la'
 alias devices='cd $HOME/android_devices && ls -la'
@@ -34,8 +44,6 @@ alias scheduler='test -z $(dmesg | grep -i muqss) && echo CFS || echo MuQSS'
 alias gz='gunzip -c /proc/config.gz | grep'
 alias ssha='eval ssh-agent -s && ssh-add ~/.ssh/id_rsa'
 alias sshc='cat /home/ridobe/.ssh/config | grep "Host"'
-alias nordc='nordvpn connect'
-alias nordd='nordvpn disconnect'
 alias initgen='sudo mkinitcpio -p ridobe-seiei'
 alias md5='md5sum'
 alias gitpush='git status && ssha && git add * && git commit -m "updated/committed via script" && git push'
