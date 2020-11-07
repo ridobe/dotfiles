@@ -17,9 +17,10 @@ alias cp='cp -iv'
 #alias nordd='nordvpn disconnect'
 
 ##update
+alias piupdate='sudo apt-get update && sudo apt-get upgrade -y && pihole -up && pihole -g'
+alias piholelog='tail -n 2000 /var/log/pihole.log | grep gravity'
 #alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 alias pacnew='sudo find /etc -regextype posix-extended -regex ".+\.pac(new|save|orig)" 2> /dev/null'
-alias piupdate='sudo apt-get update && sudo apt-get upgrade -y && pihole -up && pihole -g'
 
 ##working directories
 alias tw='cd $HOME/temp_work && ls -la'
