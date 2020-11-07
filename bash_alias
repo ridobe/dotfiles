@@ -7,37 +7,17 @@ alias mkdir='mkdir -iv'
 alias mv='mv -iv'
 alias cp='cp -iv'
 
-##mullvad (via nmcli)
-#alias mullc='nmcli connection up mlvd-us22'
-#alias mulld='nmcli connection down mlvd-us22'
-#alias mullstat='nmcli device show mlvd-us22'
-
-##nordvpn/nordlynx
-#alias nordc='nordvpn connect'
-#alias nordd='nordvpn disconnect'
-
 ##update
 alias piupdate='sudo apt-get update && sudo apt-get upgrade -y && pihole -up && pihole -g'
 alias piholelog='tail -n 2000 /var/log/pihole.log | grep gravity'
-#alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 alias pacnew='sudo find /etc -regextype posix-extended -regex ".+\.pac(new|save|orig)" 2> /dev/null'
 
 ##working directories
 alias tw='cd $HOME/temp_work && ls -la'
 alias kb='cd $HOME/kernel_build/linux'
-#alias coral='cd $HOME/android_devices/coral && ls -la'
 alias redfin='cd $HOME/android_devices/redfin && ls -la'
 alias bonito='cd $HOME/android_devices/bonito && ls -la'
 alias devices='cd $HOME/android_devices && ls -la'
-
-##docker OSX
-#alias osx='cd $HOME/android_devices/iphone_SE/OSX/OSX-KVM && ./OpenCore-Boot.sh'
-
-##insync
-#alias insyncfull='insync start --synchronous-full'
-#alias insyncheadless='/usr/bin/insync-headless start'
-#alias insyncquit='/usr/bin/insync-headless quit'
-#alias insyncrestart='sudo systemctl stop insync@ridobe && sudo systemctl start insync@ridobe'
 
 ##misc
 alias reflector='sudo systemctl start reflector'
