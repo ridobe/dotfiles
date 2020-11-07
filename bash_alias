@@ -7,8 +7,8 @@ alias mv='mv -iv'
 alias cp='cp -iv'
 
 ##update
-alias piupdate='sudo apt-get update && sudo apt-get upgrade -y && pihole -up && pihole -g'
-alias piholelog='tail -n 2000 /var/log/pihole.log | grep gravity'
+alias maint='sudo apt-get update && sudo apt-get upgrade -y && pihole -up && pihole -g'
+alias gravity='tail -n 2000 /var/log/pihole.log | grep gravity'
 alias pacnew='sudo find /etc -regextype posix-extended -regex ".+\.pac(new|save|orig)" 2> /dev/null'
 
 ##working directories
