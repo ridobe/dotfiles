@@ -6,6 +6,10 @@ alias mkdir='mkdir -iv'
 alias mv='mv -iv'
 alias cp='cp -iv'
 
+##python
+alias pyth2='ln -s /usr/bin/python2 ~/bin/python'
+alias pyth3='rm ~/bin/python'
+
 ##update
 alias piupdate='sudo apt-get update && sudo apt-get upgrade -y && pihole -up && pihole -g'
 alias gravity='tail -f /var/log/pihole.log | grep gravity'
