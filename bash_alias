@@ -15,6 +15,10 @@ alias piupdate='sudo apt-get update && sudo apt-get upgrade -y && pihole -up && 
 alias gravity='tail -f /var/log/pihole.log | grep gravity'
 alias pacnew='sudo find /etc -regextype posix-extended -regex ".+\.pac(new|save|orig)" 2> /dev/null'
 
+##wireguard
+alias wgup='wg-quick up wg0'
+alias wgdown='wg-quick down wg0'
+
 ##working directories
 alias tw='cd $HOME/temp_work && ls -la'
 alias kb='cd $HOME/kernel_build/linux'
