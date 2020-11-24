@@ -19,6 +19,11 @@ alias pacnew='sudo find /etc -regextype posix-extended -regex ".+\.pac(new|save|
 alias wgup='sudo wg-quick up wg0'
 alias wgdown='sudo wg-quick down wg0'
 
+##mullvad
+alias mullvadup='sudo systemctl start mullvad-daemon'
+alias mullvaddown='sudo systemctl stop mullvad-daemon'
+alias mullvadstatus='systemctl status mullvad-daemon'
+
 ##working directories
 alias tw='cd $HOME/temp_work && ls -la'
 alias kb='cd $HOME/kernel_build/linux'
