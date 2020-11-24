@@ -25,12 +25,13 @@ alias mullvaddown='sudo systemctl stop mullvad-daemon && systemctl status mullva
 alias mullvadstatus='systemctl status mullvad-daemon'
 
 ##working directories
+alias dotfiles='$HOME/dotfiles'
 alias tw='cd $HOME/temp_work && ls -la'
 alias kb='cd $HOME/kernel_build/linux'
 alias redfin='cd $HOME/android_devices/redfin && ls -la'
 alias bonito='cd $HOME/android_devices/bonito && ls -la'
 alias devices='cd $HOME/android_devices && ls -la'
-alias gp='cd git_projects && ls -la'
+alias gp='cd $HOME/git_projects && ls -la'
 
 ##misc
 alias reflector='sudo systemctl start reflector'
