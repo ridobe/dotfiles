@@ -103,7 +103,8 @@ export HISTCONTROL=ignoreboth:erasedups
 shopt -s histappend
 
 #set $PATH
-export PATH=$PATH:~/bin
+#export PATH=$PATH:~/bin
+export PATH=/usr/bin:$PATH
 export PATH=$PATH:~/android-sdk-linux/platform-tools
 export PATH=$PATH:~/android-sdk-linux/tools/bin
 export PATH=$PATH:~/android-sdk-linux/tools

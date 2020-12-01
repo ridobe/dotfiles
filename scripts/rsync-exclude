@@ -5,9 +5,12 @@
 /.local/share/Trash
 /CloudStation
 /dotfiles
+/Desktop
+/dotfiles_old
 /android-sdk-linux
 /kernel_build
 /Music
+/pi-hole
 /android_devices
 /Books
 /Backdrops_2560x1080_and-images
@@ -17,3 +20,4 @@
 /nordvpn-linux-system-tray
 /gopro
 /temp_work
+/git_projects
