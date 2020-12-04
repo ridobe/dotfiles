@@ -2,7 +2,7 @@
 alias ls='ls --color=auto --group-directories-first'
 
 ##Make some commands more helpful and interactive.
-#alias mkdir='mkdir -iv'
+alias mkdir='mkdir -v'
 alias mv='mv -iv'
 alias cp='cp -iv'
 
