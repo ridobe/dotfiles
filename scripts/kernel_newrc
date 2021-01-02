@@ -1,0 +1,24 @@
+#!/bin/bash
+
+#
+# Retrieve kernel from GD and deploy.
+# by ridobe18 at gmail dot com
+#
+
+srcdir1="/boot"
+
+echo "..::Script to remove and replace new stable kernel::.."
+sleep 3
+echo "removing old stable version"
+echo " "
+sleep 1
+cd "$srcdir1" && sudo rm -rf *stable*
+echo " "
+sleep 3
+echo "copying and creating new stable kernel"
+sudo cp initramfs-ridobe-seiei.img initramfs-ridobe-seiei-stable.img && sudo cp vmlinuz-ridobe-seiei vmlinuz-ridobe-seiei-stable
+sleep 1
+echo "..."
+echo "..."
+echo "..."
+echo "done"
