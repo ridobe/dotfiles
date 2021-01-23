@@ -20,9 +20,9 @@ alias wgup='sudo wg-quick up wg0'
 alias wgdown='sudo wg-quick down wg0'
 
 ##mullvad
-alias mullvadup='sudo systemctl start mullvad-daemon && systemctl status mullvad-daemon'
-alias mullvaddown='sudo systemctl stop mullvad-daemon && systemctl status mullvad-daemon'
-alias mullvadstatus='systemctl status mullvad-daemon'
+#alias mullvadup='sudo systemctl start mullvad-daemon && systemctl status mullvad-daemon'
+#alias mullvaddown='sudo systemctl stop mullvad-daemon && systemctl status mullvad-daemon'
+#alias mullvadstatus='systemctl status mullvad-daemon'
 alias mullvadconnected='curl https://am.i.mullvad.net/connected'
 
 ##working directories
@@ -33,6 +33,11 @@ alias redfin='cd $HOME/android_devices/redfin && ls -la'
 alias bonito='cd $HOME/android_devices/bonito && ls -la'
 alias devices='cd $HOME/android_devices && ls -la'
 alias gp='cd $HOME/git_projects && ls -la'
+
+##scrot
+alias scrotall='scrot -d 5 -m /home/ridobe/temp_work/screenshots/'
+alias scrotgrab='scrot -s /home/ridobe/temp_work/screenshots/'
+alias scrotwindow='scrot -u /home/ridobe/temp_work/screenshots/'
 
 ##misc
 alias reflector='sudo systemctl start reflector'

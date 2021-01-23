@@ -109,6 +109,7 @@ uptime: $uptime
 bios: ${exec sudo dmidecode -t 0 | grep 'Version'| cut -c 11-14 | uniq}
 motherboard: X570 AORUS PRO WIFI
 #motherboard: ${exec sudo lshw | grep 'product: X570' | tail -1 | cut -c 17-35 | uniq}
+#vpn status: ${font DejaVu Sans:size=14:italic}${execpi 30 sh ~/home/ridobe/dotfiles/vpn_color.sh}${font}
 
 ##################################
 ##             GPU              ##
