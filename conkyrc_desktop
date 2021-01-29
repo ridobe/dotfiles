@@ -90,12 +90,11 @@ conky.config = {
 
 -- Add spaces to keep things from moving about? This only affects certain objects.
 	use_spacer = 'none',
-
+	
 };
 
 conky.text = [[
-#${image /home/ridobe/Google_Drive/Linux/arch/Archimages/penguin-icon.png -p 50,730 -s 200x200}
-${image /home/ridobe/Backdrops_2560x1080_and-images/archimages/archlinux-logo-white.png -p -0,890 -s 300x99.5}
+${image $HOME/Backdrops_2560x1080_and-images/archimages/archlinux-logo-white.png -p -0,900 -s 300x99.5}
 #-p is position, -s is size (728x455) original
 ##################################
 ##            SYSTEM            ##
@@ -109,7 +108,10 @@ uptime: $uptime
 bios: ${exec sudo dmidecode -t 0 | grep 'Version'| cut -c 11-14 | uniq}
 motherboard: X570 AORUS PRO WIFI
 #motherboard: ${exec sudo lshw | grep 'product: X570' | tail -1 | cut -c 17-35 | uniq}
-#vpn status: ${font DejaVu Sans:size=14:italic}${execpi 30 sh ~/home/ridobe/dotfiles/vpn_color.sh}${font}
+mullvad server: ${color green2}${execpi 1 cat /home/ridobe/temp_work/mullvad_conky/mullvad_hostname.txt | tr -d '"'}${color}
+#if up: ${if_match us22-wireguard | ${color green2}${execpi 5 cat /home/ridobe/temp_work/mullvad_conky/mullvad_hostname.txt | tr -d '"'}${color}${else}${color firebrick2}not connected$${color}{endif}
+#if up: ${color green2}${execpi 5 cat /home/ridobe/temp_work/mullvad_conky/mullvad_hostname.txt | tr -d '"'}${if_match us22-wireguard | ${color}${else}${color firebrick2}not connected$${color}{endif}
+#test: ${eval $${if_existing ${execi 1 echo "$HOME/temp_work/mullvad_conky/mullvad_hostname.txt"}} us22-wireguard $${else} not connected $${endif} }
 
 ##################################
 ##             GPU              ##
@@ -117,7 +119,7 @@ motherboard: X570 AORUS PRO WIFI
 ${color dimgray}GPU ${hr 2}${color}
 #type: Ellesmere [Polaris10] Sapphire RX 470
 type: ${exec lspci -vnn | grep Sapphire | head -1 | cut -c 34-66 | uniq}
-#freq: $freq MHz
+freq: $freq MHz
 temp: ${execi 1 sensors -f amdgpu-pci-0900 | grep edge | tr -d '+' | cut -c 14-22}
 
 ##################################

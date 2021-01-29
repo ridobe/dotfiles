@@ -1,0 +1,4 @@
+#!/bin/bash
+
+wrkdir="/$HOME/temp_work/mullvad_conky"
+w3m https://am.i.mullvad.net/json | jshon -e mullvad_exit_ip_hostname > "$wrkdir"/mullvad_hostname.txt
