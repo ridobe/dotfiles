@@ -94,8 +94,7 @@ conky.config = {
 };
 
 conky.text = [[
-#${image /home/ridobe/Google_Drive/Linux/arch/Archimages/penguin-icon.png -p 50,730 -s 200x200}
-${image /home/ridobe/Backdrops_2560x1080_and-images/archimages/archlinux-logo-white.png -p -0,820 -s 300x99.5}
+${image /home/ridobe/Backdrops_2560x1080_and-images/archimages/archlinux-logo-white.png -p -0,850 -s 300x99.5}
 #-p is position, -s is size (728x455) original
 ##################################
 ##            SYSTEM            ##
@@ -107,10 +106,11 @@ kernel: ${exec uname -r | grep 'seiei' | tr -d '+'}
 ${alignr 20}${color dodgerblue3}${font DejaVu Sans:size=10:italic} -elite, powerful, efficient${color}${font}
 uptime: $uptime
 bios: ${execi 1 sudo dmidecode -t 0 | grep 'Version'}
+mullvad server: ${color green2}${execpi 1 cat /home/ridobe/temp_work/mullvad_conky/mullvad_hostname.txt | tr -d '"'}${color}
+
 ##################################
 ##             GPU              ##
 ##################################
-
 ${color dimgray}GPU ${hr 2}${color}
 type: AMD radeon Vega 8
 #freq: $freq MHz
