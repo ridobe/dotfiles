@@ -133,7 +133,7 @@ ${color dimgray}CPU ${hr 2}${color}
 #temp: ${execi 1 sensors -f k10temp-pci-00c3 | grep 'Tdie'| tr -d '+' | tail -n 2 | cut -c 14-22 | awk '{print ($1-32)*5/9}' OFMT="%.1f"}°C/${execi 1 sensors -f k10temp-pci-00c3 | grep 'Tdie'| tr -d '+' | tail -n 2 | cut -c 14-22} limit: (95°C/203°F)
 #Vcore: ${execi 1 sensors -f k10temp-pci-00c3 | grep 'Vcore'| cut -c 14-24}
 #VsoC: ${execi 1 sensors -f k10temp-pci-00c3 | grep 'Vsoc'| cut -c 15-22}
-temp: ${color navajowhite3}${execi 1 sensors -f zenpower-pci-00c3 | grep 'Tdie'| tr -d '+' | tail -n 2 | cut -c 14-22 | awk '{print ($1-32)*5/9}' OFMT="%.1f"}°C/${execi 1 sensors -f zenpower-pci-00c3 | grep 'Tdie'| tr -d '+' | tail -n 2 | cut -c 14-22} limit: (95°C/203°F)${color}
+temp: ${color navajowhite3}${execi 1 sensors -f zenpower-pci-00c3 | grep 'Tdie'| tr -d '+' | tail -n 2 | cut -c 14-22 | awk '{print ($1-32)*5/9}' OFMT="%.1f"}°C/${execi 1 sensors -f zenpower-pci-00c3 | grep 'Tdie'| tr -d '+' | tail -n 2 | cut -c 14-22}${color} limit: ${color navajowhite3}(95°C/203°F)${color}
 Vcore: ${color navajowhite3}${execi 1 sensors -f zenpower-pci-00c3 | grep 'SVI2_Core'| cut -c 14-24}${color}
 VsoC: ${color navajowhite3}${execi 1 sensors -f zenpower-pci-00c3 | grep 'SVI2_SoC'| cut -c 15-22}${color}
 
