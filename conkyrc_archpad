@@ -106,7 +106,8 @@ kernel: ${exec uname -r | grep 'seiei' | tr -d '+'}
 ${alignr 20}${color orange3}${font DejaVu Sans:size=10:italic} -elite, powerful, efficient${color}${font}
 uptime: $uptime
 bios: ${execi 1 sudo dmidecode -t 0 | grep 'Version'}
-mullvad server: ${color green2}${execpi 1 cat /home/ridobe/temp_work/mullvad_conky/mullvad_hostname.txt | tr -d '"'}${color}
+mullvad server: ${if_existing /proc/net/route wg0}${color green2}wireguard chicago${color}${else}${color firebrick2}not connected${color}${endif}
+#mullvad server: ${color green2}${execpi 1 cat /home/ridobe/temp_work/mullvad_conky/mullvad_hostname.txt | tr -d '"'}${color}
 
 ##################################
 ##             GPU              ##
