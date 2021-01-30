@@ -105,7 +105,7 @@ ${execi 1000 cat /proc/cpuinfo | grep 'model name' | cut -c 14-30 | uniq}
 kernel: ${color navajowhite3}${exec uname -r | grep 'seiei' | tr -d '+'}${color}
 ${alignr 20}${color mediumturquoise}${font DejaVu Sans:size=10:italic} -elite, powerful, efficient${color}${font}
 uptime: ${color navajowhite3}$uptime${color}
-bios: ${color navajowhite3}${execi 1 sudo dmidecode -t 0 | grep 'Version'}${color}
+bios: ${color navajowhite3}${execi 1 sudo dmidecode -t 0 | grep 'Version' | cut -c 11-28 | uniq}${color}
 mullvad server: ${if_existing /proc/net/route wg0}${color green2}wireguard chicago${color}${else}${color firebrick2}not connected${color}${endif}
 
 ##################################
