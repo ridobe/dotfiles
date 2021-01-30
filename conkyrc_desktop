@@ -108,10 +108,8 @@ uptime: $uptime
 bios: ${exec sudo dmidecode -t 0 | grep 'Version'| cut -c 11-14 | uniq}
 motherboard: X570 AORUS PRO WIFI
 #motherboard: ${exec sudo lshw | grep 'product: X570' | tail -1 | cut -c 17-35 | uniq}
-mullvad server: ${color green2}${execpi 1 cat /home/ridobe/temp_work/mullvad_conky/mullvad_hostname.txt | tr -d '"'}${color}
-#if up: ${if_match us22-wireguard | ${color green2}${execpi 5 cat /home/ridobe/temp_work/mullvad_conky/mullvad_hostname.txt | tr -d '"'}${color}${else}${color firebrick2}not connected$${color}{endif}
-#if up: ${color green2}${execpi 5 cat /home/ridobe/temp_work/mullvad_conky/mullvad_hostname.txt | tr -d '"'}${if_match us22-wireguard | ${color}${else}${color firebrick2}not connected$${color}{endif}
-#test: ${eval $${if_existing ${execi 1 echo "$HOME/temp_work/mullvad_conky/mullvad_hostname.txt"}} us22-wireguard $${else} not connected $${endif} }
+mullvad server: ${if_existing /proc/net/route wg0}${color green2}wireguard chicago${color}${else}${color firebrick2}not connected${color}${endif}
+#mullvad server: ${color green2}${execpi 1 cat /home/ridobe/temp_work/mullvad_conky/mullvad_hostname.txt | tr -d '"'}${color}
 
 ##################################
 ##             GPU              ##
