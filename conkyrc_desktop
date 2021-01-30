@@ -102,31 +102,29 @@ ${image $HOME/Backdrops_2560x1080_and-images/archimages/archlinux-logo-white.png
 ${color dimgray}SYSTEM ${hr 2}${color}
 ${font DejaVu:size=14}${nodename} -xfce${font}
 ${exec cat /proc/cpuinfo | grep 'model name' | cut -c 14-50 | uniq}
-kernel: ${exec uname -r | grep 'seiei' | tr -d '+'}
-${alignr 20}${color orange3}${font DejaVu Sans:size=10:italic} -elite, powerful, efficient${color}${font}
-uptime: $uptime
-bios: ${exec sudo dmidecode -t 0 | grep 'Version'| cut -c 11-14 | uniq}
-motherboard: X570 AORUS PRO WIFI
-#motherboard: ${exec sudo lshw | grep 'product: X570' | tail -1 | cut -c 17-35 | uniq}
-mullvad server: ${if_existing /proc/net/route wg0}${color green2}wireguard chicago${color}${else}${color firebrick2}not connected${color}${endif}
-#mullvad server: ${color green2}${execpi 1 cat /home/ridobe/temp_work/mullvad_conky/mullvad_hostname.txt | tr -d '"'}${color}
+kernel: ${color navajowhite3}${exec uname -r | grep 'seiei' | tr -d '+'}${color}
+${alignr 20}${color mediumturquoise}${font DejaVu Sans:size=10:italic} -elite, powerful, efficient${color}${font}
+uptime: ${color navajowhite3}$uptime${color}
+bios: ${color navajowhite3}${exec sudo dmidecode -t 0 | grep 'Version'| cut -c 11-14 | uniq}${color}
+motherboard: ${color navajowhite3}X570 AORUS PRO WIFI${color}
+mullvad server: ${if_existing /proc/net/route wg0}${color green2}wireguard chicago${color}${else}${font DejaVu Sans:size=10:italic}${color firebrick2}not connected${font}${color}${endif}
 
 ##################################
 ##             GPU              ##
 ##################################
 ${color dimgray}GPU ${hr 2}${color}
 #type: Ellesmere [Polaris10] Sapphire RX 470
-type: ${exec lspci -vnn | grep Sapphire | head -1 | cut -c 34-66 | uniq}
-freq: $freq MHz
-temp: ${execi 1 sensors -f amdgpu-pci-0900 | grep edge | tr -d '+' | cut -c 14-22}
+type: ${color navajowhite3}${exec lspci -vnn | grep Sapphire | head -1 | cut -c 34-66 | uniq}${color}
+freq: ${color navajowhite3}$freq MHz${color}
+temp: ${color navajowhite3}${execi 1 sensors -f amdgpu-pci-0900 | grep edge | tr -d '+' | cut -c 14-22}${color}
 
 ##################################
 ##             RAM              ##
 ##################################
 ${color dimgray}RAM ${hr 2}${color}
-RAM usage: $mem/$memmax - ${color orange3}$memperc% ${membar 4}${color}
-RAM clock: ${exec sudo dmidecode -t 17 | grep 'Speed' | head -7 | tail -1 | cut -c 9-12 | uniq}MHz
-RAM PN: ${exec sudo dmidecode -t 17 | grep 'Part' | head -4 | tail -1 | cut -c 14-30 | uniq}
+RAM usage: ${color navajowhite3}$mem/$memmax - ${color}${color mediumturquoise}$memperc% ${membar 4}${color}
+RAM clock: ${color navajowhite3}${exec sudo dmidecode -t 17 | grep 'Speed' | head -7 | tail -1 | cut -c 9-12 | uniq}MHz${color}
+RAM PN: ${color navajowhite3}${exec sudo dmidecode -t 17 | grep 'Part' | head -4 | tail -1 | cut -c 14-30 | uniq}${color}
 
 ##################################
 ##             CPU              ##
@@ -135,36 +133,36 @@ ${color dimgray}CPU ${hr 2}${color}
 #temp: ${execi 1 sensors -f k10temp-pci-00c3 | grep 'Tdie'| tr -d '+' | tail -n 2 | cut -c 14-22 | awk '{print ($1-32)*5/9}' OFMT="%.1f"}°C/${execi 1 sensors -f k10temp-pci-00c3 | grep 'Tdie'| tr -d '+' | tail -n 2 | cut -c 14-22} limit: (95°C/203°F)
 #Vcore: ${execi 1 sensors -f k10temp-pci-00c3 | grep 'Vcore'| cut -c 14-24}
 #VsoC: ${execi 1 sensors -f k10temp-pci-00c3 | grep 'Vsoc'| cut -c 15-22}
-temp: ${execi 1 sensors -f zenpower-pci-00c3 | grep 'Tdie'| tr -d '+' | tail -n 2 | cut -c 14-22 | awk '{print ($1-32)*5/9}' OFMT="%.1f"}°C/${execi 1 sensors -f zenpower-pci-00c3 | grep 'Tdie'| tr -d '+' | tail -n 2 | cut -c 14-22} limit: (95°C/203°F)
-Vcore: ${execi 1 sensors -f zenpower-pci-00c3 | grep 'SVI2_Core'| cut -c 14-24}
-VsoC: ${execi 1 sensors -f zenpower-pci-00c3 | grep 'SVI2_SoC'| cut -c 15-22}
+temp: ${color navajowhite3}${execi 1 sensors -f zenpower-pci-00c3 | grep 'Tdie'| tr -d '+' | tail -n 2 | cut -c 14-22 | awk '{print ($1-32)*5/9}' OFMT="%.1f"}°C/${execi 1 sensors -f zenpower-pci-00c3 | grep 'Tdie'| tr -d '+' | tail -n 2 | cut -c 14-22} limit: (95°C/203°F)${color}
+Vcore: ${color navajowhite3}${execi 1 sensors -f zenpower-pci-00c3 | grep 'SVI2_Core'| cut -c 14-24}${color}
+VsoC: ${color navajowhite3}${execi 1 sensors -f zenpower-pci-00c3 | grep 'SVI2_SoC'| cut -c 15-22}${color}
 
-cpu_0: ${freq_g cpu0} Ghz ${color orange3}${cpu cpu0}%  ${cpubar cpu0}${color}
-cpu_1: ${freq_g cpu1} Ghz ${color orange3}${cpu cpu1}%  ${cpubar cpu1}${color}
-cpu_2: ${freq_g cpu2} Ghz ${color orange3}${cpu cpu2}%  ${cpubar cpu2}${color}
-cpu_3: ${freq_g cpu3} Ghz ${color orange3}${cpu cpu3}%  ${cpubar cpu3}${color}
-cpu_4: ${freq_g cpu4} Ghz ${color orange3}${cpu cpu4}%  ${cpubar cpu4}${color}
-cpu_5: ${freq_g cpu5} Ghz ${color orange3}${cpu cpu5}%  ${cpubar cpu5}${color}
-cpu_6: ${freq_g cpu6} Ghz ${color orange3}${cpu cpu6}%  ${cpubar cpu6}${color}
-cpu_7: ${freq_g cpu7} Ghz ${color orange3}${cpu cpu7}%  ${cpubar cpu7}${color}
-cpu_8: ${freq_g cpu8} Ghz ${color orange3}${cpu cpu8}%  ${cpubar cpu8}${color}
-cpu_9: ${freq_g cpu9} Ghz ${color orange3}${cpu cpu9}%  ${cpubar cpu9}${color}
-cpu_10: ${freq_g cpu10} Ghz ${color orange3}${cpu cpu10}%  ${cpubar cpu10}${color}
-cpu_11: ${freq_g cpu11} Ghz ${color orange3}${cpu cpu11}%  ${cpubar cpu11}${color}
+cpu_0: ${color navajowhite3}${freq_g cpu0} Ghz ${color}${color mediumturquoise}${cpu cpu0}%  ${cpubar cpu0}${color}
+cpu_1: ${color navajowhite3}${freq_g cpu1} Ghz ${color}${color mediumturquoise}${cpu cpu1}%  ${cpubar cpu1}${color}
+cpu_2: ${color navajowhite3}${freq_g cpu2} Ghz ${color}${color mediumturquoise}${cpu cpu2}%  ${cpubar cpu2}${color}
+cpu_3: ${color navajowhite3}${freq_g cpu3} Ghz ${color}${color mediumturquoise}${cpu cpu3}%  ${cpubar cpu3}${color}
+cpu_4: ${color navajowhite3}${freq_g cpu4} Ghz ${color}${color mediumturquoise}${cpu cpu4}%  ${cpubar cpu4}${color}
+cpu_5: ${color navajowhite3}${freq_g cpu5} Ghz ${color}${color mediumturquoise}${cpu cpu5}%  ${cpubar cpu5}${color}
+cpu_6: ${color navajowhite3}${freq_g cpu6} Ghz ${color}${color mediumturquoise}${cpu cpu6}%  ${cpubar cpu6}${color}
+cpu_7: ${color navajowhite3}${freq_g cpu7} Ghz ${color}${color mediumturquoise}${cpu cpu7}%  ${cpubar cpu7}${color}
+cpu_8: ${color navajowhite3}${freq_g cpu8} Ghz ${color}${color mediumturquoise}${cpu cpu8}%  ${cpubar cpu8}${color}
+cpu_9: ${color navajowhite3}${freq_g cpu9} Ghz ${color}${color mediumturquoise}${cpu cpu9}%  ${cpubar cpu9}${color}
+cpu_10: ${color navajowhite3}${freq_g cpu10} Ghz ${color}${color mediumturquoise}${cpu cpu10}%  ${cpubar cpu10}${color}
+cpu_11: ${color navajowhite3}${freq_g cpu11} Ghz ${color}${color mediumturquoise}${cpu cpu11}%  ${cpubar cpu11}${color}
 
 ##################################
 ##          STATISTICS          ##
 ##################################
 ${color dimgray}STATISTICS ${hr 2}${color}
-processes: $processes   Running: $running_processes
-file systems: / ${fs_used /}/${fs_size /} ${color orange3}${fs_bar 6 /}${color}
-file systems: /home ${fs_used /home}/${fs_size /home} ${color orange3}${fs_bar 6 /home}${color}
+processes: ${color navajowhite3}$processes${color}   Running: ${color navajowhite3}$running_processes${color}
+file systems: ${color navajowhite3}/ ${fs_used /}/${fs_size /}${color} ${color mediumturquoise}${fs_bar 6 /}${color}
+file systems: ${color navajowhite3}/home ${fs_used /home}/${fs_size /home}${color} ${color mediumturquoise}${fs_bar 6 /home}${color}
 
 Name			PID   CPU%   MEM%
-${top name 1}	${top pid 1} ${top cpu 1} ${top mem 1}
-${top name 2}	${top pid 2} ${top cpu 2} ${top mem 2}
-${top name 3}	${top pid 3} ${top cpu 3} ${top mem 3}
-${top name 4}	${top pid 4} ${top cpu 4} ${top mem 4}
+${top name 1}	${color navajowhite3}${top pid 1} ${top cpu 1} ${top mem 1}${color}
+${top name 2}	${color navajowhite3}${top pid 2} ${top cpu 2} ${top mem 2}${color}
+${top name 3}	${color navajowhite3}${top pid 3} ${top cpu 3} ${top mem 3}${color}
+${top name 4}	${color navajowhite3}${top pid 4} ${top cpu 4} ${top mem 4}${color}
 
 ##################################
 ##          DATE/TIME           ##
@@ -180,13 +178,13 @@ ${time %A, %d %B %Y}
 ${color dimgray}NETWORK ${hr 2}${color}
 ${if_existing /proc/net/route wlp7s0}
 #${if_existing /proc/net/route enp7s0}
-${voffset -6}${font PizzaDude Bullets:size=14}O${font} up: ${upspeed wlp7s0}${alignr}${color orange3}${upspeedgraph wlp7s0 8,60}${color}
-#${voffset -6}${font PizzaDude Bullets:size=14}O${font} up: ${upspeed enp7s0}${alignr}${color orange3}${upspeedgraph enp7s0 8,60}${color}
-${voffset 4}${font PizzaDude Bullets:size=14}U${font} down: ${downspeed wlp7s0}${alignr}${color orange3}${downspeedgraph wlp7s0 8,60}${color}
-#${voffset 4}${font PizzaDude Bullets:size=14}U${font} down: ${downspeed enp7s0}${alignr}${color orange3}${downspeedgraph enp7s0 8,60}${color}
-${voffset 4}${font PizzaDude Bullets:size=14}N${font} upload: ${alignr}${totalup wlp7s0}
-#${voffset 4}${font PizzaDude Bullets:size=14}N${font} upload: ${alignr}${totalup enp7s0}
-${voffset 4}${font PizzaDude Bullets:size=14}T${font} download: ${alignr}${totaldown wlp7s0}
-#${voffset 4}${font PizzaDude Bullets:size=14}T${font} download: ${alignr}${totaldown enp7s0}
+${voffset -6}${font PizzaDude Bullets:size=14}O${font} up: ${color navajowhite3}${upspeed wlp7s0}${color}${alignr}${color mediumturquoise}${upspeedgraph wlp7s0 8,60}${color}
+#${voffset -6}${font PizzaDude Bullets:size=14}O${font} up: ${color navajowhite3}${upspeed enp7s0}${color}${alignr}${color mediumturquoise}${upspeedgraph enp7s0 8,60}${color}
+${voffset 4}${font PizzaDude Bullets:size=14}U${font} down: ${color navajowhite3}${downspeed wlp7s0}${color}${alignr}${color mediumturquoise}${downspeedgraph wlp7s0 8,60}${color}
+#${voffset 4}${font PizzaDude Bullets:size=14}U${font} down: ${color navajowhite3}${downspeed enp7s0}${color}${alignr}${color mediumturquoise}${downspeedgraph enp7s0 8,60}${color}
+${voffset 4}${font PizzaDude Bullets:size=14}N${font} upload: ${color navajowhite3}${alignr}${totalup wlp7s0}${color}
+#${voffset 4}${font PizzaDude Bullets:size=14}N${font} upload: ${color navajowhite3}${alignr}${totalup enp7s0}${color}
+${voffset 4}${font PizzaDude Bullets:size=14}T${font} download: ${color navajowhite3}${alignr}${totaldown wlp7s0}${color}
+#${voffset 4}${font PizzaDude Bullets:size=14}T${font} download: ${color navajowhite3}${alignr}${totaldown enp7s0}${color}
 ${endif}
 ]];
