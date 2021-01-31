@@ -1,6 +1,5 @@
 /.thumbnails
-/Downloads
-/googledrive
+/.ssh
 /.cache
 /.local/share/Trash
 /CloudStation
@@ -21,3 +20,5 @@
 /gopro
 /temp_work
 /git_projects
+/Downloads
+/googledrive
