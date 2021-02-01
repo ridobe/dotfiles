@@ -22,8 +22,7 @@ alias wgdown='sudo wg-quick down wg0'
 ##mullvad
 #alias mullvadup='sudo systemctl start mullvad-daemon && systemctl status mullvad-daemon'
 #alias mullvaddown='sudo systemctl stop mullvad-daemon && systemctl status mullvad-daemon'
-#alias mullvadstatus='systemctl status mullvad-daemon'
-alias mullvadconnected='curl https://am.i.mullvad.net/connected'
+alias mullvadstatus='curl https://am.i.mullvad.net/connected'
 
 ##working directories
 alias dotfiles='cd $HOME/dotfiles && ls -la'
