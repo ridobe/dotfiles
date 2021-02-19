@@ -98,9 +98,9 @@ export EDITOR="nano"
 HISTFILESIZE=
 HISTSIZE=
 shopt -s histappend
-export HISTTIMEFORMAT="%h %d %H:%M:%S "
-export HISTCONTROL=ignoreboth:erasedups
-shopt -s histappend
+HISTTIMEFORMAT="%h %d %H:%M:%S "
+HISTCONTROL=ignoreboth:erasedups
+PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
 #set $PATH
 export PATH=$PATH:~/bin

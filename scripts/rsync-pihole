@@ -2,4 +2,4 @@
 #Automated .sh file for rsync backups to Synology NAS.
 LOG=~/home/ridobe/rsync-pihole.log 2>&1
 echo "*** $(date -R) ***" >> $LOG
-rsync -a -e "ssh -p 2027" --delete --info=progress2 /home/ridobe/pihole/ ridobenet@ignorelist.com:/volume1/homes/ridobe/rsync_ridobe_pihole/pihole/ && echo "Successfully completed" >> $LOG
+rsync -a -e "ssh -p 2027" --delete --info=progress2 /home/ridobe/pihole/ ridobenet.ignorelist.com:/volume1/homes/ridobe/rsync_ridobe_pihole/pihole/ && echo "Successfully completed" >> $LOG
