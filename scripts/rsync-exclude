@@ -1,9 +1,10 @@
 /.thumbnails
 /.cache
 /.local/share/Trash
+/.ssh
 /CloudStation
-/dotfiles
 /Desktop
+/dotfiles
 /dotfiles_old
 /android-sdk-linux
 /kernel_build
