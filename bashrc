@@ -95,11 +95,13 @@ PROMPT_COMMAND=set_bash_prompt
 export EDITOR="nano"
 
 #History expansion, format and retention
+HISTFILE="$HOME/.bash_history."
 HISTFILESIZE=
 HISTSIZE=
 shopt -s histappend
 HISTTIMEFORMAT="%h %d %H:%M:%S "
 HISTCONTROL=ignoreboth:erasedups
+HISTIGNORE="ls:ps:history"
 PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
 #set $PATH
