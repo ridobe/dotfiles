@@ -107,7 +107,7 @@ ${alignr 20}${color mediumturquoise}${font DejaVu Sans:size=10:italic} -elite, p
 uptime: ${color navajowhite3}$uptime${color}
 bios: ${color navajowhite3}${exec sudo dmidecode -t 0 | grep 'Version'| cut -c 11-14 | uniq}${color}
 motherboard: ${color navajowhite3}X570 AORUS PRO WIFI${color}
-mullvad server: ${if_existing /proc/net/route wg0}${color green2}wireguard chicago${color}${else}${font DejaVu Sans:size=10:italic}${color firebrick2}not connected${font}${color}${endif}
+mullvad server: ${if_existing /proc/net/route wg0}${color green2}wireguard active${color}${else}${font DejaVu Sans:size=10:italic}${color firebrick2}not connected${font}${color}${endif}
 
 ##################################
 ##             GPU              ##
