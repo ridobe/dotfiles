@@ -1,0 +1,52 @@
+#!/bin/bash
+
+#
+# Make copy of current kernel, package it and upload to GD.
+# by ridobe18 at gmail dot com
+#
+
+srcdir1="/boot"
+srcdir2="/usr/lib/modules"
+wrkdir="$HOME/temp_work/seiei"
+dstdir="$HOME/googledrive/seiei"
+#prefixes="{initramfs-,vmlinuz-}"
+
+echo "..::Script to copy new kernel, compress it and add it to Google Drive::.."
+echo " "
+echo "removing old kernels..."
+echo " "
+sleep 3
+rm -rf "$wrkdir"/* && echo "cleaning up temp_work..."
+echo " "
+sleep 1
+rm -rf "$dstdir"/* && echo "cleaning up Google Drive..."
+sleep 1
+echo " "
+echo "create folder and copy kernel and it's components..."
+sleep 3
+mkdir "$wrkdir/$(uname -r)"
+cp "$srcdir1/"initramfs-ridobe-seiei.img "$wrkdir/$(uname -r)"
+cp "$srcdir1/"vmlinuz-ridobe-seiei "$wrkdir/$(uname -r)"
+cp "$srcdir2/$(uname -r)/modules."* "$wrkdir/$(uname -r)"
+cp -r "$srcdir2/$(uname -r)/kernel" "$wrkdir/$(uname -r)/kernel"
+echo "creating 7z file..."
+sleep 3
+cd "$wrkdir" && 7za a -tzip "$wrkdir/$(uname -r).7z" *
+echo "copy 7z to Google Drive..."
+sleep .5
+echo "."
+sleep .5
+echo "."
+sleep .5
+echo "."
+sleep .5
+echo "."
+rclone copy "$wrkdir/$(uname -r).7z" gd:/seiei
+#cp "$wrkdir/$(uname -r).7z" "$dstdir"
+echo " "
+echo "upload complete"
+
+
+
+
+
