@@ -110,4 +110,4 @@ export PATH=/usr/bin:$PATH
 export PATH=$PATH:~/android-sdk-linux/platform-tools
 export PATH=$PATH:~/android-sdk-linux/tools/bin
 export PATH=$PATH:~/android-sdk-linux/tools
-export PATH=$PATH:~/dotfiles/scripts
+export PATH=$PATH:~/dotfiles/bin
