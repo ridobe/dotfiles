@@ -66,4 +66,6 @@ alias gitlog='git log --max-count=1 kernel'
 alias sdk='sdkmanager'
 alias code='ykman oath accounts code'
 alias unlock='sudo rm /var/lib/pacman/db.lck'
-alias alias='cat /home/ridobe/dotfiles/bash_alias'
+alias aliases='less /home/ridobe/dotfiles/bash_alias'
+alias weather='curl wttr.in/46074'
+
