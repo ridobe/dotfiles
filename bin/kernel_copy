@@ -29,6 +29,7 @@ cp "$srcdir1/"initramfs-ridobe-seiei.img "$wrkdir/$(uname -r)"
 cp "$srcdir1/"vmlinuz-ridobe-seiei "$wrkdir/$(uname -r)"
 cp "$srcdir2/$(uname -r)/modules."* "$wrkdir/$(uname -r)"
 cp -r "$srcdir2/$(uname -r)/kernel" "$wrkdir/$(uname -r)/kernel"
+cp -r "$srcdir2/$(uname -r)/updates" "$wrkdir/$(uname -r)/updates"
 echo "creating 7z file..."
 sleep 3
 cd "$wrkdir" && 7za a -tzip "$wrkdir/$(uname -r).7z" *
