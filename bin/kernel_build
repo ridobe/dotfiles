@@ -5,15 +5,48 @@
 # by ridobe18 at gmail dot com
 #
 
-srcdir1="/boot"
-srcdir2="/usr/lib/modules"
+#srcdir1="/boot"
+#srcdir2="/usr/lib/modules"
 wrkdir="$HOME/kernel_build/linux"
-dstdir="$HOME/Google_Drive/seiei"
+#dstdir="$HOME/Google_Drive/seiei"
 #prefixes="{initramfs-,vmlinuz-}"
 
+#reminders
+echo "Don't forget to remove previous kernel from /usr/lib/modules"
+sleep 2
+
+#enter build directory
 cd "$wrkdir"
-make clean
-git pull
-make menuconfig
-make -j24 $$ sudo make modules_install -j24
-sudo cp -v arch/x86/boot/bzImage /boot/vmlinuz-
+
+#make copy of current config
+\cp ~/kernel_build/linux/.config ~/kernel_build/
+
+#make clean
+make clean &&
+
+#git stash current patches
+git stash &&
+
+#get latest build
+git pull &&
+
+#re-enable patches
+git stash pop &&
+
+#configure and save config file
+yes "" | make oldconfig
+
+#make command
+make CC=clang HOSTCC=clang -j50
+
+#make and install modules
+sudo make modules_install -j50
+
+#copy bz image to /boot and rename
+sudo cp -v arch/x86_64/boot/bzImage /boot/vmlinuz-ridobe-seiei
+
+#continue on to make initramfs
+sudo mkinitcpio -p ridobe-seiei
+
+#add external module for zenpower
+pbr -Su zenpower-dkms
