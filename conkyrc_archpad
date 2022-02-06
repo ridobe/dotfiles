@@ -9,7 +9,7 @@ conky.config = {
 
 -- Use Xft?
 	use_xft = true,
-	font = 'DejaVu Sans:size=10',
+	font = 'DejaVu Sans:size=8',
 	xftalpha = 0.8,
 	text_buffer_size = 2048,
 
@@ -68,7 +68,7 @@ conky.config = {
 
 -- Gap between borders of screen and text
 -- same thing as passing -x at command line
-	gap_x = 2255,
+	gap_x = 1620,
 	gap_y = 0,
 
 -- Subtract file system buffers from used memory?
@@ -94,7 +94,7 @@ conky.config = {
 };
 
 conky.text = [[
-${image /home/ridobe/Backdrops_2560x1080_and-images/archimages/archlinux-logo-white.png -p -0,850 -s 300x99.5}
+${image /home/ridobe/Backdrops_2560x1080_and-images/archimages/archlinux-logo-white.png -p -0,930 -s 300x99.5}
 #-p is position, -s is size (728x455) original
 ##################################
 ##            SYSTEM            ##
