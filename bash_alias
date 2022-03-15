@@ -24,7 +24,7 @@ alias wgdown='sudo wg-quick down wg0'
 alias makej='make CC=clang HOSTCC=clang -j40'
 alias makemod='sudo make modules_install -j50'
 alias copybz='sudo cp -v arch/x86_64/boot/bzImage /boot/vmlinuz-ridobe-seiei'
-alias cpio='sudo mkinitcpio -p ridobe-seiei && pbr -Su zenpower-dkms'
+alias cpio='sudo mkinitcpio -p ridobe-seiei && pbr -Su zenpower3-dkms'
 
 ##mce logging
 alias mce='ras-mc-ctl --errors'

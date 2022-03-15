@@ -34,7 +34,8 @@ git pull &&
 git stash pop &&
 
 #configure and save config file
-yes "" | make oldconfig
+#yes "" | make oldconfig
+make menuconfig &&
 
 #make command
 make CC=clang HOSTCC=clang -j50
