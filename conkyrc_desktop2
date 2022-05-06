@@ -61,16 +61,16 @@ conky.config = {
 --own_window_colour black
 
 -- Text alignment, other possible values are commented
---alignment = top_left
---alignment = 'top_right',	
---alignment = bottom_left,
---alignment = bottom_right,
+--alignment = 'top_left'
+--alignment = 'top_right'	
+--alignment = 'bottom_left'
+--alignment = 'bottom_right'
 
 -- Gap between borders of screen and text
 -- same thing as passing -x at command line
 -- gap_x = 2255 for ultrawide
 	gap_x = 1900,
-	gap_y = 1200,
+	gap_y = 1500,
 
 -- Subtract file system buffers from used memory?
 	no_buffers = true,
@@ -106,12 +106,12 @@ temp: ${color navajowhite3}${execi 1 sensors -f zenpower-pci-00c3 | grep 'Tdie'|
 Vcore: ${color navajowhite3}${execi 1 sensors -f zenpower-pci-00c3 | grep 'SVI2_Core'| cut -c 14-24}${color}
 VsoC: ${color navajowhite3}${execi 1 sensors -f zenpower-pci-00c3 | grep 'SVI2_SoC'| cut -c 15-22}${color}
 
-cpu_1: ${color navajowhite3}${freq_g cpu1} Ghz ${color}${color steelblue2}${cpu cpu1}%  ${cpubar cpu1 7,300}${color}  cpu_9:   ${color navajowhite3}${freq_g cpu9} Ghz ${color}${color steelblue2}${cpu cpu9}%  ${cpubar cpu9 7,300}${color}  cpu_17: ${color navajowhite3}${freq_g cpu17} Ghz ${color}${color steelblue2}${cpu cpu17}%  ${cpubar cpu17 7,300}${color}  
-cpu_2: ${color navajowhite3}${freq_g cpu2} Ghz ${color}${color steelblue2}${cpu cpu2}%  ${cpubar cpu2 7,300}${color}  cpu_10: ${color navajowhite3}${freq_g cpu10} Ghz ${color}${color steelblue2}${cpu cpu10}%  ${cpubar cpu10 7,300}${color}  cpu_18: ${color navajowhite3}${freq_g cpu18} Ghz ${color}${color steelblue2}${cpu cpu18}%  ${cpubar cpu18 7,300}${color}  
-cpu_3: ${color navajowhite3}${freq_g cpu3} Ghz ${color}${color steelblue2}${cpu cpu3}%  ${cpubar cpu3 7,300}${color}  cpu_11: ${color navajowhite3}${freq_g cpu11} Ghz ${color}${color steelblue2}${cpu cpu11}%  ${cpubar cpu11 7,300}${color}  cpu_19: ${color navajowhite3}${freq_g cpu19} Ghz ${color}${color steelblue2}${cpu cpu19}%  ${cpubar cpu19 7,300}${color}  
-cpu_4: ${color navajowhite3}${freq_g cpu4} Ghz ${color}${color steelblue2}${cpu cpu4}%  ${cpubar cpu4 7,300}${color}  cpu_12: ${color navajowhite3}${freq_g cpu12} Ghz ${color}${color steelblue2}${cpu cpu12}%  ${cpubar cpu12 7,300}${color}  cpu_20: ${color navajowhite3}${freq_g cpu20} Ghz ${color}${color steelblue2}${cpu cpu20}%  ${cpubar cpu20 7,300}${color}  
-cpu_5: ${color navajowhite3}${freq_g cpu5} Ghz ${color}${color steelblue2}${cpu cpu5}%  ${cpubar cpu5 7,300}${color}  cpu_13: ${color navajowhite3}${freq_g cpu13} Ghz ${color}${color steelblue2}${cpu cpu13}%  ${cpubar cpu13 7,300}${color}  cpu_21: ${color navajowhite3}${freq_g cpu21} Ghz ${color}${color steelblue2}${cpu cpu21}%  ${cpubar cpu21 7,300}${color}  
-cpu_6: ${color navajowhite3}${freq_g cpu6} Ghz ${color}${color steelblue2}${cpu cpu6}%  ${cpubar cpu6 7,300}${color}  cpu_14: ${color navajowhite3}${freq_g cpu14} Ghz ${color}${color steelblue2}${cpu cpu14}%  ${cpubar cpu14 7,300}${color}  cpu_22: ${color navajowhite3}${freq_g cpu22} Ghz ${color}${color steelblue2}${cpu cpu22}%  ${cpubar cpu22 7,300}${color}  
-cpu_7: ${color navajowhite3}${freq_g cpu7} Ghz ${color}${color steelblue2}${cpu cpu7}%  ${cpubar cpu7 7,300}${color}  cpu_15: ${color navajowhite3}${freq_g cpu15} Ghz ${color}${color steelblue2}${cpu cpu15}%  ${cpubar cpu15 7,300}${color}  cpu_23: ${color navajowhite3}${freq_g cpu23} Ghz ${color}${color steelblue2}${cpu cpu23}%  ${cpubar cpu23 7,300}${color}  
-cpu_8: ${color navajowhite3}${freq_g cpu8} Ghz ${color}${color steelblue2}${cpu cpu8}%  ${cpubar cpu8 7,300}${color}  cpu_16: ${color navajowhite3}${freq_g cpu16} Ghz ${color}${color steelblue2}${cpu cpu16}%  ${cpubar cpu16 7,300}${color}  cpu_24: ${color navajowhite3}${freq_g cpu24} Ghz ${color}${color steelblue2}${cpu cpu24}%  ${cpubar cpu24 7,300}${color}  
+cpu_1: ${color navajowhite3}${freq_g cpu1} Ghz ${color}${color steelblue2}${cpu cpu1}%  ${cpubar cpu1 7,400}${color}  cpu_9:   ${color navajowhite3}${freq_g cpu9} Ghz ${color}${color steelblue2}${cpu cpu9}%  ${cpubar cpu9 7,400}${color}  cpu_17: ${color navajowhite3}${freq_g cpu17} Ghz ${color}${color steelblue2}${cpu cpu17}%  ${cpubar cpu17 7,400}${color}  cpu_25: ${color navajowhite3}${freq_g cpu25} Ghz ${color}${color steelblue2}${cpu cpu25}%  ${cpubar cpu25 7,400}${color}
+cpu_2: ${color navajowhite3}${freq_g cpu2} Ghz ${color}${color steelblue2}${cpu cpu2}%  ${cpubar cpu2 7,400}${color}  cpu_10: ${color navajowhite3}${freq_g cpu10} Ghz ${color}${color steelblue2}${cpu cpu10}%  ${cpubar cpu10 7,400}${color}  cpu_18: ${color navajowhite3}${freq_g cpu18} Ghz ${color}${color steelblue2}${cpu cpu18}%  ${cpubar cpu18 7,400}${color}  cpu_26: ${color navajowhite3}${freq_g cpu26} Ghz ${color}${color steelblue2}${cpu cpu26}%  ${cpubar cpu26 7,400}${color}
+cpu_3: ${color navajowhite3}${freq_g cpu3} Ghz ${color}${color steelblue2}${cpu cpu3}%  ${cpubar cpu3 7,400}${color}  cpu_11: ${color navajowhite3}${freq_g cpu11} Ghz ${color}${color steelblue2}${cpu cpu11}%  ${cpubar cpu11 7,400}${color}  cpu_19: ${color navajowhite3}${freq_g cpu19} Ghz ${color}${color steelblue2}${cpu cpu19}%  ${cpubar cpu19 7,400}${color}  cpu_27: ${color navajowhite3}${freq_g cpu27} Ghz ${color}${color steelblue2}${cpu cpu27}%  ${cpubar cpu27 7,400}${color}
+cpu_4: ${color navajowhite3}${freq_g cpu4} Ghz ${color}${color steelblue2}${cpu cpu4}%  ${cpubar cpu4 7,400}${color}  cpu_12: ${color navajowhite3}${freq_g cpu12} Ghz ${color}${color steelblue2}${cpu cpu12}%  ${cpubar cpu12 7,400}${color}  cpu_20: ${color navajowhite3}${freq_g cpu20} Ghz ${color}${color steelblue2}${cpu cpu20}%  ${cpubar cpu20 7,400}${color}  cpu_28: ${color navajowhite3}${freq_g cpu28} Ghz ${color}${color steelblue2}${cpu cpu28}%  ${cpubar cpu28 7,400}${color}
+cpu_5: ${color navajowhite3}${freq_g cpu5} Ghz ${color}${color steelblue2}${cpu cpu5}%  ${cpubar cpu5 7,400}${color}  cpu_13: ${color navajowhite3}${freq_g cpu13} Ghz ${color}${color steelblue2}${cpu cpu13}%  ${cpubar cpu13 7,400}${color}  cpu_21: ${color navajowhite3}${freq_g cpu21} Ghz ${color}${color steelblue2}${cpu cpu21}%  ${cpubar cpu21 7,400}${color}  cpu_29: ${color navajowhite3}${freq_g cpu29} Ghz ${color}${color steelblue2}${cpu cpu29}%  ${cpubar cpu29 7,400}${color}
+cpu_6: ${color navajowhite3}${freq_g cpu6} Ghz ${color}${color steelblue2}${cpu cpu6}%  ${cpubar cpu6 7,400}${color}  cpu_14: ${color navajowhite3}${freq_g cpu14} Ghz ${color}${color steelblue2}${cpu cpu14}%  ${cpubar cpu14 7,400}${color}  cpu_22: ${color navajowhite3}${freq_g cpu22} Ghz ${color}${color steelblue2}${cpu cpu22}%  ${cpubar cpu22 7,400}${color}  cpu_30: ${color navajowhite3}${freq_g cpu30} Ghz ${color}${color steelblue2}${cpu cpu30}%  ${cpubar cpu30 7,400}${color}
+cpu_7: ${color navajowhite3}${freq_g cpu7} Ghz ${color}${color steelblue2}${cpu cpu7}%  ${cpubar cpu7 7,400}${color}  cpu_15: ${color navajowhite3}${freq_g cpu15} Ghz ${color}${color steelblue2}${cpu cpu15}%  ${cpubar cpu15 7,400}${color}  cpu_23: ${color navajowhite3}${freq_g cpu23} Ghz ${color}${color steelblue2}${cpu cpu23}%  ${cpubar cpu23 7,400}${color}  cpu_31: ${color navajowhite3}${freq_g cpu31} Ghz ${color}${color steelblue2}${cpu cpu31}%  ${cpubar cpu31 7,400}${color}
+cpu_8: ${color navajowhite3}${freq_g cpu8} Ghz ${color}${color steelblue2}${cpu cpu8}%  ${cpubar cpu8 7,400}${color}  cpu_16: ${color navajowhite3}${freq_g cpu16} Ghz ${color}${color steelblue2}${cpu cpu16}%  ${cpubar cpu16 7,400}${color}  cpu_24: ${color navajowhite3}${freq_g cpu24} Ghz ${color}${color steelblue2}${cpu cpu24}%  ${cpubar cpu24 7,400}${color}  cpu_32: ${color navajowhite3}${freq_g cpu32} Ghz ${color}${color steelblue2}${cpu cpu32}%  ${cpubar cpu32 7,400}${color}
 ]];
