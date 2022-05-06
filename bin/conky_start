@@ -1,0 +1,4 @@
+#!/bin/sh
+sleep 5
+conky -q -c /home/ridobe/.conky/conkyrc_desktop &
+conky -q -c /home/ridobe/.conky/conkyrc_desktop2 & exit

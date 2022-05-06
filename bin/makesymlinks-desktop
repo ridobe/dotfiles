@@ -7,7 +7,7 @@
 
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files="bashrc ridobe_avatar_yira_75 gitconfig bash_alias bash_profile pam_environment xinitrc start-conky"    # list of files/folders to symlink in homedir
+files="bashrc ridobe_avatar_yira_75 gitconfig bash_alias bash_profile pam_environment xinitrc"    # list of files/folders to symlink in homedir
 
 ##########
 
@@ -21,17 +21,12 @@ echo -n "Changing to the $dir directory ..."
 cd $dir
 echo "done"
 
-# move conkyrc_* due to unique naming
-echo "Moving .conkyrc to ~/dotfiles_old"
-mv ~/.conkyrc ~/dotfiles_old/
-echo "Creating unique symlink for .conkyrc"
-ln -s $dir/conkyrc_desktop ~/.conkyrc
-
 # move unique files due to location
-echo "Moving ~/.config/cower/config to ~/dotfiles_old"
-mv ~/.config/cower/config ~/dotfiles_old/
-echo "Creating unique symlink for cower config"
-ln -s $dir/config ~/.config/cower/config
+echo "Moving .conkyrc to ~/dotfiles_old"
+mv ~/.conky/conkyrc* ~/dotfiles_old/
+echo "Creating unique symlink for conkyrc_desktop configs"
+ln -s $dir/conkyrc_desktop ~/.conky &
+ln -s $dir/conkyrc_desktop2 ~/.conky
 echo "Moving ~/.config/systemd/user/ssh-agent.service to ~/dotfiles_old"
 mv ~/.config/systemd/user/ssh-agent.service ~/dotfiles_old/
 echo "Creating unique symlink for ssh-agent"
