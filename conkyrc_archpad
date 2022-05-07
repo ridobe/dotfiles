@@ -23,7 +23,7 @@ conky.config = {
 	own_window_transparent = false,
 
 --own_window_type override
-	own_window_type = 'normal',
+	own_window_type = 'desktop',
 --own_window_type normal #use this if you want a nice shadow to appear around conky
 
 -- If own_window is yes, these window manager hints may be used
@@ -62,15 +62,15 @@ conky.config = {
 --own_window_colour black
 
 -- Text alignment, other possible values are commented
---alignment top_left
---alignment = 'top_right',	
---alignment = bottom_left,
---alignment = bottom_right,
+--alignment = 'top_left',
+  alignment = 'top_right',	
+--alignment = 'bottom_left',
+--alignment = 'bottom_right',
 
 -- Gap between borders of screen and text
 -- same thing as passing -x at command line
-	gap_x = 1620,
-	gap_y = 0,
+	gap_x = 5,
+	gap_y = 30,
 
 -- Subtract file system buffers from used memory?
 	no_buffers = true,
