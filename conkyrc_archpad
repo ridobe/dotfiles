@@ -54,7 +54,8 @@ conky.config = {
 
 -- Default colors and also border colors
 --http://www.graphviz.org/doc/info/colors.html
-	default_color = 'gainsboro',
+--	default_color = 'gainsboro',
+	default_color = 'azure2',
 --default_shade_color black
 --default_outline_color grey
 	own_window_colour = 'grey17',
@@ -102,27 +103,27 @@ ${image /home/ridobe/Backdrops_2560x1080_and-images/archimages/archlinux-logo-wh
 ${color dimgray}SYSTEM ${hr 2}${color}
 ${font DejaVu:size=10}${nodename} -xfce${font}
 ${execi 1000 cat /proc/cpuinfo | grep 'model name' | cut -c 14-30 | uniq}
-kernel: ${color navajowhite3}${exec uname -r | grep 'seiei' | tr -d '+'}${color}
-${alignr 20}${color mediumturquoise}${font DejaVu Sans:size=10:italic} -elite, powerful, efficient${color}${font}
-uptime: ${color navajowhite3}$uptime${color}
-bios: ${color navajowhite3}${execi 1 sudo dmidecode -t 0 | grep 'Version' | cut -c 11-28 | uniq}${color}
+kernel: ${color khaki3}${exec uname -r | grep 'seiei' | tr -d '+'}${color}
+${alignr 20}${color steelblue2}${font DejaVu Sans:size=10:italic} -elite, powerful, efficient${color}${font}
+uptime: ${color khaki3}$uptime${color}
+bios: ${color khaki3}${execi 1 sudo dmidecode -t 0 | grep 'Version' | cut -c 11-28 | uniq}${color}
 mullvad server: ${if_existing /proc/net/route wg0}${color green2}wireguard tunnel active${color}${else}${color firebrick2}not protected${color}${endif}
 
 ##################################
 ##             GPU              ##
 ##################################
 ${color dimgray}GPU ${hr 2}${color}
-type: ${color navajowhite3}AMD radeon Vega 8${color}
-freq: ${color navajowhite3}$freq MHz${color}
-temp: ${color navajowhite3}${execi 1 sensors -f amdgpu-pci-0500 | grep edge | tr -d '+' | cut -c 14-22}${color}
+type: ${color khaki3}AMD radeon Vega 8${color}
+freq: ${color khaki3}$freq MHz${color}
+temp: ${color khaki3}${execi 1 sensors -f amdgpu-pci-0500 | grep edge | tr -d '+' | cut -c 14-22}${color}
 
 ##################################
 ##             RAM              ##
 ##################################
 ${color dimgray}RAM ${hr 2}${color}
-RAM usage: ${color navajowhite3}$mem/$memmax - ${color}${color mediumturquoise}$memperc% ${membar 4}${color}
-RAM clock: ${color navajowhite3}${execi 1 sudo dmidecode -t 17 | grep 'Speed' | head -4 | tail -1 | cut -c 26-30 | uniq}MHz${color}
-RAM PN: ${color navajowhite3}${execi 1 sudo dmidecode -t 17 | grep 'Part' | head -4 | tail -1| cut -c 14-30 | uniq}${color}
+RAM usage: ${color khaki3}$mem/$memmax - ${color}${color steelblue2}$memperc% ${membar 4}${color}
+RAM clock: ${color khaki3}${execi 1 sudo dmidecode -t 17 | grep 'Speed' | head -4 | tail -1 | cut -c 26-30 | uniq}MHz${color}
+RAM PN: ${color khaki3}${execi 1 sudo dmidecode -t 17 | grep 'Part' | head -4 | tail -1| cut -c 14-30 | uniq}${color}
 
 ##################################
 ##             CPU              ##
@@ -132,32 +133,32 @@ ${color dimgray}CPU ${hr 2}${color}
 #temp: ${execi 1 sensors -f k10temp-pci-00c3 | grep 'Tdie'| tr -d '+' | tail -n 2 | cut -c 14-22 | awk '{print ($1-32)*5/9}' OFMT="%.1f"}°C/${execi 1 sensors -f k10temp-pci-00c3 | grep 'Tdie'| tr -d '+' | tail -n 2 | cut -c 14-22} limit: (95°C/203°F)
 #Vcore: ${execi 1 sensors -f k10temp-pci-00c3 | grep 'Vcore'| cut -c 14-24}
 #VsoC: ${execi 1 sensors -f k10temp-pci-00c3 | grep 'Vsoc'| cut -c 14-22}
-temp: ${color navajowhite3}${execi 1 sensors -f zenpower-pci-00c3 | grep 'Tdie'| tr -d '+' | tail -n 2 | cut -c 14-22 | awk '{print ($1-32)*5/9}' OFMT="%.1f"}°C/${execi 1 sensors -f zenpower-pci-00c3 | grep 'Tdie'| tr -d '+' | tail -n 2 | cut -c 14-22}${color} limit: ${color navajowhite3}(95°C/203°F)${color}
-Vcore: ${color navajowhite3}${execi 1 sensors -f zenpower-pci-00c3 | grep 'SVI2_Core'| cut -c 14-24}${color}
-VsoC: ${color navajowhite3}${execi 1 sensors -f zenpower-pci-00c3 | grep 'SVI2_SoC'| cut -c 14-22}${color}
+temp: ${color khaki3}${execi 1 sensors -f zenpower-pci-00c3 | grep 'Tdie'| tr -d '+' | tail -n 2 | cut -c 14-22 | awk '{print ($1-32)*5/9}' OFMT="%.1f"}°C/${execi 1 sensors -f zenpower-pci-00c3 | grep 'Tdie'| tr -d '+' | tail -n 2 | cut -c 14-22}${color} limit: ${color khaki3}(95°C/203°F)${color}
+Vcore: ${color khaki3}${execi 1 sensors -f zenpower-pci-00c3 | grep 'SVI2_Core'| cut -c 14-24}${color}
+VsoC: ${color khaki3}${execi 1 sensors -f zenpower-pci-00c3 | grep 'SVI2_SoC'| cut -c 14-22}${color}
 
-cpu_0: ${color navajowhite3}${freq_g cpu0} Ghz ${color}${color mediumturquoise}${cpu cpu0}%  ${cpubar cpu0}${color}
-cpu_1: ${color navajowhite3}${freq_g cpu1} Ghz ${color}${color mediumturquoise}${cpu cpu1}%  ${cpubar cpu1}${color}
-cpu_2: ${color navajowhite3}${freq_g cpu2} Ghz ${color}${color mediumturquoise}${cpu cpu2}%  ${cpubar cpu2}${color}
-cpu_3: ${color navajowhite3}${freq_g cpu3} Ghz ${color}${color mediumturquoise}${cpu cpu3}%  ${cpubar cpu3}${color}
-cpu_4: ${color navajowhite3}${freq_g cpu4} Ghz ${color}${color mediumturquoise}${cpu cpu4}%  ${cpubar cpu4}${color}
-cpu_5: ${color navajowhite3}${freq_g cpu5} Ghz ${color}${color mediumturquoise}${cpu cpu5}%  ${cpubar cpu5}${color}
-cpu_6: ${color navajowhite3}${freq_g cpu6} Ghz ${color}${color mediumturquoise}${cpu cpu6}%  ${cpubar cpu6}${color}
-cpu_7: ${color navajowhite3}${freq_g cpu7} Ghz ${color}${color mediumturquoise}${cpu cpu7}%  ${cpubar cpu7}${color}
+cpu_0: ${color khaki3}${freq_g cpu0} Ghz ${color}${color steelblue2}${cpu cpu0}%  ${cpubar cpu0}${color}
+cpu_1: ${color khaki3}${freq_g cpu1} Ghz ${color}${color steelblue2}${cpu cpu1}%  ${cpubar cpu1}${color}
+cpu_2: ${color khaki3}${freq_g cpu2} Ghz ${color}${color steelblue2}${cpu cpu2}%  ${cpubar cpu2}${color}
+cpu_3: ${color khaki3}${freq_g cpu3} Ghz ${color}${color steelblue2}${cpu cpu3}%  ${cpubar cpu3}${color}
+cpu_4: ${color khaki3}${freq_g cpu4} Ghz ${color}${color steelblue2}${cpu cpu4}%  ${cpubar cpu4}${color}
+cpu_5: ${color khaki3}${freq_g cpu5} Ghz ${color}${color steelblue2}${cpu cpu5}%  ${cpubar cpu5}${color}
+cpu_6: ${color khaki3}${freq_g cpu6} Ghz ${color}${color steelblue2}${cpu cpu6}%  ${cpubar cpu6}${color}
+cpu_7: ${color khaki3}${freq_g cpu7} Ghz ${color}${color steelblue2}${cpu cpu7}%  ${cpubar cpu7}${color}
 
 ##################################
 ##          STATISTICS          ##
 ##################################
 ${color dimgray}STATISTICS ${hr 2}${color}
-processes: ${color navajowhite3}$processes${color}   Running: ${color navajowhite3}$running_processes${color}
-file systems: ${color navajowhite3}/ ${fs_used /}/${fs_size /}${color} ${color mediumturquoise}${fs_bar 6 /}${color}
-file systems: ${color navajowhite3}/home ${fs_used /home}/${fs_size /home}${color} ${color mediumturquoise}${fs_bar 6 /home}${color}
+processes: ${color khaki3}$processes${color}   Running: ${color khaki3}$running_processes${color}
+file systems: ${color khaki3}/ ${fs_used /}/${fs_size /}${color} ${color steelblue2}${fs_bar 6 /}${color}
+file systems: ${color khaki3}/home ${fs_used /home}/${fs_size /home}${color} ${color steelblue2}${fs_bar 6 /home}${color}
 
 Name			PID   CPU%   MEM%
-${top name 1}	${color navajowhite3}${top pid 1} ${top cpu 1} ${top mem 1}${color}
-${top name 2}	${color navajowhite3}${top pid 2} ${top cpu 2} ${top mem 2}${color}
-${top name 3}	${color navajowhite3}${top pid 3} ${top cpu 3} ${top mem 3}${color}
-${top name 4}	${color navajowhite3}${top pid 4} ${top cpu 4} ${top mem 4}${color}
+${top name 1}	${color khaki3}${top pid 1} ${top cpu 1} ${top mem 1}${color}
+${top name 2}	${color khaki3}${top pid 2} ${top cpu 2} ${top mem 2}${color}
+${top name 3}	${color khaki3}${top pid 3} ${top cpu 3} ${top mem 3}${color}
+${top name 4}	${color khaki3}${top pid 4} ${top cpu 4} ${top mem 4}${color}
 
 ##################################
 ##          DATE/TIME           ##
@@ -173,13 +174,13 @@ ${time %A, %d %B %Y}
 ${color dimgray}NETWORK ${hr 2}${color}
 ${if_existing /proc/net/route wlp7s0}
 #${if_existing /proc/net/route enp7s0}
-${voffset -6}${font PizzaDude Bullets:size=12}O${font} up: ${color navajowhite3}${upspeed wlp7s0}${color}${alignr}${color mediumturquoise}${upspeedgraph wlp7s0 8,60}${color}
-#${voffset -6}${font PizzaDude Bullets:size=12}O${font} up: ${color navajowhite3}${upspeed enp7s0}${color}${alignr}${color mediumturquoise}${upspeedgraph enp7s0 8,60}${color}
-${voffset 4}${font PizzaDude Bullets:size=12}U${font} down: ${color navajowhite3}${downspeed wlp7s0}${color}${alignr}${color mediumturquoise}${downspeedgraph wlp7s0 8,60}${color}
-#${voffset 4}${font PizzaDude Bullets:size=12}U${font} down: ${color navajowhite3}${downspeed enp7s0}${color}${alignr}${color mediumturquoise}${downspeedgraph enp7s0 8,60}${color}
-${voffset 4}${font PizzaDude Bullets:size=12}N${font} upload: ${color navajowhite3}${alignr}${totalup wlp7s0}${color}
-#${voffset 4}${font PizzaDude Bullets:size=12}N${font} upload: ${color navajowhite3}${alignr}${totalup enp7s0}${color}
-${voffset 4}${font PizzaDude Bullets:size=12}T${font} download: ${color navajowhite3}${alignr}${totaldown wlp7s0}${color}
-#${voffset 4}${font PizzaDude Bullets:size=12}T${font} download: ${color navajowhite3}${alignr}${totaldown enp7s0}${color}
+${voffset -6}${font PizzaDude Bullets:size=12}O${font} up: ${color khaki3}${upspeed wlp7s0}${color}${alignr}${color steelblue2}${upspeedgraph wlp7s0 8,60}${color}
+#${voffset -6}${font PizzaDude Bullets:size=12}O${font} up: ${color khaki3}${upspeed enp7s0}${color}${alignr}${color steelblue2}${upspeedgraph enp7s0 8,60}${color}
+${voffset 4}${font PizzaDude Bullets:size=12}U${font} down: ${color khaki3}${downspeed wlp7s0}${color}${alignr}${color steelblue2}${downspeedgraph wlp7s0 8,60}${color}
+#${voffset 4}${font PizzaDude Bullets:size=12}U${font} down: ${color khaki3}${downspeed enp7s0}${color}${alignr}${color steelblue2}${downspeedgraph enp7s0 8,60}${color}
+${voffset 4}${font PizzaDude Bullets:size=12}N${font} upload: ${color khaki3}${alignr}${totalup wlp7s0}${color}
+#${voffset 4}${font PizzaDude Bullets:size=12}N${font} upload: ${color khaki3}${alignr}${totalup enp7s0}${color}
+${voffset 4}${font PizzaDude Bullets:size=12}T${font} download: ${color khaki3}${alignr}${totaldown wlp7s0}${color}
+#${voffset 4}${font PizzaDude Bullets:size=12}T${font} download: ${color khaki3}${alignr}${totaldown enp7s0}${color}
 ${endif}
 ]];
