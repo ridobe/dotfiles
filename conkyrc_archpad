@@ -121,7 +121,7 @@ temp: ${color khaki3}${execi 1 sensors -f amdgpu-pci-0500 | grep edge | tr -d '+
 ##             RAM              ##
 ##################################
 ${color dimgray}RAM ${hr 2}${color}
-RAM usage: ${color khaki3}$mem/$memmax - ${color}${color steelblue2}$memperc% ${membar 4}${color}
+RAM usage: ${color khaki3}$mem/$memmax - ${color}${color steelblue2}$memperc% ${membar 7}${color}
 RAM clock: ${color khaki3}${execi 1 sudo dmidecode -t 17 | grep 'Speed' | head -4 | tail -1 | cut -c 26-30 | uniq}MHz${color}
 RAM PN: ${color khaki3}${execi 1 sudo dmidecode -t 17 | grep 'Part' | head -4 | tail -1| cut -c 14-30 | uniq}${color}
 
@@ -137,22 +137,22 @@ temp: ${color khaki3}${execi 1 sensors -f zenpower-pci-00c3 | grep 'Tdie'| tr -d
 Vcore: ${color khaki3}${execi 1 sensors -f zenpower-pci-00c3 | grep 'SVI2_Core'| cut -c 14-24}${color}
 VsoC: ${color khaki3}${execi 1 sensors -f zenpower-pci-00c3 | grep 'SVI2_SoC'| cut -c 14-22}${color}
 
-cpu_1: ${color khaki3}${freq_g cpu1} Ghz ${color}${color steelblue2}${cpu cpu1}%  ${cpubar cpu1}${color}
-cpu_2: ${color khaki3}${freq_g cpu2} Ghz ${color}${color steelblue2}${cpu cpu2}%  ${cpubar cpu2}${color}
-cpu_3: ${color khaki3}${freq_g cpu3} Ghz ${color}${color steelblue2}${cpu cpu3}%  ${cpubar cpu3}${color}
-cpu_4: ${color khaki3}${freq_g cpu4} Ghz ${color}${color steelblue2}${cpu cpu4}%  ${cpubar cpu4}${color}
-cpu_5: ${color khaki3}${freq_g cpu5} Ghz ${color}${color steelblue2}${cpu cpu5}%  ${cpubar cpu5}${color}
-cpu_6: ${color khaki3}${freq_g cpu6} Ghz ${color}${color steelblue2}${cpu cpu6}%  ${cpubar cpu6}${color}
-cpu_7: ${color khaki3}${freq_g cpu7} Ghz ${color}${color steelblue2}${cpu cpu7}%  ${cpubar cpu7}${color}
-cpu_8: ${color khaki3}${freq_g cpu8} Ghz ${color}${color steelblue2}${cpu cpu8}%  ${cpubar cpu8}${color}
+cpu_1: ${color khaki3}${freq_g cpu1} Ghz ${color}${color steelblue2}${cpu cpu1}%  ${cpubar cpu1 7}${color}
+cpu_2: ${color khaki3}${freq_g cpu2} Ghz ${color}${color steelblue2}${cpu cpu2}%  ${cpubar cpu2 7}${color}
+cpu_3: ${color khaki3}${freq_g cpu3} Ghz ${color}${color steelblue2}${cpu cpu3}%  ${cpubar cpu3 7}${color}
+cpu_4: ${color khaki3}${freq_g cpu4} Ghz ${color}${color steelblue2}${cpu cpu4}%  ${cpubar cpu4 7}${color}
+cpu_5: ${color khaki3}${freq_g cpu5} Ghz ${color}${color steelblue2}${cpu cpu5}%  ${cpubar cpu5 7}${color}
+cpu_6: ${color khaki3}${freq_g cpu6} Ghz ${color}${color steelblue2}${cpu cpu6}%  ${cpubar cpu6 7}${color}
+cpu_7: ${color khaki3}${freq_g cpu7} Ghz ${color}${color steelblue2}${cpu cpu7}%  ${cpubar cpu7 7}${color}
+cpu_8: ${color khaki3}${freq_g cpu8} Ghz ${color}${color steelblue2}${cpu cpu8}%  ${cpubar cpu8 7}${color}
 
 ##################################
 ##          STATISTICS          ##
 ##################################
 ${color dimgray}STATISTICS ${hr 2}${color}
 processes: ${color khaki3}$processes${color}   Running: ${color khaki3}$running_processes${color}
-file systems: ${color khaki3}/ ${fs_used /}/${fs_size /}${color} ${color steelblue2}${fs_bar 6 /}${color}
-file systems: ${color khaki3}/home ${fs_used /home}/${fs_size /home}${color} ${color steelblue2}${fs_bar 6 /home}${color}
+file systems: ${color khaki3}/ ${fs_used /}/${fs_size /}${color} ${color steelblue2}${fs_bar 7 /}${color}
+file systems: ${color khaki3}/home ${fs_used /home}/${fs_size /home}${color} ${color steelblue2}${fs_bar 7 /home}${color}
 
 Name			PID   CPU%   MEM%
 ${top name 1}	${color khaki3}${top pid 1} ${top cpu 1} ${top mem 1}${color}
