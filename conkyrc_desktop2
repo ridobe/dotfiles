@@ -23,7 +23,7 @@ conky.config = {
 	own_window_transparent = false,
 
 --own_window_type override
-	own_window_type = 'normal',
+	own_window_type = 'desktop',
 --own_window_type normal #use this if you want a nice shadow to appear around conky
 
 -- If own_window is yes, these window manager hints may be used
@@ -33,7 +33,7 @@ conky.config = {
 	double_buffer = true,
 
 -- Minimum size of text area
-	minimum_width = 2292, minimum_height = 230,
+	minimum_width = 2350, minimum_height = 230,
 	
 --maximum_width 300
 
@@ -62,16 +62,16 @@ conky.config = {
 --own_window_colour black
 
 -- Text alignment, other possible values are commented
---alignment = 'top_left'
---alignment = 'top_right'	
---alignment = 'bottom_left'
---alignment = 'bottom_right'
+--alignment = 'top_left',
+--alignment = 'top_right',	
+--alignment = 'bottom_left',
+--alignment = 'bottom_right',
 
 -- Gap between borders of screen and text
 -- same thing as passing -x at command line
 -- gap_x = 2255 for ultrawide
-	gap_x = 1900,
-	gap_y = 1500,
+	gap_x = 2310,
+	gap_y = 1060,
 
 -- Subtract file system buffers from used memory?
 	no_buffers = true,
@@ -103,7 +103,7 @@ ${color dimgray}CPU ${hr 2}${color}
 #temp: ${execi 1 sensors -f k10temp-pci-00c3 | grep 'Tdie'| tr -d '+' | tail -n 2 | cut -c 14-22 | awk '{print ($1-32)*5/9}' OFMT="%.1f"}°C/${execi 1 sensors -f k10temp-pci-00c3 | grep 'Tdie'| tr -d '+' | tail -n 2 | cut -c 14-22} limit: (95°C/203°F)
 #Vcore: ${execi 1 sensors -f k10temp-pci-00c3 | grep 'Vcore'| cut -c 14-24}
 #VsoC: ${execi 1 sensors -f k10temp-pci-00c3 | grep 'Vsoc'| cut -c 15-22}
-temp: ${color khaki3}${execi 1 sensors -f zenpower-pci-00c3 | grep 'Tdie'| tr -d '+' | tail -n 2 | cut -c 14-22 | awk '{print ($1-32)*5/9}' OFMT="%.1f"}°C/${execi 1 sensors -f zenpower-pci-00c3 | grep 'Tdie'| tr -d '+' | tail -n 2 | cut -c 14-22}${color} limit: ${color khaki3}(95°C/203°F)${color}
+${font DejaVu Sans:size=14}temp: ${color khaki3}${execi 1 sensors -f zenpower-pci-00c3 | grep 'Tdie'| tr -d '+' | tail -n 2 | cut -c 14-22 | awk '{print ($1-32)*5/9}' OFMT="%.1f"}°C/${execi 1 sensors -f zenpower-pci-00c3 | grep 'Tdie'| tr -d '+' | tail -n 2 | cut -c 14-22}${color} limit: ${color khaki3}(95°C/203°F)${font}${color}
 Vcore: ${color khaki3}${execi 1 sensors -f zenpower-pci-00c3 | grep 'SVI2_Core'| cut -c 14-24}${color}
 VsoC: ${color khaki3}${execi 1 sensors -f zenpower-pci-00c3 | grep 'SVI2_SoC'| cut -c 15-22}${color}
 
