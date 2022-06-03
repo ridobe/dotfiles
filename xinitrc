@@ -4,8 +4,9 @@
 # ~/.xinitrc
 
 #xset dpms to suspend after 20 min and lock.
-(sleep 15s && xset dpms 0 0 1200) &
-xautolock -time 20 -locker "sxlock -f -misc-fixed-medium-r-semicondensed--13-100-100-100-c-60-iso8859-1" &
+#(sleep 5s && xset dpms 0 0 900) &
+xset dpms 0 0 900 &
+xautolock -time 15 -locker "sxlock -f -misc-fixed-medium-r-semicondensed--13-100-100-100-c-60-iso8859-1" &
 
 if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  for f in /etc/X11/xinit/xinitrc.d/?*.sh ; do
