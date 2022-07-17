@@ -1,7 +1,7 @@
 #!/bin/bash
 
 SECONDS=0
-make CC=clang HOSTCC=clang -j512
+make CC=clang HOSTCC=clang -j250
 if (( $SECONDS > 3600 )) ; then
     let "hours=SECONDS/3600"
     let "minutes=(SECONDS%3600)/60"
