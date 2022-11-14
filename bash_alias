@@ -11,7 +11,7 @@ alias cp='cp -iv'
 #alias pyth3='rm ~/bin/python'
 
 ##update
-alias piupdate='sudo apt-get update && sudo apt-get upgrade -y'
+alias piupdate='sudo apt update && sudo apt upgrade -y'
 alias piholeupdate='pihole -up && pihole -g'
 alias gravity='tail -f /var/log/pihole.log | grep gravity'
 alias pacnew='sudo find /etc -regextype posix-extended -regex ".+\.pac(new|save|orig)" 2> /dev/null'
@@ -32,7 +32,7 @@ alias mce='ras-mc-ctl --errors'
 ##mullvad
 #alias mullvadup='sudo systemctl start mullvad-daemon && systemctl status mullvad-daemon'
 #alias mullvaddown='sudo systemctl stop mullvad-daemon && systemctl status mullvad-daemon'
-alias mullvadstatus='curl https://am.i.mullvad.net/ip &&curl https://am.i.mullvad.net/city && curl https://am.i.mullvad.net/country'
+alias mullvadstatus='curl https://am.i.mullvad.net/ip && curl https://am.i.mullvad.net/city && curl https://am.i.mullvad.net/country'
 
 ##working directories
 alias dotfiles='cd $HOME/dotfiles && ls -la'
