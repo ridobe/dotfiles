@@ -2,6 +2,7 @@
 /.cache
 /.local/share/Trash
 /.ssh
+/.piratebay
 /CloudStation
 /Desktop
 /dotfiles
