@@ -29,6 +29,17 @@ alias cpio='sudo mkinitcpio -p ridobe-seiei && paru -S zenpower3-dkms'
 ##mce logging
 alias mce='ras-mc-ctl --errors'
 
+##paru options
+alias paruse='cat $HOME/dotfiles/bash_alias | grep paru'
+#paru ; alias for paru -Syu
+#paru <target> ; interactively search and install <target>
+#paru -Sua ; upgrade aur packages
+#paru -Qua ; print avaliable aur upgrades
+#paru -G <target> ; download PKGBUILD of <target>
+#paru -Gp <target> ; print the PKGBUILD of <target>
+#paru -Gc <target> ; pring the aur comments of <target>
+
+
 ##mullvad
 #alias mullvadup='sudo systemctl start mullvad-daemon && systemctl status mullvad-daemon'
 #alias mullvaddown='sudo systemctl stop mullvad-daemon && systemctl status mullvad-daemon'
