@@ -175,12 +175,8 @@ ${color dimgray}NETWORK ${hr 2}${color}
 ${if_existing /proc/net/route wlp7s0}
 #${if_existing /proc/net/route enp7s0}
 ${voffset -6}${font PizzaDude Bullets:size=12}O${font} up: ${color khaki3}${upspeed wlp7s0}${color}${alignr}${color steelblue2}${upspeedgraph wlp7s0 8,60}${color}
-#${voffset -6}${font PizzaDude Bullets:size=12}O${font} up: ${color khaki3}${upspeed enp7s0}${color}${alignr}${color steelblue2}${upspeedgraph enp7s0 8,60}${color}
 ${voffset 4}${font PizzaDude Bullets:size=12}U${font} down: ${color khaki3}${downspeed wlp7s0}${color}${alignr}${color steelblue2}${downspeedgraph wlp7s0 8,60}${color}
-#${voffset 4}${font PizzaDude Bullets:size=12}U${font} down: ${color khaki3}${downspeed enp7s0}${color}${alignr}${color steelblue2}${downspeedgraph enp7s0 8,60}${color}
 ${voffset 4}${font PizzaDude Bullets:size=12}N${font} upload: ${color khaki3}${alignr}${totalup wlp7s0}${color}
-#${voffset 4}${font PizzaDude Bullets:size=12}N${font} upload: ${color khaki3}${alignr}${totalup enp7s0}${color}
 ${voffset 4}${font PizzaDude Bullets:size=12}T${font} download: ${color khaki3}${alignr}${totaldown wlp7s0}${color}
-#${voffset 4}${font PizzaDude Bullets:size=12}T${font} download: ${color khaki3}${alignr}${totaldown enp7s0}${color}
 ${endif}
 ]];
