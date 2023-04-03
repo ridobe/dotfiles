@@ -14,7 +14,7 @@ sleep 3
 echo "copying files to requisite kernel destinations"
 echo " "
 sleep 1
-rclone copy gd:/seiei "$srcdir1"
+rclone copy googledrive:/seiei "$srcdir1"
 sudo cp  "$srcdir1"/*.7z "$dstdir1" && cd "$dstdir1"
 sudo 7za x *.7z && cd $(basename *.7z .7z)
 sudo cp vmlinuz-ridobe-seiei "$dstdir2"

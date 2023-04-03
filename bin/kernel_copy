@@ -42,7 +42,7 @@ sleep .5
 echo "."
 sleep .5
 echo "."
-rclone copy "$wrkdir/$(uname -r).7z" gd:/seiei
+rclone copy "$wrkdir/$(uname -r).7z" googledrive:/seiei
 #cp "$wrkdir/$(uname -r).7z" "$dstdir"
 echo " "
 echo "upload complete"
