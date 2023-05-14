@@ -155,17 +155,20 @@ ${time %A, %d %B %Y}
 ##################################
 ##          NETWORK             ##
 ##################################
-#${color dimgray}NETWORK ${hr 2}${color}
-#${if_existing /sys/class/net/wlp7s0/operstate up}
-#${voffset -6}${font PizzaDude Bullets:size=14}O${font} up: ${color khaki3}${upspeed wlp7s0}${color}${alignr}${color steelblue2}${color}${upspeedgraph wlp7s0 8,60}${color}
-#${voffset 4}${font PizzaDude Bullets:size=14}U${font} down: ${color khaki3}${downspeed wlp7s0}${color}${alignr}${color steelblue2}${color}${downspeedgraph wlp7s0 8,60}${color}
-#${voffset 4}${font PizzaDude Bullets:size=14}N${font} upload: ${color khaki3}${alignr}${totalup wlp7s0}${color}
-#${voffset 4}${font PizzaDude Bullets:size=14}T${font} download: ${color khaki3}${alignr}${totaldown wlp7s0}${color}
-#${endif}${if_existing /sys/class/net/enp7s0/operstate up}
+${color dimgray}NETWORK ${hr 2}${color}
+${if_existing /sys/class/net/wlp7s0/operstate up}
+interface: wlp7s0
 
-#${voffset -6}${font PizzaDude Bullets:size=14}O${font} up: ${color khaki3}${upspeed enp7s0}${color}${alignr}${color steelblue2}${color}${upspeedgraph enp7s0 8,60}${color}
-#${voffset 4}${font PizzaDude Bullets:size=14}U${font} down: ${color khaki3}${downspeed enp7s0}${color}${alignr}${color steelblue2${color}}${downspeedgraph enp7s0 8,60}${color}
-#${voffset 4}${font PizzaDude Bullets:size=14}N${font} upload: ${color khaki3}${alignr}${totalup enp7s0}${color}
-#${voffset 4}${font PizzaDude Bullets:size=14}T${font} download: ${color khaki3}${alignr}${totaldown enp7s0}${color}
-#${endif}
+${voffset -6}${font PizzaDude Bullets:size=14}O${font} up: ${color khaki3}${upspeed "wlp7s0"}${color}${alignr}${color steelblue2}${upspeedgraph "wlp7s0" 8,60}${color}
+${voffset 4}${font PizzaDude Bullets:size=14}U${font} down: ${color khaki3}${downspeed "wlp7s0"}${color}${alignr}${color steelblue2}${downspeedgraph "wlp7s0" 8,60}${color}
+${voffset 4}${font PizzaDude Bullets:size=14}N${font} upload: ${color khaki3}${alignr}${totalup "wlp7s0"}${color}
+${voffset 4}${font PizzaDude Bullets:size=14}T${font} download: ${color khaki3}${alignr}${totaldown "wlp7s0"}${color}
+${endif}${if_existing /sys/class/net/enp7s0/operstate up}
+interface: enp7s0
+
+${voffset -6}${font PizzaDude Bullets:size=14}O${font} up: ${color khaki3}${upspeed "enp7s0"}${color}${alignr}${color steelblue2}${upspeedgraph "enp7s0" 8,60}${color}
+${voffset 4}${font PizzaDude Bullets:size=14}U${font} down: ${color khaki3}${downspeed "enp7s0"}${color}${alignr}${color steelblue2}${downspeedgraph "enp7s0" 8,60}${color}
+${voffset 4}${font PizzaDude Bullets:size=14}N${font} upload: ${color khaki3}${alignr}${totalup "enp7s0"}${color}
+${voffset 4}${font PizzaDude Bullets:size=14}T${font} download: ${color khaki3}${alignr}${totaldown "enp7s0"}${color}
+${endif}
 ]];
