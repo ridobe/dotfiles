@@ -98,7 +98,7 @@ conky.config = {
 conky.text = [[
 ${image $HOME/Backdrops_2560x1080_and-images/archimages/archlinux-logo-white.png -p 20,1080 -s 300x99.5}
 #-p is position, -s is size (728x455) original
-${image $HOME/Backdrops_2560x1080_and-images/archimages/ryzen2.png -p 50,850 -s 246x169}
+#${image $HOME/Backdrops_2560x1080_and-images/archimages/ryzen2.png -p 50,850 -s 246x169}
 #-p is position, -s is size (492x338) original
 ##################################
 ##            SYSTEM            ##
@@ -117,7 +117,6 @@ mullvad server: ${if_existing /proc/net/route wg0}${color green2}wireguard tunne
 ##             GPU              ##
 ##################################
 ${color dimgray}GPU ${hr 2}${color}
-#type: Ellesmere [Polaris10] Sapphire RX 470
 type: ${color khaki3}${exec lspci -vnn | grep Sapphire | head -1 | cut -c 34-66 | uniq}${color}
 freq: ${color khaki3}$freq MHz${color}
 temp: ${color khaki3}${execi 1 sensors -f amdgpu-pci-0900 | grep edge | tr -d '+' | cut -c 14-22}${color}
@@ -156,19 +155,11 @@ ${time %A, %d %B %Y}
 ##          NETWORK             ##
 ##################################
 ${color dimgray}NETWORK ${hr 2}${color}
-${if_existing /sys/class/net/wlp7s0/operstate up}
-interface: wlp7s0
+${font DejaVu Sans:size=10:italic}${color dimgray}related only to wlp7s0${font}${color}
 
 ${voffset -6}${font PizzaDude Bullets:size=14}O${font} up: ${color khaki3}${upspeed "wlp7s0"}${color}${alignr}${color steelblue2}${upspeedgraph "wlp7s0" 8,60}${color}
 ${voffset 4}${font PizzaDude Bullets:size=14}U${font} down: ${color khaki3}${downspeed "wlp7s0"}${color}${alignr}${color steelblue2}${downspeedgraph "wlp7s0" 8,60}${color}
 ${voffset 4}${font PizzaDude Bullets:size=14}N${font} upload: ${color khaki3}${alignr}${totalup "wlp7s0"}${color}
 ${voffset 4}${font PizzaDude Bullets:size=14}T${font} download: ${color khaki3}${alignr}${totaldown "wlp7s0"}${color}
-${endif}${if_existing /sys/class/net/enp7s0/operstate up}
-interface: enp7s0
 
-${voffset -6}${font PizzaDude Bullets:size=14}O${font} up: ${color khaki3}${upspeed "enp7s0"}${color}${alignr}${color steelblue2}${upspeedgraph "enp7s0" 8,60}${color}
-${voffset 4}${font PizzaDude Bullets:size=14}U${font} down: ${color khaki3}${downspeed "enp7s0"}${color}${alignr}${color steelblue2}${downspeedgraph "enp7s0" 8,60}${color}
-${voffset 4}${font PizzaDude Bullets:size=14}N${font} upload: ${color khaki3}${alignr}${totalup "enp7s0"}${color}
-${voffset 4}${font PizzaDude Bullets:size=14}T${font} download: ${color khaki3}${alignr}${totaldown "enp7s0"}${color}
-${endif}
 ]];
