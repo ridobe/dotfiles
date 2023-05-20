@@ -123,7 +123,7 @@ temp: ${color khaki3}${execi 1 sensors -f amdgpu-pci-0500 | grep edge | tr -d '+
 ${color dimgray}RAM ${hr 2}${color}
 RAM usage: ${color khaki3}$mem/$memmax - ${color}${color steelblue2}$memperc% ${membar 7}${color}
 RAM clock: ${color khaki3}${execi 1 sudo dmidecode -t 17 | grep 'Speed' | head -4 | tail -1 | cut -c 26-30 | uniq}MHz${color}
-RAM PN: ${color khaki3}${execi 1 sudo dmidecode -t 17 | grep 'Part' | head -4 | tail -1| cut -c 14-30 | uniq}${color}
+#RAM PN: ${color khaki3}${execi 1 sudo dmidecode -t 17 | grep 'Part' | head -4 | tail -1| cut -c 14-30 | uniq}${color}
 
 ##################################
 ##             CPU              ##
@@ -136,15 +136,14 @@ ${color dimgray}CPU ${hr 2}${color}
 temp: ${color khaki3}${execi 1 sensors -f zenpower-pci-00c3 | grep 'Tdie'| tr -d '+' | tail -n 2 | cut -c 14-22 | awk '{print ($1-32)*5/9}' OFMT="%.1f"}°C/${execi 1 sensors -f zenpower-pci-00c3 | grep 'Tdie'| tr -d '+' | tail -n 2 | cut -c 14-22}${color} limit: ${color khaki3}(95°C/203°F)${color}
 Vcore: ${color khaki3}${execi 1 sensors -f zenpower-pci-00c3 | grep 'SVI2_Core'| cut -c 14-24}${color}
 VsoC: ${color khaki3}${execi 1 sensors -f zenpower-pci-00c3 | grep 'SVI2_SoC'| cut -c 14-22}${color}
-
-cpu_1: ${color khaki3}${freq_g cpu1} Ghz ${color}${color steelblue2}${cpu cpu1}%  ${cpubar cpu1 7}${color}
-cpu_2: ${color khaki3}${freq_g cpu2} Ghz ${color}${color steelblue2}${cpu cpu2}%  ${cpubar cpu2 7}${color}
-cpu_3: ${color khaki3}${freq_g cpu3} Ghz ${color}${color steelblue2}${cpu cpu3}%  ${cpubar cpu3 7}${color}
-cpu_4: ${color khaki3}${freq_g cpu4} Ghz ${color}${color steelblue2}${cpu cpu4}%  ${cpubar cpu4 7}${color}
-cpu_5: ${color khaki3}${freq_g cpu5} Ghz ${color}${color steelblue2}${cpu cpu5}%  ${cpubar cpu5 7}${color}
-cpu_6: ${color khaki3}${freq_g cpu6} Ghz ${color}${color steelblue2}${cpu cpu6}%  ${cpubar cpu6 7}${color}
-cpu_7: ${color khaki3}${freq_g cpu7} Ghz ${color}${color steelblue2}${cpu cpu7}%  ${cpubar cpu7 7}${color}
-cpu_8: ${color khaki3}${freq_g cpu8} Ghz ${color}${color steelblue2}${cpu cpu8}%  ${cpubar cpu8 7}${color}
+#cpu_0: ${color khaki3}${freq_g cpu1} Ghz ${color}${color steelblue2}${cpu cpu0}%  ${cpubar cpu1 0}${color}
+#cpu_2: ${color khaki3}${freq_g cpu2} Ghz ${color}${color steelblue2}${cpu cpu2}%  ${cpubar cpu2 7}${color}
+#cpu_3: ${color khaki3}${freq_g cpu3} Ghz ${color}${color steelblue2}${cpu cpu3}%  ${cpubar cpu3 7}${color}
+#cpu_4: ${color khaki3}${freq_g cpu4} Ghz ${color}${color steelblue2}${cpu cpu4}%  ${cpubar cpu4 7}${color}
+#cpu_5: ${color khaki3}${freq_g cpu5} Ghz ${color}${color steelblue2}${cpu cpu5}%  ${cpubar cpu5 7}${color}
+#cpu_6: ${color khaki3}${freq_g cpu6} Ghz ${color}${color steelblue2}${cpu cpu6}%  ${cpubar cpu6 7}${color}
+#cpu_7: ${color khaki3}${freq_g cpu7} Ghz ${color}${color steelblue2}${cpu cpu7}%  ${cpubar cpu7 7}${color}
+#cpu_8: ${color khaki3}${freq_g cpu8} Ghz ${color}${color steelblue2}${cpu cpu8}%  ${cpubar cpu8 7}${color}
 
 ##################################
 ##          STATISTICS          ##
@@ -171,12 +170,11 @@ ${time %A, %d %B %Y}
 ##################################
 ##          NETWORK             ##
 ##################################
-#${color dimgray}NETWORK ${hr 2}${color}
-#${if_existing /proc/net/route wlp7s0}
-#${if_existing /proc/net/route enp7s0}
-#${voffset -6}${font PizzaDude Bullets:size=12}O${font} up: ${color khaki3}${upspeed wlp7s0}${color}${alignr}${color steelblue2}${upspeedgraph wlp7s0 8,60}${color}
-#${voffset 4}${font PizzaDude Bullets:size=12}U${font} down: ${color khaki3}${downspeed wlp7s0}${color}${alignr}${color steelblue2}${downspeedgraph wlp7s0 8,60}${color}
-#${voffset 4}${font PizzaDude Bullets:size=12}N${font} upload: ${color khaki3}${alignr}${totalup wlp7s0}${color}
-#${voffset 4}${font PizzaDude Bullets:size=12}T${font} download: ${color khaki3}${alignr}${totaldown wlp7s0}${color}
-#${endif}
+${color dimgray}NETWORK ${hr 2}${color}
+
+${voffset -6}${font PizzaDude Bullets:size=14}O${font} up: ${color khaki3}${upspeed "wlp7s0"}${color}${alignr}${color steelblue2}${upspeedgraph "wlp7s0" 8,60}${color}
+${voffset 4}${font PizzaDude Bullets:size=14}U${font} down: ${color khaki3}${downspeed "wlp7s0"}${color}${alignr}${color steelblue2}${downspeedgraph "wlp7s0" 8,60}${color}
+${voffset 4}${font PizzaDude Bullets:size=14}N${font} upload: ${color khaki3}${alignr}${totalup "wlp7s0"}${color}
+${voffset 4}${font PizzaDude Bullets:size=14}T${font} download: ${color khaki3}${alignr}${totaldown "wlp7s0"}${color}
+
 ]];
