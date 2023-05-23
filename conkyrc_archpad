@@ -23,7 +23,7 @@ conky.config = {
 	own_window_transparent = false,
 
 --own_window_type override
-	own_window_type = 'desktop',
+	own_window_type = 'normal',
 --own_window_type normal #use this if you want a nice shadow to appear around conky
 
 -- If own_window is yes, these window manager hints may be used
@@ -174,10 +174,10 @@ ${color dimgray}NETWORK ${hr 2}${color}
 ${if_existing /sys/class/net/wlp7s0/operstate up}
 interface: ${font DejaVu Sans:size=10:italic}${color green2}wlp7s0${font}${color}
 
-${voffset -6}${font PizzaDude Bullets:size=14}O${font} up: ${color khaki3}${upspeed "wlp7s0"}${color}${alignr}${color steelblue2}${upspeedgraph "wlp7s0" 8,60}${color}
-${voffset 4}${font PizzaDude Bullets:size=14}U${font} down: ${color khaki3}${downspeed "wlp7s0"}${color}${alignr}${color steelblue2}${downspeedgraph "wlp7s0" 8,60}${color}
-${voffset 4}${font PizzaDude Bullets:size=14}N${font} upload: ${color khaki3}${alignr}${totalup "wlp7s0"}${color}
-${voffset 4}${font PizzaDude Bullets:size=14}T${font} download: ${color khaki3}${alignr}${totaldown "wlp7s0"}${color}
+${voffset -6}${font PizzaDude Bullets:size=14}O${font} up: ${color khaki3}${upspeed wlp7s0}${color}${alignr}${color steelblue2}${upspeedgraph wlp7s0 8,60}${color}
+${voffset 4}${font PizzaDude Bullets:size=14}U${font} down: ${color khaki3}${downspeed wlp7s0}${color}${alignr}${color steelblue2}${downspeedgraph wlp7s0 8,60}${color}
+${voffset 4}${font PizzaDude Bullets:size=14}N${font} upload: ${color khaki3}${alignr}${totalup wlp7s0}${color}
+${voffset 4}${font PizzaDude Bullets:size=14}T${font} download: ${color khaki3}${alignr}${totaldown wlp7s0}${color}
 ${endif}${if_existing /sys/class/net/enp7s0/operstate up}
 
 interface: ${font DejaVu Sans:size=10:italic}${color green2}enp7s0${font}${color}
