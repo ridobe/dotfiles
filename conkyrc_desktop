@@ -104,8 +104,8 @@ conky.text = [[
 ##            SYSTEM            ##
 ##################################
 ${color dimgray}SYSTEM ${hr 2}${color}
-#${font DejaVu:size=14}${nodename} -xfce${font}
-#${exec cat /proc/cpuinfo | grep 'model name' | cut -c 14-50 | uniq}
+${font DejaVu:size=14}${nodename} -xfce${font}
+${exec cat /proc/cpuinfo | grep 'model name' | cut -c 14-50 | uniq}
 #kernel: ${color khaki3}${exec uname -r | grep 'seiei' | tr -d '+'}${color}
 #${alignr 20}${color steelblue2}${font DejaVu Sans:size=10:italic} -elite, powerful, efficient${color}${font}
 #uptime: ${color khaki3}$uptime${color}
