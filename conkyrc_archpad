@@ -121,7 +121,7 @@ temp: ${color khaki3}${execi 1 sensors -f amdgpu-pci-0500 | grep edge | tr -d '+
 ##             RAM              ##
 ##################################
 ${color dimgray}RAM ${hr 2}${color}
-RAM usage: ${color khaki3}$mem/$memmax - ${color}${color steelblue2}$memperc% ${membar 7}${color}
+#RAM usage: ${color khaki3}$mem/$memmax - ${color}${color steelblue2}$memperc% ${membar 7}${color}
 RAM clock: ${color khaki3}${execi 1 sudo dmidecode -t 17 | grep 'Speed' | head -4 | tail -1 | cut -c 26-30 | uniq}MHz${color}
 #RAM PN: ${color khaki3}${execi 1 sudo dmidecode -t 17 | grep 'Part' | head -4 | tail -1| cut -c 14-30 | uniq}${color}
 
