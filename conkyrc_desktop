@@ -106,26 +106,32 @@ conky.text = [[
 ${color dimgray}SYSTEM ${hr 2}${color}
 ${font DejaVu:size=14}${nodename} -xfce${font}
 ${exec cat /proc/cpuinfo | grep 'model name' | cut -c 14-50 | uniq}
-#kernel: ${color khaki3}${exec uname -r | grep 'seiei' | tr -d '+'}${color}
-#${alignr 20}${color steelblue2}${font DejaVu Sans:size=10:italic} -elite, powerful, efficient${color}${font}
-#uptime: ${color khaki3}$uptime${color}
-#bios: ${color khaki3}${exec sudo dmidecode -t 0 | grep 'Version'| cut -c 11-14 | uniq}${color}
-#motherboard: ${color khaki3}X570 AORUS PRO WIFI${color}
-#mullvad server: ${if_existing /proc/net/route wg0}${color green2}wireguard tunnel active${color}${else}${font DejaVu Sans:size=10:italic}${color firebrick2}not protected${font}${color}${endif}
+kernel: ${color khaki3}$kernel${color}
+${alignr 20}${color steelblue2}${font DejaVu Sans:size=10:italic} -elite, powerful, efficient${color}${font}
+bios: ${color khaki3}${exec sudo dmidecode -t 0 | grep 'Version'| cut -c 11-14 | uniq}${color}
+mullvad server: ${if_existing /proc/net/route wg0}${color green2}${execi 3600 curl https://am.i.mullvad.net/ip} | ${execi 3600 curl https://am.i.mullvad.net/city}${color}${else}${font DejaVu Sans:size=10:italic}${color firebrick2}not protected${font}${color}${endif}
+#${color #666666}${stippled_hr}${color}${voffset 2}
+#${color slate grey}AC Power: ${color}${acpiacadapter}${voffset 2}
+#${color slate grey}Battery1: ${color}${battery_percent BAT0}% ${color #999999}${battery_bar BAT0}${voffset 2}
+#${color slate grey}Capacity: ${color}${execi 2 awk '{print $1*10^-3}' /sys/class/power_supply/BAT0/charge_now | cut -c1-4}/${execi 2 awk '{print $1*10^-3}' /sys/class/power_supply/BAT0/charge_full | cut -c1-4} mAh${voffset 2}
+#${color slate grey}Capacity: ${color}${execi 2 upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep  "energy:" | cut -c26-31}/${execi 2 upower -i /org/freedesktop/UPower/devices/battery_BAT0 |grep  "energy-full:" | cut -c26-31} Wh${voffset 2}
+#${color slate grey}Power: ${color}${exec rapldump -bat0}W ${battery_time BAT0}${voffset 2}
+#${color slate grey}Status: ${color}${execi 2 cat /sys/class/power_supply/BAT0/status}
+#${color #666666}${hr}${color}${voffset 2}
 
 ##################################
 ##             GPU              ##
 ##################################
 ${color dimgray}GPU ${hr 2}${color}
-#type: ${color khaki3}${exec lspci -vnn | grep Sapphire | head -1 | cut -c 34-66 | uniq}${color}
-#freq: ${color khaki3}$freq MHz${color}
-#temp: ${color khaki3}${execi 1 sensors -f amdgpu-pci-0900 | grep edge | tr -d '+' | cut -c 14-22}${color}
+type: ${color khaki3}${exec lspci -vnn | grep Sapphire | head -1 | cut -c 34-66 | uniq}${color}
+freq: ${color khaki3}$freq MHz${color}
+temp: ${color khaki3}${execi 1 sensors -f amdgpu-pci-0900 | grep edge | tr -d '+' | cut -c 14-22}${color}
 
 ##################################
 ##             RAM              ##
 ##################################
 ${color dimgray}RAM ${hr 2}${color}
-#RAM usage: ${color khaki3}$mem/$memmax - ${color}${color steelblue2}$memperc% ${membar 7}${color}
+RAM usage: ${color khaki3}$mem/$memmax - ${color}${color steelblue2}$memperc% ${membar 7}${color}
 RAM clock: ${color khaki3}${exec sudo dmidecode -t 17 | grep 'Speed' | head -7 | tail -1 | cut -c 27-30 | uniq}MHz${color}
 RAM PN: ${color khaki3}${exec sudo dmidecode -t 17 | grep 'Part' | head -4 | tail -1 | cut -c 14-30 | uniq}${color}
 
@@ -133,7 +139,6 @@ RAM PN: ${color khaki3}${exec sudo dmidecode -t 17 | grep 'Part' | head -4 | tai
 ##          STATISTICS          ##
 ##################################
 ${color dimgray}STATISTICS ${hr 2}${color}
-processes: ${color khaki3}$processes${color}   Running: ${color khaki3}$running_processes${color}
 file systems: ${color khaki3}/ ${fs_used /}/${fs_size /}${color} ${color steelblue2}${fs_bar 7 /}${color}
 file systems: ${color khaki3}/home ${fs_used /home}/${fs_size /home}${color} ${color steelblue2}${fs_bar 7 /home}${color}
 
@@ -155,21 +160,11 @@ ${time %A, %d %B %Y}
 ##          NETWORK             ##
 ##################################
 ${color dimgray}NETWORK ${hr 2}${color}
-${if_existing /sys/class/net/wlp7s0/operstate up}
-interface: ${font DejaVu Sans:size=10:italic}${color green2}wlp7s0${font}${color}
+interface: ${font DejaVu Sans:size=10:italic}${color green2}$gw_iface${font}${color}
 
-${voffset -6}${font PizzaDude Bullets:size=14}O${font} up: ${color khaki3}${upspeed wlp7s0}${color}${alignr}${color steelblue2}${upspeedgraph wlp7s0 8,60}${color}
-${voffset 4}${font PizzaDude Bullets:size=14}U${font} down: ${color khaki3}${downspeed wlp7s0}${color}${alignr}${color steelblue2}${downspeedgraph wlp7s0 8,60}${color}
-${voffset 4}${font PizzaDude Bullets:size=14}N${font} upload: ${color khaki3}${alignr}${totalup wlp7s0}${color}
-${voffset 4}${font PizzaDude Bullets:size=14}T${font} download: ${color khaki3}${alignr}${totaldown wlp7s0}${color}
-${endif}${if_existing /sys/class/net/enp7s0/operstate up}
-
-interface: ${font DejaVu Sans:size=10:italic}${color green2}enp7s0${font}${color}
-
-${voffset -6}${font PizzaDude Bullets:size=14}O${font} up: ${color khaki3}${upspeed "enp7s0"}${color}${alignr}${color steelblue2}${upspeedgraph "enp7s0" 8,60}${color}
-${voffset 4}${font PizzaDude Bullets:size=14}U${font} down: ${color khaki3}${downspeed "enp7s0"}${color}${alignr}${color steelblue2}${downspeedgraph "enp7s0" 8,60}${color}
-${voffset 4}${font PizzaDude Bullets:size=14}N${font} upload: ${color khaki3}${alignr}${totalup "enp7s0"}${color}
-${voffset 4}${font PizzaDude Bullets:size=14}T${font} download: ${color khaki3}${alignr}${totaldown "enp7s0"}${color}xi
-${endif}
+${voffset -6}${font PizzaDude Bullets:size=14}O${font} up: ${color khaki3}${upspeed $gw_iface}${color}${alignr}${color steelblue2}${upspeedgraph $gw_iface 8,60}${color}
+${voffset 4}${font PizzaDude Bullets:size=14}U${font} down: ${color khaki3}${downspeed $gw_iface}${color}${alignr}${color steelblue2}${downspeedgraph $gw_iface 8,60}${color}
+${voffset 4}${font PizzaDude Bullets:size=14}N${font} upload: ${color khaki3}${alignr}${totalup $gw_iface}${color}
+${voffset 4}${font PizzaDude Bullets:size=14}T${font} download: ${color khaki3}${alignr}${totaldown $gw_iface}${color}
 
 ]];
