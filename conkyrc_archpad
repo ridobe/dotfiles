@@ -107,14 +107,17 @@ kernel: ${color khaki3}$kernel${color}
 ${alignr 20}${color steelblue2}${font DejaVu Sans:size=10:italic} -elite, powerful, efficient${color}${font}
 bios: ${color khaki3}${exec sudo dmidecode -t 0 | grep 'Version'| cut -c 11-26 | uniq}${color}
 mullvad server: ${if_existing /proc/net/route wg0}${color green2}${execi 3600 curl https://am.i.mullvad.net/ip} | ${execi 3600 curl https://am.i.mullvad.net/city}${color}${else}${font DejaVu Sans:size=10:italic}${color firebrick2}not protected${font}${color}${endif}
-#${color #666666}${stippled_hr}${color}${voffset 2}
-#${color slate grey}AC Power: ${color}${acpiacadapter}${voffset 2}
-#${color slate grey}Battery1: ${color}${battery_percent BAT0}% ${color #999999}${battery_bar BAT0}${voffset 2}
-#${color slate grey}Capacity: ${color}${execi 2 awk '{print $1*10^-3}' /sys/class/power_supply/BAT0/charge_now | cut -c1-4}/${execi 2 awk '{print $1*10^-3}' /sys/class/power_supply/BAT0/charge_full | cut -c1-4} mAh${voffset 2}
-#${color slate grey}Capacity: ${color}${execi 2 upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep  "energy:" | cut -c26-31}/${execi 2 upower -i /org/freedesktop/UPower/devices/battery_BAT0 |grep  "energy-full:" | cut -c26-31} Wh${voffset 2}
-#${color slate grey}Power: ${color}${exec rapldump -bat0}W ${battery_time BAT0}${voffset 2}
-#${color slate grey}Status: ${color}${execi 2 cat /sys/class/power_supply/BAT0/status}
-#${color #666666}${hr}${color}${voffset 2}
+
+##################################
+##          BATT STATS          ##
+##################################
+${color dimgray}BATT STATS ${hr 2}${color}
+AC Power: ${color khaki3}${acpiacadapter}${voffset 2}${color}
+battery1: ${color khaki3}${battery_percent BAT0}%${color} ${color steelblue2}${battery_bar BAT0}${voffset 2}${color}
+#capacity: ${color khaki3}${execi 2 awk '{print $1*10^-3}' /sys/class/power_supply/BAT0/charge_now | cut -c1-4}/${execi 2 awk '{print $1*10^-3}' /sys/class/power_supply/BAT0/charge_full | cut -c1-4} mAh${voffset 2}${color}
+capacity: ${color khaki3}${execi 2 upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep  "energy:" | cut -c26-31}/${execi 2 upower -i /org/freedesktop/UPower/devices/battery_BAT0 |grep  "energy-full:" | cut -c26-31} Wh${voffset 2}${color}
+power: ${color khaki3}${battery_time BAT0}${voffset 2}${color}
+status: ${color khaki3}${execi 2 cat /sys/class/power_supply/BAT0/status}${color}
 
 ##################################
 ##             GPU              ##
@@ -128,29 +131,25 @@ temp: ${color khaki3}${execi 1 sensors -f amdgpu-pci-0500 | grep edge | tr -d '+
 ##             RAM              ##
 ##################################
 ${color dimgray}RAM ${hr 2}${color}
-#RAM usage: ${color khaki3}$mem/$memmax - ${color}${color steelblue2}$memperc% ${membar 7}${color}
+RAM usage: ${color khaki3}$mem/$memmax - ${color}${color steelblue2}$memperc% ${membar 7}${color}
 RAM clock: ${color khaki3}${execi 1 sudo dmidecode -t 17 | grep 'Speed' | head -4 | tail -1 | cut -c 26-30 | uniq}MHz${color}
-#RAM PN: ${color khaki3}${execi 1 sudo dmidecode -t 17 | grep 'Part' | head -4 | tail -1| cut -c 14-30 | uniq}${color}
+RAM PN: ${color khaki3}${execi 1 sudo dmidecode -t 17 | grep 'Part' | head -4 | tail -1| cut -c 14-30 | uniq}${color}
 
 ##################################
 ##             CPU              ##
 ##################################
 ${color dimgray}CPU ${hr 2}${color}
-#temp: ${execi 1 sensors -f k10temp-pci-00c3 | tr -d '+' | tail -n 2 | cut -c 14-42}
-#temp: ${execi 1 sensors -f k10temp-pci-00c3 | grep 'Tdie'| tr -d '+' | tail -n 2 | cut -c 14-22 | awk '{print ($1-32)*5/9}' OFMT="%.1f"}°C/${execi 1 sensors -f k10temp-pci-00c3 | grep 'Tdie'| tr -d '+' | tail -n 2 | cut -c 14-22} limit: (95°C/203°F)
-#Vcore: ${execi 1 sensors -f k10temp-pci-00c3 | grep 'Vcore'| cut -c 14-24}
-#VsoC: ${execi 1 sensors -f k10temp-pci-00c3 | grep 'Vsoc'| cut -c 14-22}
 temp: ${color khaki3}${execi 1 sensors -f zenpower-pci-00c3 | grep 'Tdie'| tr -d '+' | tail -n 2 | cut -c 14-22 | awk '{print ($1-32)*5/9}' OFMT="%.1f"}°C/${execi 1 sensors -f zenpower-pci-00c3 | grep 'Tdie'| tr -d '+' | tail -n 2 | cut -c 14-22}${color} limit: ${color khaki3}(95°C/203°F)${color}
 Vcore: ${color khaki3}${execi 1 sensors -f zenpower-pci-00c3 | grep 'SVI2_Core'| cut -c 14-24}${color}
 VsoC: ${color khaki3}${execi 1 sensors -f zenpower-pci-00c3 | grep 'SVI2_SoC'| cut -c 14-22}${color}
-cpu_1: ${color khaki3}${freq_g cpu1} Ghz ${color}${color steelblue2}${cpu cpu1}%  ${cpubar cpu1 7}${color}
-cpu_2: ${color khaki3}${freq_g cpu2} Ghz ${color}${color steelblue2}${cpu cpu2}%  ${cpubar cpu2 7}${color}
-cpu_3: ${color khaki3}${freq_g cpu3} Ghz ${color}${color steelblue2}${cpu cpu3}%  ${cpubar cpu3 7}${color}
-cpu_4: ${color khaki3}${freq_g cpu4} Ghz ${color}${color steelblue2}${cpu cpu4}%  ${cpubar cpu4 7}${color}
-cpu_5: ${color khaki3}${freq_g cpu5} Ghz ${color}${color steelblue2}${cpu cpu5}%  ${cpubar cpu5 7}${color}
-cpu_6: ${color khaki3}${freq_g cpu6} Ghz ${color}${color steelblue2}${cpu cpu6}%  ${cpubar cpu6 7}${color}
-cpu_7: ${color khaki3}${freq_g cpu7} Ghz ${color}${color steelblue2}${cpu cpu7}%  ${cpubar cpu7 7}${color}
-cpu_8: ${color khaki3}${freq_g cpu8} Ghz ${color}${color steelblue2}${cpu cpu8}%  ${cpubar cpu8 7}${color}
+#average 4 cores: ${color khaki3}${freq_g cpu0} Ghz ${color}${color steelblue2}${cpu cpu0}%  ${cpubar cpu0 7}${color}
+#cpu_2: ${color khaki3}${freq_g cpu2} Ghz ${color}${color steelblue2}${cpu cpu2}%  ${cpubar cpu2 7}${color}
+#cpu_3: ${color khaki3}${freq_g cpu3} Ghz ${color}${color steelblue2}${cpu cpu3}%  ${cpubar cpu3 7}${color}
+#cpu_4: ${color khaki3}${freq_g cpu4} Ghz ${color}${color steelblue2}${cpu cpu4}%  ${cpubar cpu4 7}${color}
+#cpu_5: ${color khaki3}${freq_g cpu5} Ghz ${color}${color steelblue2}${cpu cpu5}%  ${cpubar cpu5 7}${color}
+#cpu_6: ${color khaki3}${freq_g cpu6} Ghz ${color}${color steelblue2}${cpu cpu6}%  ${cpubar cpu6 7}${color}
+#cpu_7: ${color khaki3}${freq_g cpu7} Ghz ${color}${color steelblue2}${cpu cpu7}%  ${cpubar cpu7 7}${color}
+#cpu_8: ${color khaki3}${freq_g cpu8} Ghz ${color}${color steelblue2}${cpu cpu8}%  ${cpubar cpu8 7}${color}
 
 ##################################
 ##          STATISTICS          ##
