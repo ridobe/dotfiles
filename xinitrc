@@ -21,6 +21,6 @@ fi
 
 # Set a single desktop environment
 #exec i3 -V >> ~/i3log-$(date +'%F-%k-%M-%S') 2>&1
-#exec startxfce4
-dbus-launch --sh-syntax --exit-with-session startxfce4
+exec startxfce4
+#dbus-launch --sh-syntax --exit-with-session startxfce4
 #exec xmonad

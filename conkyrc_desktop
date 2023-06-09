@@ -70,7 +70,7 @@ conky.config = {
 -- Gap between borders of screen and text
 -- same thing as passing -x at command line
 -- gap_x = 2255 for ultrawide
-	gap_x = 1967,
+	gap_x = 0,
 	gap_y = 0,
 
 -- Subtract file system buffers from used memory?
@@ -108,27 +108,28 @@ ${font DejaVu:size=12}${nodename} -xfce${font}
 ${exec cat /proc/cpuinfo | grep 'model name' | cut -c 14-50 | uniq}
 kernel: ${color khaki3}$kernel${color}
 ${alignr 20}${color steelblue2}${font DejaVu Sans:size=10:italic} -elite, powerful, efficient${color}${font}
-bios: ${color khaki3}${exec sudo dmidecode -t 0 | grep 'Version'| cut -c 11-14 | uniq}${color}
+bios: ${color khaki3}${exec sudo dmidecode -t 0 | grep 'Version'| cut -c 11-26 | uniq}${color}
 mullvad server: ${if_existing /proc/net/route wg0}${color green2}${execi 3600 curl https://am.i.mullvad.net/ip} | ${execi 3600 curl https://am.i.mullvad.net/city}${color}${else}${font DejaVu Sans:size=10:italic}${color firebrick2}not protected${font}${color}${endif}
 
 ##################################
 ##          BATT STATS          ##
 ##################################
 ${color dimgray}BATT STATS ${hr 2}${color}
-#AC Power: ${color khaki3}${acpiacadapter}${voffset 2}${color}
-#battery1: ${color khaki3}${battery_percent BAT0}%${color} ${color steelblue2}${battery_bar BAT0}${voffset 2}${color}
+AC Power: ${color khaki3}${acpiacadapter}${voffset 2}${color}
+battery: ${color khaki3}${battery_percent BAT0}%${color} ${color steelblue2}${battery_bar BAT0}${voffset 2}${color}
 #capacity: ${color khaki3}${execi 2 awk '{print $1*10^-3}' /sys/class/power_supply/BAT0/charge_now | cut -c1-4}/${execi 2 awk '{print $1*10^-3}' /sys/class/power_supply/BAT0/charge_full | cut -c1-4} mAh${voffset 2}${color}
-#capacity: ${color khaki3}${execi 2 upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep  "energy:" | cut -c26-31}/${execi 2 upower -i /org/freedesktop/UPower/devices/battery_BAT0 |grep  "energy-full:" | cut -c26-31} Wh${voffset 2}${color}
-#power: ${color khaki3}${battery_time BAT0}${voffset 2}${color}
-#status: ${color khaki3}${execi 2 cat /sys/class/power_supply/BAT0/status}${color}
+capacity: ${color khaki3}${execi 2 upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep  "energy:" | cut -c26-31}/${execi 2 upower -i /org/freedesktop/UPower/devices/battery_BAT0 |grep  "energy-full:" | cut -c26-31} Wh${voffset 2}${color}
+power: ${color khaki3}${battery_time BAT0}${voffset 2}${color}
+status: ${color khaki3}${execi 2 cat /sys/class/power_supply/BAT0/status}${color}
 
 ##################################
 ##             GPU              ##
 ##################################
 ${color dimgray}GPU ${hr 2}${color}
-type: ${color khaki3}${exec lspci -vnn | grep Sapphire | head -1 | cut -c 34-66 | uniq}${color}
+#type: ${color khaki3}${exec lspci -vnn | grep Sapphire | head -1 | cut -c 34-66 | uniq}${color}
+type: ${color khaki3}AMD radeon Vega 8${color}
 freq: ${color khaki3}$freq MHz${color}
-temp: ${color khaki3}${execi 1 sensors -f amdgpu-pci-0900 | grep edge | tr -d '+' | cut -c 14-22}${color}
+temp: ${color khaki3}${execi 1 sensors -f amdgpu-pci-0500 | grep edge | tr -d '+' | cut -c 14-22}${color}
 
 ##################################
 ##             RAM              ##
@@ -181,13 +182,14 @@ ${color dimgray}CPU ${hr 2}${color}
 temp: ${color khaki3}${execi 1 sensors -f zenpower-pci-00c3 | grep 'Tdie'| tr -d '+' | tail -n 2 | cut -c 14-22 | awk '{print ($1-32)*5/9}' OFMT="%.1f"}°C/${execi 1 sensors -f zenpower-pci-00c3 | grep 'Tdie'| tr -d '+' | tail -n 2 | cut -c 14-22}${color} limit: ${color khaki3}(95°C/203°F)${color}
 Vcore: ${color khaki3}${execi 1 sensors -f zenpower-pci-00c3 | grep 'SVI2_Core'| cut -c 14-24}${color}
 VsoC: ${color khaki3}${execi 1 sensors -f zenpower-pci-00c3 | grep 'SVI2_SoC'| cut -c 14-22}${color}
-#cpu_1: ${color khaki3}${freq_g cpu0} Ghz ${color}${color steelblue2}${cpu cpu0}%  ${cpubar cpu0 7}${color}
-#cpu_2: ${color khaki3}${freq_g cpu2} Ghz ${color}${color steelblue2}${cpu cpu2}%  ${cpubar cpu2 7}${color}
-#cpu_3: ${color khaki3}${freq_g cpu3} Ghz ${color}${color steelblue2}${cpu cpu3}%  ${cpubar cpu3 7}${color}
-#cpu_4: ${color khaki3}${freq_g cpu4} Ghz ${color}${color steelblue2}${cpu cpu4}%  ${cpubar cpu4 7}${color}
-#cpu_5: ${color khaki3}${freq_g cpu5} Ghz ${color}${color steelblue2}${cpu cpu5}%  ${cpubar cpu5 7}${color}
-#cpu_6: ${color khaki3}${freq_g cpu6} Ghz ${color}${color steelblue2}${cpu cpu6}%  ${cpubar cpu6 7}${color}
-#cpu_7: ${color khaki3}${freq_g cpu7} Ghz ${color}${color steelblue2}${cpu cpu7}%  ${cpubar cpu7 7}${color}
-#cpu_8: ${color khaki3}${freq_g cpu8} Ghz ${color}${color steelblue2}${cpu cpu8}%  ${cpubar cpu8 7}${color}
+
+cpu_1: ${color khaki3}${freq_g cpu0} Ghz ${color}${color steelblue2}${cpu cpu0}%  ${cpubar cpu0 7}${color}
+cpu_2: ${color khaki3}${freq_g cpu2} Ghz ${color}${color steelblue2}${cpu cpu2}%  ${cpubar cpu2 7}${color}
+cpu_3: ${color khaki3}${freq_g cpu3} Ghz ${color}${color steelblue2}${cpu cpu3}%  ${cpubar cpu3 7}${color}
+cpu_4: ${color khaki3}${freq_g cpu4} Ghz ${color}${color steelblue2}${cpu cpu4}%  ${cpubar cpu4 7}${color}
+cpu_5: ${color khaki3}${freq_g cpu5} Ghz ${color}${color steelblue2}${cpu cpu5}%  ${cpubar cpu5 7}${color}
+cpu_6: ${color khaki3}${freq_g cpu6} Ghz ${color}${color steelblue2}${cpu cpu6}%  ${cpubar cpu6 7}${color}
+cpu_7: ${color khaki3}${freq_g cpu7} Ghz ${color}${color steelblue2}${cpu cpu7}%  ${cpubar cpu7 7}${color}
+cpu_8: ${color khaki3}${freq_g cpu8} Ghz ${color}${color steelblue2}${cpu cpu8}%  ${cpubar cpu8 7}${color}
 
 ]];
