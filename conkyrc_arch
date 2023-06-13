@@ -1,0 +1,195 @@
+conky.config = {
+--#####################################################
+--#  .conkyrc by ridobe <ridobe18 AT gmail DOT com>  ##
+--#####################################################
+
+--units
+	temperature_unit = 'fahrenheit',
+	short_units = true,
+
+-- Use Xft?
+	use_xft = true,
+	font = 'DejaVu Sans:size=10',
+	xftalpha = 0.8,
+	text_buffer_size = 512,
+
+-- Update interval in seconds
+	update_interval = 1.0,
+
+-- This is the number of times Conky will update before quitting.
+-- Set to zero to run forever.
+	total_run_times = 0,
+	own_window = true,
+	own_window_transparent = false,
+
+--own_window_type override
+--	own_window_type = 'desktop',
+--own_window_type normal #use this if you want a nice shadow to appear around conky
+
+-- If own_window is yes, these window manager hints may be used
+	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+
+-- Use double buffering (reduces flicker, may not work for everyone)
+	double_buffer = true,
+
+-- Minimum size of text area
+	minimum_width = 330, minimum_height = 1255,
+	
+--maximum_width 300
+
+-- Draw shades?
+	draw_shades = false,
+
+-- Draw outlines?
+	draw_outline = false,
+
+-- Draw borders around text
+	draw_borders = false,
+
+-- Stippled borders?
+	stippled_borders = 0,
+
+-- border width
+	border_width = 1,
+
+-- Default colors and also border colors
+--http://www.graphviz.org/doc/info/colors.html
+--	default_color = 'gainsboro',
+	default_color = 'azure2',
+--default_shade_color black
+--default_outline_color grey
+	own_window_colour = 'grey17',
+--own_window_colour black
+
+-- Text alignment, other possible values are commented
+--alignment top_left
+--alignment = 'top_right',	
+--alignment = bottom_left,
+--alignment = bottom_right,
+
+-- Gap between borders of screen and text
+-- same thing as passing -x at command line
+-- gap_x = 2255 for ultrawide
+	gap_x = 0,
+	gap_y = 0,
+
+-- Subtract file system buffers from used memory?
+	no_buffers = true,
+
+-- set to yes if you want all text to be in uppercase
+	uppercase = false,
+
+-- number of cpu samples to average
+-- set to 1 to disable averaging
+	cpu_avg_samples = 1,
+
+-- number of net samples to average
+-- set to 1 to disable averaging
+	net_avg_samples = 1,
+
+-- Force UTF8? note that UTF8 support required XFT
+	override_utf8_locale = true,
+
+-- Add spaces to keep things from moving about? This only affects certain objects.
+	use_spacer = 'none',
+	
+};
+
+conky.text = [[
+#${image $HOME/Backdrops_2560x1080_and-images/archimages/archlinux-logo-white.png -p 20,1080 -s 300x99.5}
+#-p is position, -s is size (728x455) original
+#${image $HOME/Backdrops_2560x1080_and-images/archimages/ryzen2.png -p 50,850 -s 246x169}
+#-p is position, -s is size (492x338) original
+##################################
+##            SYSTEM            ##
+##################################
+${color dimgray}SYSTEM ${hr 2}${color}
+${font DejaVu:size=12}${nodename} -xfce${font}
+${exec cat /proc/cpuinfo | grep 'model name' | cut -c 14-50 | uniq}
+kernel: ${color khaki3}$kernel${color}
+${alignr 20}${color steelblue2}${font DejaVu Sans:size=10:italic} -elite, powerful, efficient${color}${font}
+bios: ${color khaki3}${exec sudo dmidecode -t 0 | grep 'Version'| cut -c 11-26 | uniq}${color}
+mullvad server: ${if_existing /proc/net/route wg0}${color green2}${execi 3600 curl https://am.i.mullvad.net/ip} | ${execi 3600 curl https://am.i.mullvad.net/city}${color}${else}${font DejaVu Sans:size=10:italic}${color firebrick2}not protected${font}${color}${endif}
+
+##################################
+##          BATT STATS          ##
+##################################
+${color dimgray}BATT STATS ${hr 2}${color}
+AC Power: ${color khaki3}${acpiacadapter}${voffset 2}${color}
+battery: ${color khaki3}${battery_percent BAT0}%${color} ${color steelblue2}${battery_bar BAT0}${voffset 2}${color}
+#capacity: ${color khaki3}${execi 2 awk '{print $1*10^-3}' /sys/class/power_supply/BAT0/charge_now | cut -c1-4}/${execi 2 awk '{print $1*10^-3}' /sys/class/power_supply/BAT0/charge_full | cut -c1-4} mAh${voffset 2}${color}
+capacity: ${color khaki3}${execi 2 upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep  "energy:" | cut -c26-31}/${execi 2 upower -i /org/freedesktop/UPower/devices/battery_BAT0 |grep  "energy-full:" | cut -c26-31} Wh${voffset 2}${color}
+power: ${color khaki3}${battery_time BAT0}${voffset 2}${color}
+status: ${color khaki3}${execi 2 cat /sys/class/power_supply/BAT0/status}${color}
+
+##################################
+##             GPU              ##
+##################################
+${color dimgray}GPU ${hr 2}${color}
+#type: ${color khaki3}${exec lspci -vnn | grep Sapphire | head -1 | cut -c 34-66 | uniq}${color}
+type: ${color khaki3}AMD radeon Vega 8${color}
+freq: ${color khaki3}$freq MHz${color}
+temp: ${color khaki3}${execi 1 sensors -f amdgpu-pci-0500 | grep edge | tr -d '+' | cut -c 14-22}${color}
+
+##################################
+##             RAM              ##
+##################################
+${color dimgray}RAM ${hr 2}${color}
+RAM usage: ${color khaki3}$mem/$memmax - ${color}${color steelblue2}$memperc% ${membar 7}${color}
+RAM clock: ${color khaki3}${exec sudo dmidecode -t 17 | grep 'Speed' | head -7 | tail -1 | cut -c 27-30 | uniq}MHz${color}
+RAM PN: ${color khaki3}${exec sudo dmidecode -t 17 | grep 'Part' | head -4 | tail -1 | cut -c 14-30 | uniq}${color}
+
+##################################
+##        FILE SYSTEMS          ##
+##################################
+${color dimgray}FILE SYSTEMS ${hr 2}${color}
+root: ${color khaki3} ${fs_used /}/${fs_size /}${color} ${color steelblue2}${fs_used_perc /}% ${fs_bar 7 /}${color}
+home: ${color khaki3} ${fs_used /home}/${fs_size /home}${color} ${color steelblue2}${fs_used_perc /home}% ${fs_bar 7 /home}${color}
+downloads: ${color khaki3} ${fs_used /home/ridobe/Downloads}/${fs_size /home/ridobe/Downloads}${color} ${color steelblue2}${fs_used_perc /home/ridobe/Downloads}% ${fs_bar 7 /home/ridobe/Downloads}${color}
+swap: ${color khaki3}$swap/$swapmax - ${color}${color steelblue2}$swapperc% ${swapbar 7}${color}
+
+##################################
+##       TOP PROCESSES          ##
+##################################
+${color dimgray}TOP PROCESSES ${hr 2}${color}
+Name			PID   CPU%   MEM%
+${top name 1}	${color khaki3}${top pid 1} ${top cpu 1} ${top mem 1}${color}
+${top name 2}	${color khaki3}${top pid 2} ${top cpu 2} ${top mem 2}${color}
+${top name 3}	${color khaki3}${top pid 3} ${top cpu 3} ${top mem 3}${color}
+${top name 4}	${color khaki3}${top pid 4} ${top cpu 4} ${top mem 4}${color}
+
+##################################
+##          DATE/TIME           ##
+##################################
+${color dimgray}DATE ${hr 2}${color}
+
+${font Arial white:size=18}${time %H:%M}${font}
+${time %A, %d %B %Y}
+
+##################################
+##          NETWORK             ##
+##################################
+${color dimgray}NETWORK ${hr 2}${color}
+interface: ${font DejaVu Sans:size=10:italic}${color green2}$gw_iface${font}${color}
+
+${voffset -6}${font PizzaDude Bullets:size=14}O${font} up: ${color khaki3}${upspeed $gw_iface}${color}${alignr}${color steelblue2}${upspeedgraph $gw_iface 14,200}${color}
+${voffset 4}${font PizzaDude Bullets:size=14}U${font} down: ${color khaki3}${downspeed $gw_iface}${color}${alignr}${color steelblue2}${downspeedgraph $gw_iface 14,200}${color}
+
+##################################
+##             CPU              ##
+##################################
+${color dimgray}CPU ${hr 2}${color}
+temp: ${color khaki3}${execi 1 sensors -f zenpower-pci-00c3 | grep 'Tdie'| tr -d '+' | tail -n 2 | cut -c 14-22 | awk '{print ($1-32)*5/9}' OFMT="%.1f"}°C/${execi 1 sensors -f zenpower-pci-00c3 | grep 'Tdie'| tr -d '+' | tail -n 2 | cut -c 14-22}${color} limit: ${color khaki3}(95°C/203°F)${color}
+Vcore: ${color khaki3}${execi 1 sensors -f zenpower-pci-00c3 | grep 'SVI2_Core'| cut -c 14-24}${color}
+VsoC: ${color khaki3}${execi 1 sensors -f zenpower-pci-00c3 | grep 'SVI2_SoC'| cut -c 14-22}${color}
+
+cpu_1: ${color khaki3}${freq_g cpu0} Ghz ${color}${color steelblue2}${cpu cpu0}%  ${cpubar cpu0 7}${color}
+cpu_2: ${color khaki3}${freq_g cpu2} Ghz ${color}${color steelblue2}${cpu cpu2}%  ${cpubar cpu2 7}${color}
+cpu_3: ${color khaki3}${freq_g cpu3} Ghz ${color}${color steelblue2}${cpu cpu3}%  ${cpubar cpu3 7}${color}
+cpu_4: ${color khaki3}${freq_g cpu4} Ghz ${color}${color steelblue2}${cpu cpu4}%  ${cpubar cpu4 7}${color}
+cpu_5: ${color khaki3}${freq_g cpu5} Ghz ${color}${color steelblue2}${cpu cpu5}%  ${cpubar cpu5 7}${color}
+cpu_6: ${color khaki3}${freq_g cpu6} Ghz ${color}${color steelblue2}${cpu cpu6}%  ${cpubar cpu6 7}${color}
+cpu_7: ${color khaki3}${freq_g cpu7} Ghz ${color}${color steelblue2}${cpu cpu7}%  ${cpubar cpu7 7}${color}
+cpu_8: ${color khaki3}${freq_g cpu8} Ghz ${color}${color steelblue2}${cpu cpu8}%  ${cpubar cpu8 7}${color}
+
+]];
