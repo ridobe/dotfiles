@@ -69,7 +69,7 @@ conky.config = {
 
 -- Gap between borders of screen and text
 -- same thing as passing -x at command line
--- gap_x = 2255 for ultrawide
+-- gap_x = 2750 for LG ultrawide
 	gap_x = 0,
 	gap_y = 0,
 
