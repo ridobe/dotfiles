@@ -7,6 +7,7 @@ if (( $SECONDS > 3600 )) ; then
     let "minutes=(SECONDS%3600)/60"
     let "seconds=(SECONDS%3600)%60"
     echo "Completed in $hours hour(s), $minutes minute(s) and $seconds second(s)" 
+    echo "next up, makemod"
 elif (( $SECONDS > 60 )) ; then
     let "minutes=(SECONDS%3600)/60"
     let "seconds=(SECONDS%3600)%60"
