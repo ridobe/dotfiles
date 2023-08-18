@@ -1,3 +1,0 @@
-#!/bin/sh
-sleep 5
-conky -q -c /home/ridobe/.conky/.conkyrc

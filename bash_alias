@@ -21,8 +21,9 @@ alias wgup='sudo wg-quick up wg0'
 alias wgdown='sudo wg-quick down wg0'
 
 #kernel build
-#alias makej='make CC=clang HOSTCC=clang -j100 && echo "next up, makemod"'
-alias makemod='sudo make modules_install -j100 && echo "next up, copybz"'
+alias torvalds='git clone git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git'
+alias kpatch='echo patch -p1 "<" '
+alias makemod='sudo make modules_install -j$(nproc) && echo "next up, copybz"'
 alias copybz='sudo cp -v arch/x86_64/boot/bzImage /boot/vmlinuz-ridobe-seiei && echo "next up, cpio"'
 alias cpio='sudo mkinitcpio -p ridobe-seiei && paru -S zenpower3-dkms'
 
@@ -37,7 +38,7 @@ alias paruse='cat $HOME/dotfiles/bash_alias | grep paru'
 #paru -Qua ; print avaliable aur upgrades
 #paru -G <target> ; download PKGBUILD of <target>
 #paru -Gp <target> ; print the PKGBUILD of <target>
-#paru -Gc <target> ; pring the aur comments of <target>
+#paru -Gc <target> ; print the aur comments of <target>
 
 
 ##mullvad
@@ -71,7 +72,7 @@ alias sha256='sha256sum -b'
 alias gitpush='git status && git add * && git commit -m "updated/committed via script" && git push'
 alias octal='stat -c "%a %n"'
 alias killx='pkill -15 Xorg'
-alias microcode='journalctl --since yesterday | grep microcode'
+alias microcode='journalctl -k --grep=microcode'
 alias pbr='pkgbuilder'
 alias gitlog='git log --max-count=1 kernel'
 alias sdk='sdkmanager'
