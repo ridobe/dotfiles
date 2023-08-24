@@ -1,5 +1,6 @@
 #!/bin/bash
 #Automated .sh file for rsync backups to Synology NAS.
+echo "password must be pasted using plain text"
 LOG=~/crontab_log/rsync-desktop.log 2>&1
 echo "*** $(date -R) ***" >> $LOG
 rsync -a -e "ssh -p 2023" --delete --info=progress2  --exclude-from=$HOME/dotfiles/bin/rsync-exclude /home/ridobe/ 69.174.142.53:/volume1/homes/ridobe/rsync_arch/home/ && echo "Successfully completed" >> $LOG
