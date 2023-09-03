@@ -25,8 +25,7 @@ alias torvalds='git clone git://git.kernel.org/pub/scm/linux/kernel/git/torvalds
 alias kpatch='patch -p1 "<" '
 alias makemod='sudo make modules_install -j$(nproc) && echo "next up, copybz and prune: /usr/lib/modules/kernel_release and /var/lib/dkms/package_name'
 alias copybz='sudo cp -v arch/x86_64/boot/bzImage /boot/vmlinuz-ridobe-seiei && echo "next up, cpio"'
-#alias cpio='sudo mkinitcpio -p /etc/ridobe-seiei.preset && paru -S zenpower3-dkms'
-alias cpio='sudo mkinitcpio -p /etc/ridobe-seiei.preset && dkms install -m zenpower3/0.2.0'
+alias cpio='sudo mkinitcpio -p /etc/mkinitcpio.d/ridobe-seiei.preset && paru -S zenpower3-dkms'
 
 ##mce logging
 alias mce='ras-mc-ctl --errors'
