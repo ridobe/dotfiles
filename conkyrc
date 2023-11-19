@@ -192,5 +192,9 @@ cpu_5: ${color khaki3}${freq_g cpu5} Ghz ${color}${color steelblue2}${cpu cpu5}%
 cpu_6: ${color khaki3}${freq_g cpu6} Ghz ${color}${color steelblue2}${cpu cpu6}%  ${cpubar cpu6 7}${color}
 cpu_7: ${color khaki3}${freq_g cpu7} Ghz ${color}${color steelblue2}${cpu cpu7}%  ${cpubar cpu7 7}${color}
 cpu_8: ${color khaki3}${freq_g cpu8} Ghz ${color}${color steelblue2}${cpu cpu8}%  ${cpubar cpu8 7}${color}
+#cpu_9: ${color khaki3}${freq_g cpu9} Ghz ${color}${color steelblue2}${cpu cpu9}%  ${cpubar cpu9 7}${color}
+#cpu_10: ${color khaki3}${freq_g cpu10} Ghz ${color}${color steelblue2}${cpu cpu10}%  ${cpubar cpu10 7}${color}
+#cpu_11: ${color khaki3}${freq_g cpu11} Ghz ${color}${color steelblue2}${cpu cpu11}%  ${cpubar cpu11 7}${color}
+#cpu_12: ${color khaki3}${freq_g cpu12} Ghz ${color}${color steelblue2}${cpu cpu12}%  ${cpubar cpu12 7}${color}
 
 ]];
