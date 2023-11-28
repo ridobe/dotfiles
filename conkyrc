@@ -110,7 +110,8 @@ kernel: ${color khaki3}$kernel${color}
 ${alignr 20}${color steelblue2}${font DejaVu Sans:size=10:italic} -elite, powerful, efficient${color}${font}
 #bios: ${color khaki3}${exec sudo dmidecode -t 0 | grep 'Version'| cut -c 11-26 | uniq}${color}
 bios: ${color khaki3}${exec hostnamectl | grep 'Firmware Version'| cut -c 19-34 | uniq}${color}
-mullvad server: ${if_existing /proc/net/route wg0}${color green2}${execi 3600 curl https://am.i.mullvad.net/ip} | ${execi 3600 curl https://am.i.mullvad.net/city}${color}${else}${font DejaVu Sans:size=10:italic}${color firebrick2}not protected${font}${color}${endif}
+mullvad: ${if_existing /proc/net/route wg0}${color green2}${execi 3600 curl https://am.i.mullvad.net/ip} | ${execi 3600 curl https://am.i.mullvad.net/city}${color}${else}${font DejaVu Sans:size=10:italic}${color firebrick2}not protected${font}${color}${endif}
+             ${color green2}${execi 3600 curl https://am.i.mullvad.net/connected | grep 'server' | cut -c 30-51 | uniq}${color}
 
 ##################################
 ##          BATT STATS          ##
@@ -180,7 +181,7 @@ ${voffset 4}${font PizzaDude Bullets:size=14}U${font} down: ${color khaki3}${dow
 ##             CPU              ##
 ##################################
 ${color dimgray}CPU ${hr 2}${color}
-temp: ${color khaki3}${execi 1 sensors -f zenpower-pci-00c3 | grep 'Tdie'| tr -d '+' | tail -n 2 | cut -c 14-22 | awk '{print ($1-32)*5/9}' OFMT="%.1f"}°C/${execi 1 sensors -f zenpower-pci-00c3 | grep 'Tdie'| tr -d '+' | tail -n 2 | cut -c 14-22}${color} limit: ${color khaki3}(95°C/203°F)${color}
+temp: ${color khaki3}${execi 1 sensors -f zenpower-pci-00c3 | grep 'Tdie'| tr -d '+' | tail -n 2 | cut -c 14-22 | awk '{print ($1-32)*5/9}' OFMT="%.1f"}°C/${execi 1 sensors -f zenpower-pci-00c3 | grep 'Tdie'| tr -d '+' | tail -n 2 | cut -c 14-22}${color} limit: ${color khaki3}(100°C/212°F)${color}
 Vcore: ${color khaki3}${execi 1 sensors -f zenpower-pci-00c3 | grep 'SVI2_Core'| cut -c 14-24}${color}
 VsoC: ${color khaki3}${execi 1 sensors -f zenpower-pci-00c3 | grep 'SVI2_SoC'| cut -c 14-22}${color}
 

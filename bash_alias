@@ -44,7 +44,7 @@ alias paruse='cat $HOME/dotfiles/bash_alias | grep paru'
 ##mullvad
 #alias mullvadup='sudo systemctl start mullvad-daemon && systemctl status mullvad-daemon'
 #alias mullvaddown='sudo systemctl stop mullvad-daemon && systemctl status mullvad-daemon'
-alias mullvadstatus='curl https://am.i.mullvad.net/ip && curl https://am.i.mullvad.net/city && curl https://am.i.mullvad.net/country'
+alias mullvadstatus='curl https://am.i.mullvad.net/connected && curl https://am.i.mullvad.net/city'
 
 ##working directories
 alias dotfiles='cd $HOME/dotfiles && ls -la'
