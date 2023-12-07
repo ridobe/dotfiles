@@ -182,15 +182,15 @@ ${voffset 4}${font PizzaDude Bullets:size=14}U${font} down: ${color khaki3}${dow
 ${color dimgray}CPU ${hr 2}${color}
 temp: ${color khaki3}${execi 1 sensors k10temp-pci-00c3 | grep 'Tctl'| tr -d '+' | cut -c 15-21}/${execi 1 sensors -f k10temp-pci-00c3 | grep 'Tctl'| tr -d '+' | cut -c 14-21}${color} limit: ${color khaki3}(100°C/212°F)${color}
 
-cpu_1: ${color khaki3}${freq_g cpu0} Ghz ${color}${color steelblue2}${cpu cpu0}%  ${cpubar cpu0 7}${color}
-cpu_2: ${color khaki3}${freq_g cpu2} Ghz ${color}${color steelblue2}${cpu cpu2}%  ${cpubar cpu2 7}${color}
-cpu_3: ${color khaki3}${freq_g cpu3} Ghz ${color}${color steelblue2}${cpu cpu3}%  ${cpubar cpu3 7}${color}
-cpu_4: ${color khaki3}${freq_g cpu4} Ghz ${color}${color steelblue2}${cpu cpu4}%  ${cpubar cpu4 7}${color}
-cpu_5: ${color khaki3}${freq_g cpu5} Ghz ${color}${color steelblue2}${cpu cpu5}%  ${cpubar cpu5 7}${color}
-cpu_6: ${color khaki3}${freq_g cpu6} Ghz ${color}${color steelblue2}${cpu cpu6}%  ${cpubar cpu6 7}${color}
-cpu_7: ${color khaki3}${freq_g cpu7} Ghz ${color}${color steelblue2}${cpu cpu7}%  ${cpubar cpu7 7}${color}
-cpu_8: ${color khaki3}${freq_g cpu8} Ghz ${color}${color steelblue2}${cpu cpu8}%  ${cpubar cpu8 7}${color}
-cpu_9: ${color khaki3}${freq_g cpu9} Ghz ${color}${color steelblue2}${cpu cpu9}%  ${cpubar cpu9 7}${color}
+cpu_01: ${color khaki3}${freq_g cpu0} Ghz ${color}${color steelblue2}${cpu cpu0}%  ${cpubar cpu0 7}${color}
+cpu_02: ${color khaki3}${freq_g cpu2} Ghz ${color}${color steelblue2}${cpu cpu2}%  ${cpubar cpu2 7}${color}
+cpu_03: ${color khaki3}${freq_g cpu3} Ghz ${color}${color steelblue2}${cpu cpu3}%  ${cpubar cpu3 7}${color}
+cpu_04: ${color khaki3}${freq_g cpu4} Ghz ${color}${color steelblue2}${cpu cpu4}%  ${cpubar cpu4 7}${color}
+cpu_05: ${color khaki3}${freq_g cpu5} Ghz ${color}${color steelblue2}${cpu cpu5}%  ${cpubar cpu5 7}${color}
+cpu_06: ${color khaki3}${freq_g cpu6} Ghz ${color}${color steelblue2}${cpu cpu6}%  ${cpubar cpu6 7}${color}
+cpu_07: ${color khaki3}${freq_g cpu7} Ghz ${color}${color steelblue2}${cpu cpu7}%  ${cpubar cpu7 7}${color}
+cpu_08: ${color khaki3}${freq_g cpu8} Ghz ${color}${color steelblue2}${cpu cpu8}%  ${cpubar cpu8 7}${color}
+cpu_09: ${color khaki3}${freq_g cpu9} Ghz ${color}${color steelblue2}${cpu cpu9}%  ${cpubar cpu9 7}${color}
 cpu_10: ${color khaki3}${freq_g cpu10} Ghz ${color}${color steelblue2}${cpu cpu10}%  ${cpubar cpu10 7}${color}
 cpu_11: ${color khaki3}${freq_g cpu11} Ghz ${color}${color steelblue2}${cpu cpu11}%  ${cpubar cpu11 7}${color}
 cpu_12: ${color khaki3}${freq_g cpu12} Ghz ${color}${color steelblue2}${cpu cpu12}%  ${cpubar cpu12 7}${color}
