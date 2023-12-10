@@ -82,5 +82,6 @@ alias aliases='cat /home/ridobe/dotfiles/bash_alias'
 alias weather='curl wttr.in/46074'
 alias mitigations='grep -r . /sys/devices/system/cpu/vulnerabilities/'
 alias trash='rm -rf ~/.local/share/Trash/* && echo "thanks for taking out the trash"'
+alias bios='sudo systemctl reboot --firmware-setup'
 #alias glance='glances --config /home/ridobe/.config/glances.conf --fahrenheit --percpu'
 
