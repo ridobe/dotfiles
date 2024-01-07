@@ -1,3 +1,3 @@
 #!/bin/bash
 #.sh file for rsync backups to backup drive.
-rsync -a -e --delete --info=progress2  --exclude-from=$HOME/dotfiles/bin/rsync-exclude /home/ridobe/ /run/media/ridobe/2b61a16d-ddda-4d65-8a58-4be8e04198d8/rsync-arch/home
+rsync -a -e --delete --info=progress2  --exclude-from=$HOME/dotfiles/bin/rsync-exclude /home/ridobe/ /run/media/ridobe/backups/rsync-arch/home
