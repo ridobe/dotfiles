@@ -6,10 +6,6 @@ alias mkdir='mkdir -v'
 alias mv='mv -iv'
 alias cp='cp -iv'
 
-##python
-#alias pyth2='ln -s /usr/bin/python2 ~/bin/python'
-#alias pyth3='rm ~/bin/python'
-
 ##update
 alias piupdate='sudo aptitude update && sudo aptitude upgrade -y'
 alias piholeupdate='pihole -up && pihole -g'
@@ -22,7 +18,7 @@ alias wgdown='sudo wg-quick down wg0'
 
 #kernel build
 alias torvalds='git clone git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git'
-#alias kpatch='cat patch -p1 "<" '
+alias applypatch='patch -p1 <'
 alias makemod='sudo make modules_install -j$(nproc) && echo "next up, copybz and prune: /usr/lib/modules/kernel_release and /var/lib/dkms/package_name"'
 alias copybz='sudo cp -v arch/x86_64/boot/bzImage /boot/vmlinuz-ridobe-seiei && echo "next up, cpio"'
 alias cpio='sudo mkinitcpio -p /etc/mkinitcpio.d/ridobe-seiei.preset'
@@ -42,8 +38,6 @@ alias paruse='cat $HOME/dotfiles/bash_alias | grep paru'
 
 
 ##mullvad
-#alias mullvadup='sudo systemctl start mullvad-daemon && systemctl status mullvad-daemon'
-#alias mullvaddown='sudo systemctl stop mullvad-daemon && systemctl status mullvad-daemon'
 alias mullvadstatus='curl https://am.i.mullvad.net/connected && curl https://am.i.mullvad.net/city'
 
 ##working directories
@@ -51,7 +45,6 @@ alias dotfiles='cd $HOME/dotfiles && ls -la'
 alias tw='cd $HOME/temp_work && ls -la'
 alias kb='cd $HOME/kernel_build/linux'
 alias husky='cd $HOME/android_devices/husky(P8 pro) && ls -la'
-alias bonito='cd $HOME/android_devices/P3a XL)&& ls -la'
 alias devices='cd $HOME/android_devices && ls -la'
 alias gp='cd $HOME/git_projects && ls -la'
 
@@ -60,28 +53,26 @@ alias scrotall='scrot -d 5 -m /home/ridobe/temp_work/screenshots/'
 alias scrotgrab='scrot -s /home/ridobe/temp_work/screenshots/'
 alias scrotwindow='scrot -u /home/ridobe/temp_work/screenshots/'
 
-##misc
-alias reflector='sudo systemctl start reflector'
-alias scheduler='test -z $(dmesg | grep -i muqss) && echo CFS || echo MuQSS'
-alias gz='gunzip -c /proc/config.gz | grep'
-alias sshc='cat /home/ridobe/.ssh/config | grep -w "Host\|Port"'
-alias initgen='sudo mkinitcpio -p ridobe-seiei'
+##checksum
 alias md5='md5sum'
 alias sha512='sha512sum -b'
 alias sha256='sha256sum -b'
+
+##system
+alias mitigations='grep -r . /sys/devices/system/cpu/vulnerabilities/'
+alias microcode='sudo dmesg | grep microcode'
+alias gitlog='git log --max-count=1 kernel'
+alias reflector='sudo systemctl restart reflector'
+alias killx='pkill -15 Xorg'
+alias unlock='sudo rm /var/lib/pacman/db.lck'
+
+##misc
+alias gz='gunzip -c /proc/config.gz | grep'
+alias initgen='sudo mkinitcpio -p ridobe-seiei'
 alias gitpush='git status && git add * && git commit -m "updated/committed via script" && git push'
 alias octal='stat -c "%a %n"'
-alias killx='pkill -15 Xorg'
-alias microcode='sudo dmesg | grep microcode'
-alias pbr='pkgbuilder'
-alias gitlog='git log --max-count=1 kernel'
 alias sdk='sdkmanager'
 alias code='ykman oath accounts code'
-alias unlock='sudo rm /var/lib/pacman/db.lck'
 alias aliases='cat /home/ridobe/dotfiles/bash_alias'
 alias weather='curl wttr.in/46074'
-alias mitigations='grep -r . /sys/devices/system/cpu/vulnerabilities/'
-#alias trash='rm -rf ~/.local/share/Trash/* && echo "thanks for taking out the trash"'
-alias bios='sudo systemctl reboot --firmware-setup'
-#alias glance='glances --config /home/ridobe/.config/glances.conf --fahrenheit --percpu'
-
+alias bootbios='sudo systemctl reboot --firmware-setup'
