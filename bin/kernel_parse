@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Capture the output of the uname -a command
+uname_output="$(uname -r)"
+
+# Truncate the '-dirty' string if present using sed
+truncated_version="$(echo "$uname_output" | sed 's/-dirty$//')"
+
+# Echo the truncated version string
+echo "$truncated_version"
