@@ -106,7 +106,7 @@ ${image $HOME/Backdrops_2560x1080_and-images/archimages/archlinux-logo-white.png
 ${color dimgray}SYSTEM ${hr 2}${color}
 ${font DejaVu:size=12}${nodename} -xfce${font}
 ${exec cat /proc/cpuinfo | grep 'model name' | cut -c 14-30 | uniq}
-kernel: ${color khaki3}${exec /home/ridobe/dotfiles/bin/kernel_parse}${color}
+kernel: ${color khaki3}$kernel${color}
 ${alignr 20}${color steelblue2}${font DejaVu Sans:size=10:italic} -elite, powerful, efficient${color}${font}
 bios version: ${color khaki3}${exec hostnamectl | grep 'Firmware Version'| cut -c 19-34 | uniq}${color}
 microcode: ${color khaki3}${exec cat /proc/cpuinfo | grep 'microcode' | cut -c 13-21 | uniq}${color}
