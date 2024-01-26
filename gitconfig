@@ -17,3 +17,11 @@
 	default = simple
 [pull]
 	ff = only
+	
+[alias]
+        co = checkout
+	br = branch
+	com = commit
+	st = status
+
+

@@ -22,6 +22,8 @@ alias applypatch='patch -p1 <'
 alias makemod='sudo make modules_install -j$(nproc) && echo "next up, copybz and prune: /usr/lib/modules/kernel_release and /var/lib/dkms/package_name"'
 alias copybz='sudo cp -v arch/x86_64/boot/bzImage /boot/vmlinuz-ridobe-seiei && echo "next up, cpio"'
 alias cpio='sudo mkinitcpio -p /etc/mkinitcpio.d/ridobe-seiei.preset'
+#only used for dotfiles repo
+alias gitpush='git status && git add . && git commit -m "updated/committed via script" && git push'
 
 ##mce logging
 alias mce='ras-mc-ctl --errors'
@@ -69,7 +71,6 @@ alias unlock='sudo rm /var/lib/pacman/db.lck'
 ##misc
 alias gz='gunzip -c /proc/config.gz | grep'
 alias initgen='sudo mkinitcpio -p ridobe-seiei'
-alias gitpush='git status && git add * && git commit -m "updated/committed via script" && git push'
 alias octal='stat -c "%a %n"'
 alias sdk='sdkmanager'
 alias code='ykman oath accounts code'
