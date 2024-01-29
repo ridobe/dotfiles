@@ -5,11 +5,9 @@
 # by ridobe18 at gmail dot com
 #
 
-#srcdir1="/boot"
-#srcdir2="/usr/lib/modules"
 wrkdir="$HOME/kernel_build/linux"
-#dstdir="$HOME/Google_Drive/seiei"
-#prefixes="{initramfs-,vmlinuz-}"
+
+set -e
 
 #reminders
 echo "Don't forget to remove previous kernel from /usr/lib/modules"
@@ -18,36 +16,18 @@ sleep 2
 #enter build directory
 cd "$wrkdir"
 
-#make copy of current config
-\cp ~/kernel_build/linux/.config ~/kernel_build/
+#change to working branch
+git checkout ridobe-seiei
 
-#make clean
-make clean &&
-
-#git stash current patches
-git stash &&
-
-#get latest build
-git pull &&
-
-#re-enable patches
-git stash pop &&
-
-#configure and save config file
-#yes "" | make oldconfig
-make menuconfig &&
-
-#make command
-make CC=clang HOSTCC=clang -j50
+#Start compilation and immediately answer "yes" to any prompts
+make CC=clang HOSTCC=clang -j"$(nproc)" | grep -q "Do you want to build" && echo "yes" | make -j$(nproc)
 
 #make and install modules
-sudo make modules_install -j50
+make modules_install -j"$(nproc)"
 
 #copy bz image to /boot and rename
-sudo cp -v arch/x86_64/boot/bzImage /boot/vmlinuz-ridobe-seiei
+cp -v arch/x86_64/boot/bzImage /boot/vmlinuz-ridobe-seiei
+echo "New kernel image successfully copied"
 
 #continue on to make initramfs
-sudo mkinitcpio -p ridobe-seiei
-
-#add external module for zenpower
-pbr -Su zenpower-dkms
+mkinitcpio -p ridobe-seiei

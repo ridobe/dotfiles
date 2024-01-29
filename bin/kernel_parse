@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # Get the kernel version string directly using uname -r
-version_string="$(uname -r)"
+kernel_name="$(uname -r)"
 
 # Truncate both '-dirty' and '+' using a single sed command
-truncated_version="$(echo "$version_string" | sed 's/-dirty$\|-+$//')"
+truncated_name="$(echo "$kernel_name" | sed 's/-dirty$//; s/+$//')"
 
 # Echo the truncated version string
-echo "$truncated_version"
+echo "$truncated_name"
