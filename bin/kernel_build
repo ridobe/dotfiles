@@ -19,8 +19,24 @@ cd "$wrkdir"
 #change to working branch
 git checkout ridobe-seiei
 
+# Start compilation, time it, and conditionally display duration
+SECONDS=0
+make CC=clang HOSTCC=clang -k -j$(nproc) | | grep -q "Do you want to build" && echo "yes" | make -j$(nproc)
+if (( $SECONDS > 3600 )) ; then
+    let "hours=SECONDS/3600"
+    let "minutes=(SECONDS%3600)/60"
+    let "seconds=(SECONDS%3600)%60"
+    echo "Completed in $hours hour(s), $minutes minute(s) and $seconds second(s)"
+elif (( $SECONDS > 60 )) ; then
+    let "minutes=(SECONDS%3600)/60"
+    let "seconds=(SECONDS%3600)%60"
+    echo "Completed in $minutes minute(s) and $seconds second(s)"
+else
+    echo "Completed in $SECONDS seconds"
+fi
+
 #Start compilation and immediately answer "yes" to any prompts
-make CC=clang HOSTCC=clang -j"$(nproc)" | grep -q "Do you want to build" && echo "yes" | make -j$(nproc)
+#makej | grep -q "Do you want to build" && echo "yes" | make -j$(nproc)
 
 #make and install modules
 make modules_install -j"$(nproc)"
