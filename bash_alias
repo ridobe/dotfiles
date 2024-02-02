@@ -38,6 +38,8 @@ alias paruse='cat $HOME/dotfiles/bash_alias | grep paru'
 #paru -Gp <target> ; print the PKGBUILD of <target>
 #paru -Gc <target> ; print the aur comments of <target>
 
+#git aliases
+alias gita='cat $HOME/googledrive/Linux/arch_linux_notes.md | grep git'
 
 ##mullvad
 alias mullvadstatus='curl https://am.i.mullvad.net/connected && curl https://am.i.mullvad.net/city'
