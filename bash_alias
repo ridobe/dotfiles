@@ -16,7 +16,7 @@ alias pacnew='sudo find /etc -regextype posix-extended -regex ".+\.pac(new|save|
 alias wgup='sudo wg-quick up wg0'
 alias wgdown='sudo wg-quick down wg0'
 
-#kernel build
+##kernel build
 alias torvalds='git clone git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git'
 alias applypatch='patch -p1 <'
 alias makemod='sudo make modules_install -j$(nproc) && echo "next up, copybz and prune: /usr/lib/modules/kernel_release and /var/lib/dkms/package_name"'
@@ -38,7 +38,7 @@ alias paruse='cat $HOME/dotfiles/bash_alias | grep paru'
 #paru -Gp <target> ; print the PKGBUILD of <target>
 #paru -Gc <target> ; print the aur comments of <target>
 
-#git aliases
+##git aliases
 alias gita='cat $HOME/googledrive/Linux/arch_linux_notes.md | grep git'
 
 ##mullvad
@@ -51,6 +51,9 @@ alias kb='cd $HOME/kernel_build/linux'
 alias husky='cd $HOME/android_devices/husky(P8 pro) && ls -la'
 alias devices='cd $HOME/android_devices && ls -la'
 alias gp='cd $HOME/git_projects && ls -la'
+
+##autotrash
+alias trash='autotrash --delete 12000' #to delete 12gb immediately from trash
 
 ##scrot
 alias scrotall='scrot -d 5 -m /home/ridobe/temp_work/screenshots/'

@@ -21,7 +21,7 @@ git checkout ridobe-seiei
 
 # Start compilation, time it, and conditionally display duration
 SECONDS=0
-make CC=clang HOSTCC=clang -k -j$(nproc) | | grep -q "Do you want to build" && echo "yes" | make -j$(nproc)
+make CC=clang HOSTCC=clang -k -j$(nproc) | grep -q "Do you want to build" && echo "yes" | make -j$(nproc)
 if (( $SECONDS > 3600 )) ; then
     let "hours=SECONDS/3600"
     let "minutes=(SECONDS%3600)/60"
