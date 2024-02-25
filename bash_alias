@@ -40,6 +40,7 @@ alias paruse='cat $HOME/dotfiles/bash_alias | grep paru'
 
 ##git aliases
 alias gita='cat $HOME/googledrive/Linux/arch_linux_notes.md | grep git'
+alias gittag='git tag | sort -g | tail -1'
 
 ##mullvad
 alias mullvadstatus='curl https://am.i.mullvad.net/connected && curl https://am.i.mullvad.net/city'
