@@ -30,6 +30,7 @@ alias mce='ras-mc-ctl --errors'
 
 ##paru options
 alias paruse='cat $HOME/dotfiles/bash_alias | grep paru'
+alias aur='pacman -Qqm'
 #paru ; alias for paru -Syu
 #paru <target> ; interactively search and install <target>
 #paru -Sua ; upgrade aur packages
