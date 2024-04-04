@@ -70,7 +70,7 @@ alias sha256='sha256sum -b'
 
 ##system
 alias mitigations='grep -r . /sys/devices/system/cpu/vulnerabilities/'
-alias microcode='sudo dmesg | grep microcode'
+alias microcode='journalctl -b -0 | grep microcode'
 alias gitlog='git log --max-count=1 kernel'
 alias reflector='sudo systemctl restart reflector'
 alias killx='pkill -15 Xorg'
