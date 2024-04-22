@@ -5,6 +5,7 @@ alias ls='ls --color=auto --group-directories-first'
 alias mkdir='mkdir -v'
 alias mv='mv -iv'
 alias cp='cp -iv'
+alias rm -rf='rm -i'
 
 ##update
 alias piupdate='sudo aptitude update && sudo aptitude upgrade -y'
