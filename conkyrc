@@ -69,8 +69,8 @@ conky.config = {
 
 -- Gap between borders of screen and text
 -- same thing as passing -x at command line
--- gap_x = 2750 for LG ultrawide
-	gap_x = -2,
+-- gap_x = 2750 for LG ultrawide on the right
+	gap_x = 2750,
 	gap_y = 0,
 
 -- Subtract file system buffers from used memory?
