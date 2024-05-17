@@ -15,6 +15,7 @@ fi
 
 #conky
 (sleep 10; conky -q -c /home/ridobe/.conkyrc) &
+(sleep 10; conky -q -c /home/ridobe/.conkyrc2) &
 
 # Set a single desktop environment
 #exec i3 -V >> ~/i3log-$(date +'%F-%k-%M-%S') 2>&1

@@ -7,7 +7,7 @@
 
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files="bashrc conkyrc ridobe_avatar_yira_75 gitconfig bash_alias bash_profile xinitrc"    # list of files/folders to symlink in homedir
+files="bashrc conkyrc conkyrc2 ridobe_avatar_yira_75 gitconfig bash_alias bash_profile xinitrc"    # list of files/folders to symlink in homedir
 
 ##########
 
