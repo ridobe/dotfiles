@@ -7,7 +7,7 @@
 
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files="bashrc ridobe_avatar_yira_75 gitconfig bash_alias pam_environment"    # list of files/folders to symlink in homedir
+files="bashrc_pi ridobe_avatar_yira_75 gitconfig bash_alias pam_environment"    # list of files/folders to symlink in homedir
 
 ##########
 
@@ -26,6 +26,8 @@ echo "Moving bash_profile to ~/dotfiles_old"
 mv ~/.bash_profile ~/dotfiles_old/
 echo "Creating unique symlink for .bash_profile"
 ln -s $dir/bash_profile_pi ~/.bash_profile
+echo "Creating unique symlink for .bashrc"
+ln -s $dir/bashrc_pi ~/.bashrc
 
 # move unique files due to location 
 
