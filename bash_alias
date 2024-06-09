@@ -11,6 +11,7 @@ alias rm='rm -i'
 alias piupdate='sudo aptitude update && sudo aptitude upgrade -y'
 alias piholeupdate='pihole -up && pihole -g'
 alias gravity='tail -f /var/log/pihole.log | grep gravity'
+alias piholedash='pihole -c -r'
 alias pacnew='sudo find /etc -regextype posix-extended -regex ".+\.pac(new|save|orig)" 2> /dev/null'
 
 ##wireguard
