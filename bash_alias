@@ -6,6 +6,7 @@ alias mkdir='mkdir -v'
 alias mv='mv -iv'
 alias cp='cp -iv'
 alias rm='rm -i'
+alias nano='nano -l'
 
 ##update
 alias piupdate='sudo aptitude update && sudo aptitude upgrade -y'
