@@ -12,7 +12,6 @@ alias nano='nano -l'
 alias piupdate='sudo aptitude update && sudo aptitude upgrade -y'
 alias piholeupdate='pihole -up && pihole -g'
 alias gravity='tail -f /var/log/pihole.log | grep gravity'
-alias piholedash='pihole -c -r'
 alias pacnew='sudo find /etc -regextype posix-extended -regex ".+\.pac(new|save|orig)" 2> /dev/null'
 
 ##wireguard
@@ -53,7 +52,7 @@ alias mullvadstatus='curl https://am.i.mullvad.net/connected && curl https://am.
 ##working directories
 alias dotfiles='cd $HOME/dotfiles && ls -la'
 alias tw='cd $HOME/temp_work && ls -la'
-alias kb='cd $HOME/kernel_build'
+alias kb='cd $HOME/kernel_build/ridobe-seiei'
 alias husky='cd $HOME/android_devices/husky(P8 pro) && ls -la'
 alias devices='cd $HOME/android_devices && ls -la'
 alias gp='cd $HOME/git_projects && ls -la'
