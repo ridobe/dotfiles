@@ -77,6 +77,8 @@ alias gitlog='git log --max-count=1 kernel'
 alias reflector='sudo systemctl restart reflector'
 alias killx='pkill -15 Xorg'
 alias unlock='sudo rm /var/lib/pacman/db.lck'
+#alias memoryusage=''ps aux  | awk '{print $6/1024  " MB\t\t" $2 "\t" $11}'  | sort -n''
+alias memoryusage='ps -e -o pid,vsz,comm= | sort -n -k 2'
 
 ##misc
 alias gz='gunzip -c /proc/config.gz | grep'
