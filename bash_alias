@@ -53,7 +53,7 @@ alias mullvadstatus='curl https://am.i.mullvad.net/connected && curl https://am.
 alias dotfiles='cd $HOME/dotfiles && ls -la'
 alias tw='cd $HOME/temp_work && ls -la'
 alias kb='cd $HOME/kernel_build/ridobe-seiei'
-alias husky='cd $HOME/android_devices/husky(P8 pro) && ls -la'
+alias komodo='cd $HOME/android_devices/komodo(P9PXL) && ls -la'
 alias devices='cd $HOME/android_devices && ls -la'
 alias gp='cd $HOME/git_projects && ls -la'
 
@@ -72,7 +72,8 @@ alias sha256='sha256sum -b'
 
 ##system
 alias mitigations='grep -r . /sys/devices/system/cpu/vulnerabilities/'
-alias microcode='journalctl -b -0 | grep microcode'
+alias microcode='journalctl -k --grep='microcode:' && sudo lsinitcpio --early /boot/initramfs-ridobe-seiei.img'
+alias agesa='sudo dmidecode | grep AGESA'
 alias gitlog='git log --max-count=1 kernel'
 alias reflector='sudo systemctl restart reflector'
 alias killx='pkill -15 Xorg'
