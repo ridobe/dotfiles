@@ -72,13 +72,13 @@ alias sha256='sha256sum -b'
 
 ##system
 alias mitigations='grep -r . /sys/devices/system/cpu/vulnerabilities/'
-alias microcode='journalctl -k --grep='microcode:' && sudo lsinitcpio --early /boot/initramfs-ridobe-seiei.img'
-alias agesa='sudo dmidecode | grep AGESA'
+alias microcode='journalctl -k --grep='microcode:' && sudo sudo dmidecode | grep AGESA && lsinitcpio --early /boot/initramfs-ridobe-seiei.img'
 alias gitlog='git log --max-count=1 kernel'
 alias reflector='sudo systemctl restart reflector'
 alias killx='pkill -15 Xorg'
 alias unlock='sudo rm /var/lib/pacman/db.lck'
 alias memoryusage='ps -e -o pid,vsz,comm= | sort -n -k 2'
+alias bootbios='sudo systemctl reboot --firmware-setup'
 
 ##misc
 alias gz='gunzip -c /proc/config.gz | grep'
@@ -88,6 +88,5 @@ alias sdk='sdkmanager'
 alias code='ykman oath accounts code'
 alias aliases='cat /home/ridobe/dotfiles/bash_alias'
 alias weather='curl wttr.in/46074'
-alias bootbios='sudo systemctl reboot --firmware-setup'
 alias camera='lsusb | grep "Laptop Camera"'
 alias dns='curl -L http://dnsleaktest.com|grep "Hello"'
