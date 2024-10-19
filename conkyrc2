@@ -113,7 +113,7 @@ kernel: ${color khaki3}${execi 1200 /home/ridobe/dotfiles/bin/kernel_parse}${col
 ${alignr 20}${color steelblue2}${font DejaVu Sans:size=10:italic} -elite, powerful, efficient${color}${font}
 bios version: ${color khaki3}${exec hostnamectl | grep 'Firmware Version'| cut -c 19-34 | uniq}${color}
 microcode: ${color khaki3}${exec cat /proc/cpuinfo | grep 'microcode' | cut -c 13-21 | uniq}${color}
-mullvad: ${if_existing /proc/net/route wg0}${color green2}${execi 3600 curl https://am.i.mullvad.net/ip} | ${execi 3600 curl https://am.i.mullvad.net/city}${color}${else}${font DejaVu Sans:size=10:italic}${color firebrick2}not protected${font}${color}${endif}
+mullvad: ${if_existing /proc/net/route piholeDO}${color green2}${execi 3600 curl https://am.i.mullvad.net/ip} | ${execi 3600 curl https://am.i.mullvad.net/city}${color}${else}${font DejaVu Sans:size=10:italic}${color firebrick2}not protected${font}${color}${endif}
              ${color green2}${execi 3600 curl https://am.i.mullvad.net/connected | grep 'server' | cut -c 30-51 | uniq}${color}
 
 ##################################
