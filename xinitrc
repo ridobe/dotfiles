@@ -3,9 +3,6 @@
 
 # ~/.xinitrc
 
-#set xautolock to lock after 15 minutes
-xautolock -time 15 -locker "xset dpms force off  && i3lock -e -n -c 000000" &
-
 /home/ridobe/dotfiles/bin/xrandr_toggle &
 
 if [ -d /etc/X11/xinit/xinitrc.d ] ; then
@@ -20,6 +17,4 @@ fi
 (sleep 10; conky -q -c /home/ridobe/.conkyrc2) &
 
 # Set a single desktop environment
-#exec i3 -V >> ~/i3log-$(date +'%F-%k-%M-%S') 2>&1
 exec startxfce4
-#exec xmonad

@@ -1,6 +1,6 @@
 #!/bin/sh
 intern=eDP
-extern=DisplayPort-3
+extern=DisplayPort-1
 
 if xrandr | grep "$extern disconnected"; then
     xrandr --output "$extern" --off --output "$intern" --auto
