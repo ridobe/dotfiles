@@ -1,5 +1,5 @@
 #!/bin/sh
 
-i3lock -e -n -c 000000 &
+xset dpms force off &
 sleep 5 &
-xset dpms force off
+i3lock -e -n -c 000000
