@@ -79,6 +79,7 @@ alias killx='pkill -15 Xorg'
 alias unlock='sudo rm /var/lib/pacman/db.lck'
 alias memoryusage='ps -e -o pid,vsz,comm= | sort -n -k 2'
 alias bootbios='sudo systemctl reboot --firmware-setup'
+alias cleanram='sudo systemctl restart polkit'
 
 ##misc
 alias gz='gunzip -c /proc/config.gz | grep'
