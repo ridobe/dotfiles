@@ -48,6 +48,7 @@ alias githead='git rev-parse --short HEAD'
 
 ##mullvad
 alias mullvadstatus='curl https://am.i.mullvad.net/connected && curl https://am.i.mullvad.net/city'
+alias mullvadping='mullvad-ping --country us --type wireguard --top 8'
 
 ##working directories
 alias dotfiles='cd $HOME/dotfiles && ls -la'
