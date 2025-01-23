@@ -33,9 +33,9 @@ conky.config = {
 	double_buffer = true,
 
 -- Minimum size of text area
-	minimum_width = 330, minimum_height = 1265,
+	minimum_width = 330, minimum_height = 1840,
 	
---maximum_width 300
+--maximum_width 330
 
 -- Draw shades?
 	draw_shades = false,
@@ -70,7 +70,7 @@ conky.config = {
 -- Gap between borders of screen and text
 -- same thing as passing -x at command line
 -- gap_x = 2750 for LG ultrawide on the right
-     	gap_x = 2750,
+     	gap_x = 5820,
     	gap_y = 0,
 
 -- gap_x = 0,
