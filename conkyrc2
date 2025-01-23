@@ -23,7 +23,7 @@ conky.config = {
 	own_window_transparent = false,
 
 --own_window_type override
---	own_window_type = 'desktop',
+	own_window_type = 'desktop',
 --own_window_type normal #use this if you want a nice shadow to appear around conky
 
 -- If own_window is yes, these window manager hints may be used
@@ -33,7 +33,7 @@ conky.config = {
 	double_buffer = true,
 
 -- Minimum size of text area
-	minimum_width = 330, minimum_height = 1840,
+	minimum_width = 330, minimum_height = 1690,
 	
 --maximum_width 330
 
@@ -70,11 +70,11 @@ conky.config = {
 -- Gap between borders of screen and text
 -- same thing as passing -x at command line
 -- gap_x = 2750 for LG ultrawide on the right
-     	gap_x = 5820,
+     	gap_x = 5810,
     	gap_y = 0,
 
 -- gap_x = 0,
--- gap_y = 0,
+-- gap_y = 500,
 
 -- Subtract file system buffers from used memory?
 	no_buffers = true,
