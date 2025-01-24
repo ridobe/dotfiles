@@ -73,7 +73,7 @@ conky.config = {
 -- gap_x = 2750,
 -- gap_y = 0,
 
-	gap_x = 0,
+	gap_x = 5,
 	gap_y = 0,
 
 -- Subtract file system buffers from used memory?
