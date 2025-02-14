@@ -62,8 +62,8 @@ conky.config = {
 --own_window_colour black
 
 -- Text alignment, other possible values are commented
---alignment top_left
---alignment = 'top_right',	
+--alignment = top_left
+--alignment = top_right,	
 --alignment = bottom_left,
 --alignment = bottom_right,
 
@@ -121,8 +121,8 @@ mullvad: ${if_existing /proc/net/route piholeDO}${color green2}${execi 3600 curl
 ##################################
 ${color dimgray}BATT STATS ${hr 2}${color}
 battery: ${color paleturquoise4}${battery_percent BAT1}%${color} ${color dodgerblue3}${battery_bar BAT1}${voffset 2}${color}
-#capacity: ${color paleturquoise4}${execi 2 awk '{print $1*10^-3}' /sys/class/power_supply/BAT0/charge_now | cut -c1-4}/${execi 2 awk '{print $1*10^-3}' /sys/class/power_supply/BAT0/charge_full | cut -c1-4} mAh${voffset 2}${color}
-capacity: ${color paleturquoise4}${execi 2 upower -i /org/freedesktop/UPower/devices/battery_BAT1 | grep  "energy:" | cut -c26-31}/${execi 2 upower -i /org/freedesktop/UPower/devices/battery_BAT1 |grep  "energy-full:" | cut -c26-31} Wh${voffset 2}${color}
+capacity: ${color paleturquoise4}${execi 2 awk '{print $1*10^-3}' /sys/class/power_supply/BAT1/charge_now | cut -c1-4}/${execi 2 awk '{print $1*10^-3}' /sys/class/power_supply/BAT0/charge_full | cut -c1-4} mAh${voffset 2}${color}
+#capacity: ${color paleturquoise4}${execi 2 upower -i /org/freedesktop/UPower/devices/battery_BAT1 | grep  "energy:" | cut -c26-31}/${execi 2 upower -i /org/freedesktop/UPower/devices/battery_BAT1 |grep  "energy-full:" | cut -c26-31} Wh${voffset 2}${color}
 power: ${color paleturquoise4}${battery_time BAT1}${voffset 2}${color}
 status: ${color paleturquoise4}${execi 2 cat /sys/class/power_supply/BAT1/status}${color}
 

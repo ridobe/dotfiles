@@ -1,4 +1,4 @@
 #!/bin/bash
 
 conky -q -c ~/.conkyrc &
-conky -q -c ~/.conkyrc2
+conky -q -c ~/.conkyrc2 &
