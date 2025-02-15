@@ -1,4 +1,5 @@
 #!/bin/bash
 
+killall conky & sleep 1
 conky -q -c ~/.conkyrc &
 conky -q -c ~/.conkyrc2 &
