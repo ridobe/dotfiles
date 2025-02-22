@@ -10,7 +10,7 @@ alias nano='nano -l'
 
 ##update
 alias piupdate='sudo aptitude update && sudo aptitude upgrade -y'
-alias piholeupdate='pihole -up && pihole -g'
+alias piholeupdate='sudo pihole -up && sudo pihole -g'
 alias gravity='tail -f /var/log/pihole.log | grep gravity'
 alias pacnew='sudo find /etc -regextype posix-extended -regex ".+\.pac(new|save|orig)" 2> /dev/null'
 
