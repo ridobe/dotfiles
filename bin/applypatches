@@ -1,0 +1,10 @@
+#!/bin/bash
+
+#
+# apply multiple patches script.
+# by ridobe18 at gmail dot com
+#
+
+for patchfile in *.patch; do
+    patch -p0 < "$patchfile"
+done
