@@ -101,7 +101,7 @@ conky.config = {
 conky.text = [[
 ${image $HOME/Backdrops_2560x1080_and-images/archimages/archlinux-logo-white.png -p 10,1500 -s 300x99.5}
 #-p is position, -s is size (728x455) original
-${image $HOME/Backdrops_2560x1080_and-images/archimages/tux2.png -p -30,1160 -s 400x323}
+${image $HOME/Backdrops_2560x1080_and-images/archimages/tux_outline.png -p 30,1160 -s 264x323}
 #-p is position, -s is size (492x338) original
 ##################################
 ##            SYSTEM            ##
