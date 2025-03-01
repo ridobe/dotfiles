@@ -72,7 +72,8 @@ alias sha256='sha256sum -b'
 
 ##system
 alias mitigations='grep -r . /sys/devices/system/cpu/vulnerabilities/'
-alias microcode='journalctl -k --grep='microcode:' & sudo dmidecode | grep AGESA && lsinitcpio --early /boot/initramfs-ridobe-seiei.img'
+#alias microcode='journalctl -k --grep='microcode:' & sudo dmidecode | grep AGESA && lsinitcpio --early /boot/initramfs-ridobe-seiei.img'
+alias microcode='lsinitcpio --early /boot/initramfs-ridobe-seiei.img | grep microcode && sudo dmidecode | grep AGESA'
 alias gitlog='git log --max-count=1 kernel'
 alias reflector='sudo systemctl restart reflector'
 alias killx='pkill -15 Xorg'
