@@ -33,7 +33,8 @@ conky.config = {
 	double_buffer = true,
 
 -- Minimum size of text area
-	minimum_width = 330, minimum_height = 1690,
+	minimum_width = 330, 
+	minimum_height = 1730,
 	
 --maximum_width 330
 
@@ -74,7 +75,9 @@ conky.config = {
 -- gap_y = 0,
 
 	gap_x = 5,
-	gap_y = 0,
+-- for laptop without monitor
+-- gap_y = -350,
+	gap_y = -40,
 
 -- Subtract file system buffers from used memory?
 	no_buffers = true,
