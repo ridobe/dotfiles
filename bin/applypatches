@@ -6,5 +6,5 @@
 #
 
 for patchfile in *.patch; do
-    patch -p0 < "$patchfile"
+    patch -p1 < "$patchfile"
 done
