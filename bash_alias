@@ -42,7 +42,7 @@ alias aur='pacman -Qqm'
 
 ##git aliases
 alias gita='cat $HOME/googledrive/Linux/arch_linux_notes.md | grep git'
-alias gittag='git tag | sort -g | tail -1'
+alias gittag='git tag | sort'
 alias githead='git rev-parse --short HEAD'
 
 ##mullvad
