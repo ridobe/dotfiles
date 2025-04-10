@@ -3,7 +3,7 @@
 SECONDS=0
 export KCFLAGS=' -march=native'
 export KCPPFLAGS=' -march=native'
-make CC=clang HOSTCC=clang -k -j $(nproc)
+make LLVM=1 LLVM_IAS=1 CC=clang HOSTCC=clang -k -j $(nproc)
 if (( $SECONDS > 3600 )) ; then
     let "hours=SECONDS/3600"
     let "minutes=(SECONDS%3600)/60"
