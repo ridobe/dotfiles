@@ -52,7 +52,7 @@ alias mullvadping='mullvad-ping --country us --type wireguard --top 8'
 ##working directories
 alias dotfiles='cd $HOME/dotfiles && ls -la'
 alias tw='cd $HOME/temp_work && ls -la'
-alias kb='cd $HOME/kernel_build/linux'
+alias kb='cd $HOME/kernel_build/ridobe-seiei'
 alias komodo='cd $HOME/android_devices/komodo(P9PXL) && ls -la'
 alias devices='cd $HOME/android_devices && ls -la'
 alias gp='cd $HOME/git_projects && ls -la'
