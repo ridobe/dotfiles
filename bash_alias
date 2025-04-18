@@ -20,7 +20,7 @@ alias wgdown='wg-quick down wg0'
 
 ##kernel build
 alias torvalds='git clone git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git'
-alias makemod='sudo make modules_install -j$(nproc) && echo "next up, copybz and prune: /usr/lib/modules/kernel_release and /var/lib/dkms/package_name"'
+alias makemod='sudo make modules_install -j$(nproc) && echo "next up, copybz and prune: /usr/lib/modules/kernel_release"'
 alias copybz='sudo cp -v arch/x86_64/boot/bzImage /boot/vmlinuz-ridobe-seiei && echo "next up, cpio"'
 alias cpio='sudo mkinitcpio -p /etc/mkinitcpio.d/ridobe-seiei.preset'
 #only used for dotfiles repo
