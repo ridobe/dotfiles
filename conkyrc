@@ -190,7 +190,7 @@ ${color dimgray}CPU TEMP${hr 2}${color}
 temp: ${color paleturquoise4}${execi 1 sensors k10temp-pci-00c3 | grep 'Tctl'| tr -d '+' | cut -c 15-21}/${execi 1 sensors -f k10temp-pci-00c3 | grep 'Tctl'| tr -d '+' | cut -c 14-21}${color} limit: ${color paleturquoise4}(100°C/212°F)${color}
 
 ${color dimgray}CPU THREADS ${hr 2}${color}
-cpu_01: ${color paleturquoise4}${freq_g cpu1} Ghz ${color}${color dodgerblue3}${cpu cpu1}%  ${cpubar cpu0 7}${color}
+cpu_01: ${color paleturquoise4}${freq_g cpu1} Ghz ${color}${color dodgerblue3}${cpu cpu1}%  ${cpubar cpu1 7}${color}
 cpu_02: ${color paleturquoise4}${freq_g cpu2} Ghz ${color}${color dodgerblue3}${cpu cpu2}%  ${cpubar cpu2 7}${color}
 cpu_03: ${color paleturquoise4}${freq_g cpu3} Ghz ${color}${color dodgerblue3}${cpu cpu3}%  ${cpubar cpu3 7}${color}
 cpu_04: ${color paleturquoise4}${freq_g cpu4} Ghz ${color}${color dodgerblue3}${cpu cpu4}%  ${cpubar cpu4 7}${color}
