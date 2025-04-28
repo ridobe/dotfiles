@@ -118,7 +118,7 @@ AGESA: ${color paleturquoise4}${exec sudo dmidecode -t 40 | grep 'AGESA' | cut -
 mullvad: ${if_existing /proc/net/route piholeDO}${color green2}${execi 3600 curl https://am.i.mullvad.net/ip} | ${execi 3600 curl https://am.i.mullvad.net/city}${color}${else}${font DejaVu Sans:size=10:italic}${color firebrick2}not protected${font}${color}${endif}
              ${color green2}${execi 3600 curl https://am.i.mullvad.net/connected | grep 'server' | cut -c 30-51 | uniq}${color}
 
-###################################
+##################################
 ##          BATT STATS          ##
 ##################################
 ${color dimgray}BATT STATS ${hr 2}${color}
