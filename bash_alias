@@ -43,7 +43,7 @@ alias aur='pacman -Qqm'
 ##git aliases
 alias gita='cat $HOME/googledrive/Linux/arch_linux_notes.md | grep git'
 alias gittag='git tag | sort'
-alias githead='git rev-parse --short HEAD'
+alias githead='echo $(TZ=UTC git show -s --pretty=%cd --date=format-local:%Y%m%d HEAD).$(git rev-parse --short HEAD)'
 
 ##mullvad
 alias mullvadstatus='curl https://am.i.mullvad.net/connected && curl https://am.i.mullvad.net/city'
@@ -56,6 +56,7 @@ alias kb='cd $HOME/kernel_build/ridobe-seiei'
 alias komodo='cd $HOME/android_devices/komodo_P9PXL && ls -la'
 alias devices='cd $HOME/android_devices && ls -la'
 alias gp='cd $HOME/git_projects && ls -la'
+alias firmware='cd $HOME/kernel_build/linux-firmware'
 
 ##autotrash
 alias trash='autotrash --delete 12000' #to delete 12gb immediately from trash
