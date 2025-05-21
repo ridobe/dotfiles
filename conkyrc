@@ -73,11 +73,11 @@ conky.config = {
 -- gap_x = 2750 for LG ultrawide on the right
 -- gap_x = 2750,
 -- gap_y = 0,
+     gap_x = 5,
 
-	gap_x = 5,
--- for laptop without monitor
--- gap_y = -350,
-	gap_y = -40,
+-- for work monitor
+-- gap_y = -450,
+gap_y = -40,
 
 -- Subtract file system buffers from used memory?
 	no_buffers = true,
