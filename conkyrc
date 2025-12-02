@@ -179,7 +179,7 @@ ${time %A, %d %B %Y}
 ##          NETWORK             ##
 ##################################
 ${color dimgray}NETWORK ${hr 2}${color}
-interface: ${font DejaVu Sans:size=10:italic}${color green2}$gw_iface${font}${color}
+interface: ${font DejaVu Sans:size=12:italic}${color green2}$gw_iface${font}${color}
 
 ${voffset -6}${font PizzaDude Bullets:size=14}O${font} up: ${color paleturquoise4}${upspeed $gw_iface}${color}${alignr}${color dodgerblue3}${upspeedgraph $gw_iface 14,200}${color}
 ${voffset 4}${font PizzaDude Bullets:size=14}U${font} down: ${color paleturquoise4}${downspeed $gw_iface}${color}${alignr}${color dodgerblue3}${downspeedgraph $gw_iface 14,200}${color}
