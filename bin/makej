@@ -1,9 +1,10 @@
 #!/bin/bash
 
 SECONDS=0
-export KCFLAGS=' -march=x86-64-v3'
-export KCPPFLAGS=' -march=x86-64-v3'
-make LLVM=1 LLVM_IAS=1 CC=clang HOSTCC=clang DLLVM_ENABLE_PROJECTS="polly" -k -j"$(nproc)"
+export KCFLAGS=' -march=znver5'
+export KCPPFLAGS=' -march=znver5'
+#make LLVM=1 LLVM_IAS=1 CC=clang HOSTCC=clang DLLVM_ENABLE_PROJECTS="polly" -k -j"$(nproc)"
+make LLVM=1 LLVM_IAS=1 CC=clang HOSTCC=clang -j"$(nproc)"
 if (( $SECONDS > 3600 )) ; then
     let "hours=SECONDS/3600"
     let "minutes=(SECONDS%3600)/60"
