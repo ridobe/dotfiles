@@ -111,7 +111,7 @@ ${color dimgray}SYSTEM ${hr 2}${color}
 ${font DejaVu:size=12}${nodename}${font}
 ${exec cat /proc/cpuinfo | grep 'model name' | cut -c 14-49 | uniq}
 kernel: ${color paleturquoise4}${execi 1200 /home/ridobe/dotfiles/bin/kernel_parse}${color}
-${alignr 20}${color dodgerblue3}${font DejaVu Sans:size=10:italic} -elite, powerful, efficient${color}${font}
+#${alignr 20}${color dodgerblue3}${font DejaVu Sans:size=10:italic} -elite, powerful, efficient${color}${font}
 bios version: ${color paleturquoise4}${exec hostnamectl | grep 'Firmware Version'| cut -c 19-34 | uniq}${color}
 microcode: ${color paleturquoise4}${exec cat /proc/cpuinfo | grep 'microcode' | cut -c 13-21 | uniq}${color}
 AGESA: ${color paleturquoise4}${exec sudo dmidecode -t 40 | grep 'AGESA' | cut -c 37-45 | uniq}${color}
