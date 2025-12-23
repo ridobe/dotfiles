@@ -15,8 +15,8 @@ alias gravity='tail -f /var/log/pihole.log | grep gravity'
 alias pacnew='sudo find /etc -regextype posix-extended -regex ".+\.pac(new|save|orig)" 2> /dev/null'
 
 ##wireguard
-alias wgup='wg-quick up wg0'
-alias wgdown='wg-quick down wg0'
+#alias wgup='wg-quick up wg0'
+#alias wgdown='wg-quick down wg0'
 
 ##kernel build
 alias torvalds='git clone git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git'
@@ -29,6 +29,12 @@ alias menuconfig='make CC=clang LLVM=1  menuconfig'
 
 ##mce logging
 alias mce='ras-mc-ctl --summary'
+
+##nftables logging
+alias nftableslogging='cat $HOME/dotfiles/bash_alias | grep nftables'
+alias nftablesinv='sudo journalctl -k | grep NFT_INVALID'
+alias nftablesdrop='sudo journalctl -k | grep NFT_DROPPED_IN'
+alias nftablesrules='sudo nft -a list ruleset'
 
 ##paru options
 alias paruse='cat $HOME/dotfiles/bash_alias | grep paru'
