@@ -23,9 +23,10 @@ alias torvalds='git clone git://git.kernel.org/pub/scm/linux/kernel/git/torvalds
 alias makemod='sudo make modules_install -j$(nproc) && echo "next up, copybz and prune: /usr/lib/modules/kernel_release"'
 alias copybz='sudo cp -v arch/x86_64/boot/bzImage /boot/vmlinuz-ridobe-seiei && echo "next up, cpio"'
 alias cpio='sudo mkinitcpio -p /etc/mkinitcpio.d/ridobe-seiei.preset'
+alias menuconfig='make CC=clang LLVM=1 menuconfig'
+alias oldconfig='make CC=clang LLVM=1 oldconfig'
 #only used for dotfiles repo
 alias gitpush='git status && git add . && git commit -m "updated/committed via script" && git push'
-alias menuconfig='make CC=clang LLVM=1  menuconfig'
 
 ##mce logging
 alias mce='ras-mc-ctl --summary'
