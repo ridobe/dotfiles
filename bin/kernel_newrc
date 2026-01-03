@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #
-# Retrieve kernel from GD and deploy.
+# Script to remove and replace new stable kernel.
 # by ridobe18 at gmail dot com
 #
 
