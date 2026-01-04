@@ -56,7 +56,8 @@ alias gitlog='git log --max-count=1 kernel'
 
 ##mullvad
 alias mullvadstatus='curl https://am.i.mullvad.net/connected && curl https://am.i.mullvad.net/city'
-alias mullvadping='mullvad-ping --country us --type wireguard --top 8'
+alias mullvadping='mullvad-ping --city-code chi --type wireguard --top 8'
+#also for all of us: mullvad-ping --country us --type wireguard --top 8
 
 ##working directories
 alias dotfiles='cd $HOME/dotfiles && ls -la'
