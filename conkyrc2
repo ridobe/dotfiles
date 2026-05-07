@@ -109,7 +109,7 @@ ${image $HOME/Backdrops_2560x1080_and-images/archimages/tux_outline.png -p 30,11
 ##################################
 ${color dimgray}SYSTEM ${hr 2}${color}
 ${font DejaVu:size=12}${nodename}${font}
-${exec cat /proc/cpuinfo | grep 'model name' | cut -c 14-49 | uniq}
+${exec cat /proc/cpuinfo | grep 'model name' | cut -c 14-35 | uniq}
 kernel: ${color paleturquoise4}${execi 1200 /home/ridobe/dotfiles/bin/kernel_parse}${color}
 ${alignr 20}${color dodgerblue3}${font DejaVu Sans:size=10:italic} -elite, powerful, efficient${color}${font}
 bios version: ${color paleturquoise4}${exec hostnamectl | grep 'Firmware Version'| cut -c 19-34 | uniq}${color}
@@ -125,16 +125,13 @@ mullvad: ${color green2}${execi 3600 curl https://am.i.mullvad.net/ip}, ${execi 
 ${color dimgray}BATT STATS ${hr 2}${color}
 battery: ${color paleturquoise4}${battery_percent BAT1}%${color} ${color dodgerblue3}${battery_bar BAT1}${voffset 2}${color}
 capacity: ${color paleturquoise4}${execi 2 awk '{print $1*10^-3}' /sys/class/power_supply/BAT1/charge_now | cut -c1-4}/${execi 2 awk '{print $1*10^-3}' /sys/class/power_supply/BAT0/charge_full | cut -c1-4} mAh${voffset 2}${color}
-#capacity: ${color paleturquoise4}${execi 2 upower -i /org/freedesktop/UPower/devices/battery_BAT1 | grep  "energy:" | cut -c26-31}/${execi 2 upower -i /org/freedesktop/UPower/devices/battery_BAT1 |grep  "energy-full:" | cut -c26-31} Wh${voffset 2}${color}
-power: ${color paleturquoise4}${battery_time BAT1}${voffset 2}${color}
 status: ${color paleturquoise4}${execi 2 cat /sys/class/power_supply/BAT1/status}${color}
 
 ##################################
 ##             GPU              ##
 ##################################
 ${color dimgray}GPU ${hr 2}${color}
-#type: ${color paleturquoise4}${exec lspci -vnn | grep Sapphire | head -1 | cut -c 34-66 | uniq}${color}
-type: ${color paleturquoise4}AMD Radeon 760M${color}
+${exec cat /proc/cpuinfo | grep 'model name' | cut -c 39-49 | uniq}${color}
 freq: ${color paleturquoise4}$freq MHz${color}
 temp: ${color paleturquoise4}${execi 1 sensors -f amdgpu-pci-c100 | grep edge | tr -d '+' | cut -c 14-22}${color}
 
