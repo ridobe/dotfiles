@@ -2,6 +2,8 @@
 # /home/ridobe/.bashrc
 #
 
+source /usr/share/aur-scan/integration.bash
+
 #alias file .bash_alias
 if [ -f ~/.bashrc ]; then
 source ~/.bash_alias
