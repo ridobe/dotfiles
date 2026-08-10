@@ -28,6 +28,7 @@ alias oldconfig='make CC=clang LLVM=1 oldconfig'
 alias localconfig='make LSMOD=$HOME/.config/modprobed.db CC=clang LLVM=1 localmodconfig'
 #only used for dotfiles repo
 alias gitpush='git status && git add . && git commit -m "updated/committed via script" && git push'
+alias bore='cat /proc/sys/kernel/sched_bore'
 
 ##mce logging
 alias mce='ras-mc-ctl --summary'
