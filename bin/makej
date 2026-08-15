@@ -1,9 +1,9 @@
 #!/bin/bash
 
 SECONDS=0
-export KCFLAGS=' -march=znver5 -O3 -mllvm -polly'
-export KCPPFLAGS=' -march=znver5'
-make LLVM=1 LLVM_IAS=1 -k -j"$(nproc)"
+export KCFLAGS=' -march=znver5 -O3 '
+export KCPPFLAGS=' -march=znver5 -O3'
+make LLVM=1 -k -j"$(nproc)"
 if (( $SECONDS > 3600 )) ; then
     let "hours=SECONDS/3600"
     let "minutes=(SECONDS%3600)/60"
