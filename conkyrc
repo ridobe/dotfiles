@@ -77,7 +77,7 @@ conky.config = {
 
 -- for work monitor
 -- gap_y = -450,
-gap_y = -40,
+gap_y = -65,
 
 -- Subtract file system buffers from used memory?
 	no_buffers = true,
