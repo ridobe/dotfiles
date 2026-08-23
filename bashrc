@@ -107,11 +107,7 @@ HISTIGNORE="ls:ps:history"
 PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
 #set $PATH
-export PATH=$PATH:~/bin
-export PATH=/usr/bin:$PATH
-export PATH=$PATH:/usr/lib/ccache/bin
-export PATH=$PATH:~/android-sdk-linux/platform-tools
-export PATH=$PATH:~/android-sdk-linux/tools/bin
-export PATH=$PATH:~/android-sdk-linux/tools
-export PATH=$PATH:~/dotfiles/bin
-export PATH=$PATH:~/.local/bin
+PATH=:~/bin/:$PATH
+PATH=~/.cargo/bin:$PATH
+PATH=$PATH:~/dotfiles/bin
+PATH=$PATH:~/.local/bin
