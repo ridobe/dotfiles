@@ -39,17 +39,6 @@ alias nftablesinv='sudo journalctl -k | grep NFT_INVALID'
 alias nftablesdrop='sudo journalctl -k | grep NFT_DROPPED_IN'
 alias nftablesrules='sudo nft -a list ruleset'
 
-##paru options
-alias paruse='cat $HOME/dotfiles/bash_alias | grep paru'
-alias aur='pacman -Qqm'
-#paru ; alias for paru -Syu
-#paru <target> ; interactively search and install <target>
-#paru -Sua ; upgrade aur packages
-#paru -Qua ; print avaliable aur upgrades
-#paru -G <target> ; download PKGBUILD of <target>
-#paru -Gp <target> ; print the PKGBUILD of <target>
-#paru -Gc <target> ; print the aur comments of <target>
-
 ##git aliases
 alias gita='cat $HOME/googledrive/Linux/arch_linux_notes.md | grep git'
 alias gittag='git tag | sort'
@@ -90,7 +79,6 @@ alias unlock='sudo rm /var/lib/pacman/db.lck'
 alias memoryusage='ps -e -o pid,vsz,comm= | sort -n -k 2'
 alias bootbios='sudo systemctl reboot --firmware-setup'
 alias cleanram='sudo systemctl restart polkit'
-alias aurlist='pacman -Qmq | paru -Ta -'
 
 ##misc
 alias gz='gunzip -c /proc/config.gz | grep'
