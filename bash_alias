@@ -58,7 +58,8 @@ alias devices='cd $HOME/android_devices && ls -la'
 alias gp='cd $HOME/git_projects && ls -la'
 
 ##autotrash
-alias trash='gio trash --list && gio trash --empty --force && gio trash --list' #to delete immediately from trash
+alias trash='gio trash --empty --force' #to delete immediately from trash
+alias trashlist='gio trash --list'
 
 ##scrot
 alias scrotall='scrot -d 5 -m /home/ridobe/temp_work/screenshots/1'
