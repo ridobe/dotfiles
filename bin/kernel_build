@@ -5,7 +5,7 @@
 # by ridobe18 at gmail dot com
 #
 
-wrkdir="$HOME/kernel_build/linux"
+wrkdir="$HOME/kernel_build/ridobe-seiei"
 
 set -e
 
@@ -41,9 +41,10 @@ fi
 #make and install modules
 make modules_install -j"$(nproc)"
 
+#continue on to make initramfs
+mkinitcpio -p ridobe-seiei
+
 #copy bz image to /boot and rename
 cp -v arch/x86_64/boot/bzImage /boot/vmlinuz-ridobe-seiei
 echo "New kernel image successfully copied"
 
-#continue on to make initramfs
-mkinitcpio -p ridobe-seiei

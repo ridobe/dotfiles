@@ -82,6 +82,7 @@ alias memoryusage='ps -e -o pid,vsz,comm= | sort -n -k 2'
 alias bootbios='sudo systemctl reboot --firmware-setup'
 alias cleanram='sudo systemctl restart polkit'
 alias initgen='sudo mkinitcpio -p ridobe-seiei'
+alias aurlist='pacman -Qem | expac --timefmt="%F %T" "[%l] %n (%v)" - | sort -k3'
 
 ##misc
 alias gz='gunzip -c /proc/config.gz | grep'
